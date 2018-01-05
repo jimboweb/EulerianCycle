@@ -228,6 +228,10 @@ public class EulerianCycle {
             c.visited = Arrays.copyOf(visited, visited.length);
             return c;
         }
+        public int[] outputAsArray(){
+            //TODO: return output as array of nodes
+            return null;
+        }
     }
     
     public static void main(String[] args) {

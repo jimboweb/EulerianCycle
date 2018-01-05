@@ -71,27 +71,35 @@ public class EulerianCycleTest {
         EulerianCycle instance = new EulerianCycle();
         ArrayList<int[]> simpleInput = new ArrayList<>();
         String simpleInputs =
-                            "6 7\n" +
+                            "6 8\n" +
                             "1 2\n" +
                             "2 6\n" +
                             "6 3\n" +
                             "3 2\n" +
                             "2 5\n" +
-                            "3 5\n" +
-                            "4 3\n" +
-                            "1 4";
+                            "5 3\n" +
+                            "3 4\n" +
+                            "4 1";
         String[] simpleInputLines = simpleInputs.split("\n");
-        for(String si:simpleInputLines){
-            String[] inputString = si.split(" ");
-            int[] inputNums = new int[2];
-            inputNums[0] = Integer.parseInt(inputString[0]);
-            inputNums[1] = Integer.parseInt(inputString[1]);
-            simpleInput.add(inputNums);
-        }
-        ArrayList<int []> input = makeGraphInput();
-        Graph g = instance.buildGraph(input);
-        Cycle c = g.makeEulerianCycle();
-        assert(testEulerianCycle(c, g));
+        int[] simpleOutputAnswer = {1,2,6,3,2,5,3,4,1};
+        Graph simpleG = instance.buildGraph(simpleInput);
+        Cycle simpleC = simpleG.makeEulerianCycle();
+        assertArrayEquals(simpleOutputAnswer, simpleC.outputAsArray());
+
+        //work with this after the simple answer works
+
+//        for(String si:simpleInputLines){
+//            String[] inputString = si.split(" ");
+//            int[] inputNums = new int[2];
+//            inputNums[0] = Integer.parseInt(inputString[0]);
+//            inputNums[1] = Integer.parseInt(inputString[1]);
+//            simpleInput.add(inputNums);
+//        }
+//
+//        ArrayList<int []> input = makeGraphInput();
+//        Graph g = instance.buildGraph(input);
+//        Cycle c = g.makeEulerianCycle();
+//        assert(testEulerianCycle(c, g));
     }
     private ArrayList<int []> makeGraphInput(){
         Random rnd = new Random();
