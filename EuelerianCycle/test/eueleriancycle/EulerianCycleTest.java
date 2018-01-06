@@ -71,30 +71,32 @@ public class EulerianCycleTest {
         EulerianCycle instance = new EulerianCycle();
         ArrayList<int[]> simpleInput = new ArrayList<>();
         String simpleInputs =
-                            "6 8\n" +
+                            "8 9\n" +
                             "1 2\n" +
-                            "2 6\n" +
-                            "6 3\n" +
-                            "3 2\n" +
-                            "2 5\n" +
-                            "5 3\n" +
-                            "3 4\n" +
-                            "4 1";
+                            "2 3\n" +
+                            "3 1\n" +
+                            "1 4\n" +
+                            "4 5\n" +
+                            "5 6\n" +
+                            "6 7\n" +
+                            "7 8\n" +
+                            "8 1";
         String[] simpleInputLines = simpleInputs.split("\n");
-        int[] simpleOutputAnswer = {1,2,6,3,2,5,3,4,1};
+
+        int[] simpleOutputAnswer = {1,2,3,1,4,5,6,7,8,1};
+        for(String si:simpleInputLines){
+            String[] inputString = si.split(" ");
+            int[] inputNums = new int[2];
+            inputNums[0] = Integer.parseInt(inputString[0]);
+            inputNums[1] = Integer.parseInt(inputString[1]);
+            simpleInput.add(inputNums);
+        }
         Graph simpleG = instance.buildGraph(simpleInput);
         Cycle simpleC = simpleG.makeEulerianCycle();
-        assertArrayEquals(simpleOutputAnswer, simpleC.outputAsArray());
+        assertArrayEquals(simpleOutputAnswer, simpleC.outputAsArray(simpleG));
 
         //work with this after the simple answer works
 
-//        for(String si:simpleInputLines){
-//            String[] inputString = si.split(" ");
-//            int[] inputNums = new int[2];
-//            inputNums[0] = Integer.parseInt(inputString[0]);
-//            inputNums[1] = Integer.parseInt(inputString[1]);
-//            simpleInput.add(inputNums);
-//        }
 //
 //        ArrayList<int []> input = makeGraphInput();
 //        Graph g = instance.buildGraph(input);

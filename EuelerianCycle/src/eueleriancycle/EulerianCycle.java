@@ -18,9 +18,6 @@ import java.util.logging.Logger;
  */
 public class EulerianCycle {
 
-    /**
-     * @param args the command line arguments
-     */
     class Graph{
         private Edge[] edges;
         public Graph(int n, int m){
@@ -106,7 +103,7 @@ public class EulerianCycle {
         private int findFirstEdge(Cycle oldCycle){
             if(oldCycle.size()==0)
                 return 0;
-            int edge = oldCycle.firstEdge;
+            int edge = oldCycle.getLastEdge();
             int firstEdge = -1;
             while(firstEdge==-1){
                 for(int e:edgesFromEdge(edge)){
@@ -221,6 +218,7 @@ public class EulerianCycle {
         public int getFirstEdge(){
             return firstEdge;
         }
+        public int getLastEdge(){return edges.get(edges.size()-1);}
         public Cycle copy(){
             Cycle c = new Cycle(graphSize);
             c.edges = new ArrayList<>(edges);
@@ -228,9 +226,13 @@ public class EulerianCycle {
             c.visited = Arrays.copyOf(visited, visited.length);
             return c;
         }
-        public int[] outputAsArray(){
-            //TODO: return output as array of nodes
-            return null;
+        public int[] outputAsArray(Graph graph){
+            int[] rtrn = new int[edges.size()+1];
+            for(int i=0;i<edges.size();i++){
+                rtrn[i] = graph.edges[i].from+1;
+            }
+            rtrn[edges.size()] = graph.edges[edges.size()-1].to+1;
+            return rtrn;
         }
     }
     
@@ -263,7 +265,8 @@ public class EulerianCycle {
         Cycle c = g.makeEulerianCycle();
         System.out.print("");
     }
-    
+
+
     public Graph buildGraph(ArrayList<int[]> inputs){
         int n = inputs.get(0)[0];
         int m = inputs.get(0)[1];
