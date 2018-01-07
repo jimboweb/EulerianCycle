@@ -10,6 +10,7 @@ import eueleriancycle.EulerianCycle.Edge;
 import eueleriancycle.EulerianCycle.Graph;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Random;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -69,7 +70,17 @@ public class EulerianCycleTest {
     @Test
     public void testMakeEulerianCycle(){
         EulerianCycle instance = new EulerianCycle();
-        ArrayList<int[]> simpleInput = new ArrayList<>();
+        List<int[]> konigsburg = new ArrayList<>();
+        String kString =
+                "4 7" +
+                        "1 2" +
+                        "1 3" +
+                        "2 1" +
+                        "3 1" +
+                        "2 4" +
+                        "3 4" +
+                        "4 1";
+        List<int[]> simpleInput = new ArrayList<>();
         String simpleInputs =
                             "8 9\n" +
                             "1 2\n" +
@@ -91,7 +102,7 @@ public class EulerianCycleTest {
             inputNums[1] = Integer.parseInt(inputString[1]);
             simpleInput.add(inputNums);
         }
-        Graph simpleG = instance.buildGraph(simpleInput);
+        Graph simpleG = instance.buildGraph((ArrayList<int[]>)simpleInput);
         Cycle simpleC = simpleG.makeEulerianCycle();
         assertArrayEquals(simpleOutputAnswer, simpleC.outputAsArray(simpleG));
 
