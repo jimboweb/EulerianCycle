@@ -94,7 +94,7 @@ public class EulerianCycleTest {
                             "8 1";
         String[] simpleInputLines = simpleInputs.split("\n");
 
-        int[] simpleOutputAnswer = {1,2,3,1,4,5,6,7,8,1};
+        int[] simpleOutputAnswer = {1,2,3,1,4,5,6,7,8};
         for(String si:simpleInputLines){
             String[] inputString = si.split(" ");
             int[] inputNums = new int[2];
