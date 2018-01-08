@@ -102,17 +102,18 @@ public class EulerianCycleTest {
             inputNums[1] = Integer.parseInt(inputString[1]);
             simpleInput.add(inputNums);
         }
-        Graph simpleG = instance.buildGraph((ArrayList<int[]>)simpleInput);
-        Cycle simpleC = simpleG.makeEulerianCycle();
-        assertArrayEquals(simpleOutputAnswer, simpleC.outputAsArray(simpleG));
+//        Graph simpleG = instance.buildGraph((ArrayList<int[]>)simpleInput);
+//        Cycle simpleC = simpleG.makeEulerianCycle();
+//        int[] correctAnswer = simpleC.outputAsArray(simpleG);
+//        assertArrayEquals(simpleOutputAnswer, correctAnswer);
 
         //work with this after the simple answer works
 
-//
-//        ArrayList<int []> input = makeGraphInput();
-//        Graph g = instance.buildGraph(input);
-//        Cycle c = g.makeEulerianCycle();
-//        assert(testEulerianCycle(c, g));
+
+        ArrayList<int []> input = makeGraphInput();
+        Graph g = instance.buildGraph(input);
+        Cycle c = g.makeEulerianCycle();
+        assert(testEulerianCycle(c, g));
     }
     private ArrayList<int []> makeGraphInput(){
         Random rnd = new Random();

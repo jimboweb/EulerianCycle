@@ -5,6 +5,8 @@
  */
 
 
+
+
 import java.io.IOException;
 import java.util.*;
 import java.util.logging.Level;
@@ -15,6 +17,10 @@ import java.util.logging.Logger;
  * @author jimstewart
  */
 public class EulerianCycle {
+
+    private int addEdgeOps;
+    private int addNodeOps;
+    private int buildCycleOps;
 
     public void run() throws IOException {
         Scanner scanner = new Scanner(System.in);
@@ -97,42 +103,31 @@ public class EulerianCycle {
                 newCycle.firstEdge = findFirstEdge(oldCycle);
                 newCycle.addEdge(newCycle.firstEdge);
                 //do old cycle
-                newCycle = doPrevCycle(newCycle, oldCycle);
-                 //make new cycle
                 newCycle = growCycle(newCycle);
+                newCycle.appendCycle(oldCycle);
+                 //make new cycle
                 oldCycle = newCycle.copy();
             } while (newCycle.edges.size() < edges.length);
            return newCycle;
         }
+
+
         Cycle growCycle(Cycle newCycle){
             int nextEdge = newCycle.firstEdge;
-            do{
+            while (edges[nextEdge].to!=edges[newCycle.firstEdge].from){
                 for(Integer e:edgesFromEdge(nextEdge)){
                     if(!newCycle.visited[e]){
                         nextEdge = e;
                         newCycle.addEdge(nextEdge);
                         break;
                     }
+                    buildCycleOps++;//debug
                 }
-            } while (edges[nextEdge].to!=edges[newCycle.firstEdge].from);
+            }
              
             return newCycle;
         }
-        private Cycle doPrevCycle(Cycle newCycle, Cycle oldCycle){
-            if(oldCycle.size()==0)
-                    return newCycle;
-            int nextEdge = newCycle.firstEdge;
-            for(int i=0;i<oldCycle.size();i++){
-                newCycle.addEdge(nextEdge);
-                try{
-                    nextEdge = oldCycle.edges.get(nextEdge);
-                }catch (IndexOutOfBoundsException err){
-                    System.out.println(); 
-                }
-            } 
 
-            return newCycle;
-        }
         /**
          * Finds a new first edge with unvisited edges out
          * from previous cycle
@@ -150,6 +145,7 @@ public class EulerianCycle {
                         firstEdge = e;
                         break;
                     }
+                    buildCycleOps++;//debug
                 }
             }
             return firstEdge;
@@ -243,6 +239,11 @@ public class EulerianCycle {
             this.graphSize=graphSize;
             firstEdge = -1;
         }
+
+        public void appendCycle(Cycle otherCycle){
+            edges.addAll(otherCycle.edges);
+        }
+
         public void addEdge(int e){
             edges.add(e);
             if(firstEdge == -1)
@@ -269,7 +270,7 @@ public class EulerianCycle {
         public int[] outputAsArray(Graph graph){
             int[] rtrn = new int[edges.size()];
             for(int i=0;i<edges.size();i++){
-                rtrn[i] = graph.edges[i].from+1;
+                rtrn[i] = graph.edges[edges.get(i)].from+1;
             }
             return rtrn;
         }
@@ -309,14 +310,17 @@ public class EulerianCycle {
             Edge e = g.addEdge(edgeInd, from, to);
             edgesFromNode.get(from).add(edgeInd);
             edgesToNode.get(to).add(edgeInd);
+            addEdgeOps++; //debug
             g.nodes = addOrModifyNodes(g.nodes,edgeInd,from,to);
         }
         for(Edge e:g.edges){
             for(Integer edgeOut:edgesFromNode.get(e.to)){
                 e.edgesOut.add(edgeOut);
+                addEdgeOps++;//debug
             }
             for(Integer edgeIn:edgesToNode.get(e.from)){
                 e.edgesIn.add((edgeIn));
+                addEdgeOps++;//debug
             }
         }
         return g;
@@ -324,7 +328,7 @@ public class EulerianCycle {
 
     private Node[] addOrModifyNodes(Node[] nodes, int edgeNum, int from, int to){
         Node nextNode;
-
+        addNodeOps++; //debug
         if(nodes[from]!=null){
             nextNode = nodes[from];
         } else {
