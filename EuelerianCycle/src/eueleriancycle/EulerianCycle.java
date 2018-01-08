@@ -103,17 +103,18 @@ public class EulerianCycle {
                 newCycle.firstEdge = findFirstEdge(oldCycle);
                 newCycle.addEdge(newCycle.firstEdge);
                 //do old cycle
-                // TODO: BUG: 1/7/18 doPrevCycle isn't doing what it's supposed to
-                newCycle = doPrevCycle(newCycle, oldCycle);
-                 //make new cycle
                 newCycle = growCycle(newCycle);
+                newCycle.appendCycle(oldCycle);
+                 //make new cycle
                 oldCycle = newCycle.copy();
             } while (newCycle.edges.size() < edges.length);
            return newCycle;
         }
+
+
         Cycle growCycle(Cycle newCycle){
             int nextEdge = newCycle.firstEdge;
-            do{
+            while (edges[nextEdge].to!=edges[newCycle.firstEdge].from){
                 for(Integer e:edgesFromEdge(nextEdge)){
                     if(!newCycle.visited[e]){
                         nextEdge = e;
@@ -122,24 +123,11 @@ public class EulerianCycle {
                     }
                     buildCycleOps++;//debug
                 }
-            } while (edges[nextEdge].to!=edges[newCycle.firstEdge].from);
+            }
              
             return newCycle;
         }
-        private Cycle doPrevCycle(Cycle newCycle, Cycle oldCycle){
-            if(oldCycle.size()==0)
-                    return newCycle;
-            int nextEdge = newCycle.firstEdge;
-            for(int i=0;i<oldCycle.size();i++){
-                // TODO: 1/7/18 nextEdge isn't right here the second time around 
-                newCycle.addEdge(nextEdge);
-                nextEdge = oldCycle.edges.get(nextEdge);
-                System.out.println();
-                buildCycleOps++; //debug
-            } 
 
-            return newCycle;
-        }
         /**
          * Finds a new first edge with unvisited edges out
          * from previous cycle
@@ -251,6 +239,11 @@ public class EulerianCycle {
             this.graphSize=graphSize;
             firstEdge = -1;
         }
+
+        public void appendCycle(Cycle otherCycle){
+            edges.addAll(otherCycle.edges);
+        }
+
         public void addEdge(int e){
             edges.add(e);
             if(firstEdge == -1)
@@ -277,7 +270,7 @@ public class EulerianCycle {
         public int[] outputAsArray(Graph graph){
             int[] rtrn = new int[edges.size()];
             for(int i=0;i<edges.size();i++){
-                rtrn[i] = graph.edges[i].from+1;
+                rtrn[i] = graph.edges[edges.get(i)].from+1;
             }
             return rtrn;
         }

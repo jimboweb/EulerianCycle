@@ -15,12 +15,14 @@
       <file leaf-file-name="EulerianCycle.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/EuelerianCycle/src/eueleriancycle/EulerianCycle.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="133" column="80" lean-forward="false" selection-start-line="133" selection-start-column="80" selection-end-line="133" selection-end-column="80" />
+            <state relative-caret-position="883">
+              <caret line="116" column="70" lean-forward="false" selection-start-line="116" selection-start-column="70" selection-end-line="116" selection-end-column="70" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1975#1976#0" expanded="true" />
                 <element signature="e#2023#2024#0" expanded="true" />
+                <element signature="e#6915#6916#0" expanded="true" />
+                <element signature="e#6969#6970#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -29,8 +31,8 @@
       <file leaf-file-name="EulerianCycleTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/EuelerianCycle/test/eueleriancycle/EulerianCycleTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="422">
-              <caret line="96" column="53" lean-forward="false" selection-start-line="96" selection-start-column="53" selection-end-line="96" selection-end-column="53" />
+            <state relative-caret-position="64">
+              <caret line="70" column="21" lean-forward="false" selection-start-line="70" selection-start-column="21" selection-end-line="70" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -45,6 +47,8 @@
       <find>todo</find>
       <find>print</find>
       <find>makeE</find>
+      <find>getLast</find>
+      <find>getla</find>
     </findStrings>
   </component>
   <component name="GradleLocalSettings">
@@ -303,32 +307,11 @@
       <updated>1515188227754</updated>
       <workItem from="1515188234465" duration="3478000" />
       <workItem from="1515248222201" duration="5508000" />
-      <workItem from="1515331539850" duration="16281000" />
+      <workItem from="1515331539850" duration="19740000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="EulerianCycleTest_testMakeEulerianCycle - 2018.01.06 at 10h 24m 34s.xml">
-      <configuration name="EulerianCycleTest.testMakeEulerianCycle" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="EulerianCycleTest_testMakeEulerianCycle - 2018.01.06 at 10h 30m 19s.xml">
-      <configuration name="EulerianCycleTest.testMakeEulerianCycle" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="EulerianCycleTest_testMakeEulerianCycle - 2018.01.06 at 10h 40m 00s.xml">
-      <configuration name="EulerianCycleTest.testMakeEulerianCycle" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="EulerianCycleTest_testMakeEulerianCycle - 2018.01.06 at 10h 47m 41s.xml">
-      <configuration name="EulerianCycleTest.testMakeEulerianCycle" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="EulerianCycleTest_testMakeEulerianCycle - 2018.01.06 at 10h 52m 17s.xml">
-      <configuration name="EulerianCycleTest.testMakeEulerianCycle" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="EulerianCycleTest_testMakeEulerianCycle - 2018.01.07 at 08h 50m 48s.xml">
-      <configuration name="EulerianCycleTest.testMakeEulerianCycle" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="EulerianCycleTest_testMakeEulerianCycle - 2018.01.07 at 13h 37m 06s.xml">
-      <configuration name="EulerianCycleTest.testMakeEulerianCycle" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="EulerianCycleTest_testMakeEulerianCycle - 2018.01.07 at 13h 39m 27s.xml">
       <configuration name="EulerianCycleTest.testMakeEulerianCycle" configurationId="JUnit" />
     </history-entry>
@@ -338,13 +321,33 @@
     <history-entry file="EulerianCycleTest_testMakeEulerianCycle - 2018.01.07 at 13h 39m 56s.xml">
       <configuration name="EulerianCycleTest.testMakeEulerianCycle" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="EulerianCycleTest_testMakeEulerianCycle - 2018.01.08 at 05h 38m 06s.xml">
+      <configuration name="EulerianCycleTest.testMakeEulerianCycle" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="EulerianCycleTest_testMakeEulerianCycle - 2018.01.08 at 05h 39m 05s.xml">
+      <configuration name="EulerianCycleTest.testMakeEulerianCycle" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="EulerianCycleTest_testMakeEulerianCycle - 2018.01.08 at 05h 49m 28s.xml">
+      <configuration name="EulerianCycleTest.testMakeEulerianCycle" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="EulerianCycleTest_testMakeEulerianCycle - 2018.01.08 at 05h 55m 12s.xml">
+      <configuration name="EulerianCycleTest.testMakeEulerianCycle" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="EulerianCycleTest_testMakeEulerianCycle - 2018.01.08 at 06h 02m 51s.xml">
+      <configuration name="EulerianCycleTest.testMakeEulerianCycle" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="EulerianCycleTest_testMakeEulerianCycle - 2018.01.08 at 06h 09m 04s.xml">
+      <configuration name="EulerianCycleTest.testMakeEulerianCycle" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="EulerianCycleTest_testMakeEulerianCycle - 2018.01.08 at 06h 14m 09s.xml">
+      <configuration name="EulerianCycleTest.testMakeEulerianCycle" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25267000" />
+    <option name="totallyTimeSpent" value="28726000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="55" y="43" width="1375" height="837" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -355,7 +358,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32941177" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32941177" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -367,7 +370,7 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -386,7 +389,7 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="124" />
+      <option name="time" value="158" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -408,6 +411,8 @@
             <element signature="imports" expanded="true" />
             <element signature="e#1975#1976#0" expanded="true" />
             <element signature="e#2023#2024#0" expanded="true" />
+            <element signature="e#6915#6916#0" expanded="true" />
+            <element signature="e#6969#6970#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -430,6 +435,8 @@
             <element signature="imports" expanded="true" />
             <element signature="e#1975#1976#0" expanded="true" />
             <element signature="e#2023#2024#0" expanded="true" />
+            <element signature="e#6915#6916#0" expanded="true" />
+            <element signature="e#6969#6970#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -447,8 +454,8 @@
     <entry file="file://$PROJECT_DIR$/EuelerianCycle/src/EulerianCycle.java" />
     <entry file="file://$PROJECT_DIR$/EuelerianCycle/test/eueleriancycle/EulerianCycleTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="422">
-          <caret line="96" column="53" lean-forward="false" selection-start-line="96" selection-start-column="53" selection-end-line="96" selection-end-column="53" />
+        <state relative-caret-position="64">
+          <caret line="70" column="21" lean-forward="false" selection-start-line="70" selection-start-column="21" selection-end-line="70" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -457,12 +464,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/EuelerianCycle/src/eueleriancycle/EulerianCycle.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="133" column="80" lean-forward="false" selection-start-line="133" selection-start-column="80" selection-end-line="133" selection-end-column="80" />
+        <state relative-caret-position="883">
+          <caret line="116" column="70" lean-forward="false" selection-start-line="116" selection-start-column="70" selection-end-line="116" selection-end-column="70" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1975#1976#0" expanded="true" />
             <element signature="e#2023#2024#0" expanded="true" />
+            <element signature="e#6915#6916#0" expanded="true" />
+            <element signature="e#6969#6970#0" expanded="true" />
           </folding>
         </state>
       </provider>
