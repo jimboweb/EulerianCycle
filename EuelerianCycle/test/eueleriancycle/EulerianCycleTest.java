@@ -81,27 +81,27 @@ public class EulerianCycleTest {
                         "3 4" +
                         "4 1";
         List<int[]> simpleInput = new ArrayList<>();
-        String simpleInputs =
-                            "8 9\n" +
-                            "1 2\n" +
-                            "2 3\n" +
-                            "3 1\n" +
-                            "1 4\n" +
-                            "4 5\n" +
-                            "5 6\n" +
-                            "6 7\n" +
-                            "7 8\n" +
-                            "8 1";
-        String[] simpleInputLines = simpleInputs.split("\n");
-
-        int[] simpleOutputAnswer = {1,2,3,1,4,5,6,7,8};
-        for(String si:simpleInputLines){
-            String[] inputString = si.split(" ");
-            int[] inputNums = new int[2];
-            inputNums[0] = Integer.parseInt(inputString[0]);
-            inputNums[1] = Integer.parseInt(inputString[1]);
-            simpleInput.add(inputNums);
-        }
+//        String simpleInputs =
+//                            "8 9\n" +
+//                            "1 2\n" +
+//                            "2 3\n" +
+//                            "3 1\n" +
+//                            "1 4\n" +
+//                            "4 5\n" +
+//                            "5 6\n" +
+//                            "6 7\n" +
+//                            "7 8\n" +
+//                            "8 1";
+//        String[] simpleInputLines = simpleInputs.split("\n");
+//
+//        int[] simpleOutputAnswer = {1,2,3,1,4,5,6,7,8};
+//        for(String si:simpleInputLines){
+//            String[] inputString = si.split(" ");
+//            int[] inputNums = new int[2];
+//            inputNums[0] = Integer.parseInt(inputString[0]);
+//            inputNums[1] = Integer.parseInt(inputString[1]);
+//            simpleInput.add(inputNums);
+//        }
 //        Graph simpleG = instance.buildGraph((ArrayList<int[]>)simpleInput);
 //        Cycle simpleC = simpleG.makeEulerianCycle();
 //        int[] correctAnswer = simpleC.outputAsArray(simpleG);

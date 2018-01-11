@@ -140,6 +140,8 @@ public class EulerianCycle {
             int edge = oldCycle.getLastEdge();
             int firstEdge = -1;
             while(firstEdge==-1){
+                //TODO: duh ok I am only looking at the edges coming from the last edge I drew
+                //I think I need to go around and look at each edge in the cycle
                 for(int e:edgesFromEdge(edge)){
                     if(!oldCycle.visited[e]){
                         firstEdge = e;
