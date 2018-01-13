@@ -7,6 +7,8 @@ package eueleriancycle;
 
 
 
+import com.sun.javafx.geom.Edge;
+
 import java.io.IOException;
 import java.util.*;
 import java.util.logging.Level;
@@ -37,16 +39,23 @@ public class EulerianCycle {
             inputs.add(in);
         }
         Graph g = buildGraph(inputs);
-        if(g.isGraphEven()){
-            Cycle c = g.makeEulerianCycle();
+        Cycle c;
+        if(!g.isGraphEven()){
+            c = new Cycle(0)
+        } else {
+            c = g.makeEulerianCycle();
+        }
+        if(c.edges.size()==0){
+            //either graph is even or couldn't find edge some other reason
+            System.out.println("0");
+        } else {
             System.out.println("1");
-            for(int i:c.outputAsArray(g)){
+            for (int i : c.outputAsArray(g)) {
                 System.out.print(i + " ");
             }
             System.out.println();
-        } else {
-            System.out.println("0");
         }
+
     }
 
     class Graph{
@@ -93,6 +102,7 @@ public class EulerianCycle {
             return true;
         }
 
+
         public Cycle makeEulerianCycle(){
             Cycle newCycle;
             Cycle oldCycle = new Cycle(edges.length);
@@ -100,7 +110,11 @@ public class EulerianCycle {
                 //find new node to start from
             do{    
                 newCycle= new Cycle(edges.length);
-                newCycle.firstEdge = findFirstEdge(oldCycle);
+                newCycle.firstEdge = oldCycle.lastAvailableEdge(edges);
+                if(newCycle.firstEdge==-1){
+                    //return empty cycle because couldn't find available edge
+                    return new Cycle(0);
+                }
                 newCycle.addEdge(newCycle.firstEdge);
                 //do old cycle
                 newCycle = growCycle(newCycle);
@@ -128,30 +142,6 @@ public class EulerianCycle {
             return newCycle;
         }
 
-        /**
-         * Finds a new first edge with unvisited edges out
-         * from previous cycle
-         * @param oldCycle
-         * @return the edge number of the new first edge
-         */
-        private int findFirstEdge(Cycle oldCycle){
-            if(oldCycle.size()==0)
-                return 0;
-            int edge = oldCycle.getLastEdge();
-            int firstEdge = -1;
-            while(firstEdge==-1){
-                //TODO: duh ok I am only looking at the edges coming from the last edge I drew
-                //I think I need to go around and look at each edge in the cycle
-                for(int e:edgesFromEdge(edge)){
-                    if(!oldCycle.visited[e]){
-                        firstEdge = e;
-                        break;
-                    }
-                    buildCycleOps++;//debug
-                }
-            }
-            return firstEdge;
-        }
     }
     
     
@@ -241,6 +231,33 @@ public class EulerianCycle {
             this.graphSize=graphSize;
             firstEdge = -1;
         }
+
+        /**
+         * Finds a new first edge with unvisited edges out
+         * from previous cycle
+         * @return the edge number of the new first edge
+         */
+        private int lastAvailableEdge(Edge[] edges){
+            if(size()==0)
+                return 0;
+            int edgeNumber = edges.length-1;
+            int edge;
+            int firstEdge = -1;
+            while(firstEdge==-1 && edgeNumber>0){
+                //TODO: duh ok I am only looking at the edges coming from the last edge I drew
+                //I think I need to go around and look at each edge in the cycle
+                for(int e:edges[edgeNumber].getEdgesOut()){
+                    if(!visited[e]){
+                        firstEdge = e;
+                        break;
+                    }
+                    buildCycleOps++;//debug
+                }
+                edgeNumber--;
+            }
+            return firstEdge;
+        }
+
 
         public void appendCycle(Cycle otherCycle){
             edges.addAll(otherCycle.edges);
