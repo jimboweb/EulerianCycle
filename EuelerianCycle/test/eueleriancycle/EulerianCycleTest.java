@@ -8,16 +8,14 @@ package eueleriancycle;
 import eueleriancycle.EulerianCycle.Cycle;
 import eueleriancycle.EulerianCycle.Edge;
 import eueleriancycle.EulerianCycle.Graph;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Random;
+
+import java.util.*;
+
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 /**
  *
@@ -70,17 +68,17 @@ public class EulerianCycleTest {
     @Test
     public void testMakeEulerianCycle(){
         EulerianCycle instance = new EulerianCycle();
-        List<int[]> konigsburg = new ArrayList<>();
-        String kString =
-                "4 7" +
-                        "1 2" +
-                        "1 3" +
-                        "2 1" +
-                        "3 1" +
-                        "2 4" +
-                        "3 4" +
-                        "4 1";
-        List<int[]> simpleInput = new ArrayList<>();
+//        List<int[]> konigsburg = new ArrayList<>();
+//        String kString =
+//                "4 7" +
+//                        "1 2" +
+//                        "1 3" +
+//                        "2 1" +
+//                        "3 1" +
+//                        "2 4" +
+//                        "3 4" +
+//                        "4 1";
+//        List<int[]> simpleInput = new ArrayList<>();
 //        String simpleInputs =
 //                            "8 9\n" +
 //                            "1 2\n" +
@@ -110,74 +108,265 @@ public class EulerianCycleTest {
         //work with this after the simple answer works
 
 
-        ArrayList<int []> input = makeGraphInput();
-        Graph g = instance.buildGraph(input);
-        Cycle c = g.makeEulerianCycle();
-        assert(testEulerianCycle(c, g));
+        InputGraph input = makeBalancedInputGraph();
+        //TODO: create the cycle, then check to see if the cycle is Eulerian
+//        Graph g = instance.buildGraph(input);
+//        Cycle c = g.makeEulerianCycle();
+//        assert(testEulerianCycle(c, g));
     }
-    private ArrayList<int []> makeGraphInput(){
-        Random rnd = new Random();
-        int n = rnd.nextInt(10) + 2;
-        int m = 0;
-//        int m = (rnd.nextInt(triangular(n) - n) + n)/2 * 2  ; // use my triangular function
-        ArrayList<int []> input = new ArrayList<>();
-        int[] firstLine = {n, m};
-        input.add(firstLine);
-        int nextNode = 0;
-        ArrayList <Integer> usedNodes = new ArrayList<>();
-        int firstNode = rnd.nextInt(n);
-        int prevNode = firstNode;
-        for(int i=1;i<n;i++){
-            usedNodes.add(prevNode);
-            do{
-                nextNode = rnd.nextInt(n);
-            } while(usedNodes.contains((Integer)nextNode));
-            int[] nextLine = {prevNode+1, nextNode+1};
-            input.add(nextLine);
-            m++;
-            prevNode = nextNode;
+
+    class InputNode{
+        private ArrayList<Integer> edgesOut;
+        private ArrayList<Integer> edgesIn;
+        private final int index;
+        //positive balance = more out than in
+        //neg. balance = more in than out
+        //0 balance = even
+        private int balance;
+
+        public InputNode(int index) {
+            this.edgesOut = new ArrayList<>();
+            this.edgesIn = new ArrayList<>();
+            this.index = index;
+            this.balance = 0;
         }
-        usedNodes.add(nextNode);
-        int[] nextLine = {prevNode+1, firstNode+1};
-        input.add(nextLine);
-        // now add a few extra cycles
-        int moreCycles = rnd.nextInt(triangular(n))- (m + 3);
-        moreCycles = moreCycles < 2 ? 2 : moreCycles;
-        int maxEdges = triangular(n-1);
-        for(int i=0;i<moreCycles;i++){
-            firstNode = rnd.nextInt(n);
-            prevNode = firstNode;
-            usedNodes = new ArrayList<>();
-            usedNodes.add(prevNode);
-            do{
-                do{
-                    //[tk] think this works now try it
-                    nextNode = rnd.nextInt(n);
-                } while (usedNodes.contains((Integer)nextNode) && input.size()<maxEdges-2 && usedNodes.size()<(n-2));
-                if(nextNode == prevNode){
-                    nextNode = firstNode;
+
+        public void addEdgeOut(int e){
+            edgesOut.add(e);
+            balance--;
+        }
+        public void addEdgeIn(int e){
+            edgesIn.add(e);
+            balance++;
+        }
+
+        public int getBalance() {
+            return balance;
+        }
+
+        public boolean balanceIsPositive(){
+            return balance>0;
+        }
+
+        public boolean balanceIsNegative(){
+            return balance<0;
+        }
+        public boolean isBalanced(){
+            return balance==0;
+        }
+
+        public int getIndex() {
+            return index;
+        }
+    }
+
+    class InputEdge{
+        private final int index;
+        private final int fromNode;
+        private final int toNode;
+
+        public InputEdge(int index, int fromNode, int toNode) {
+            this.index = index;
+            this.fromNode = fromNode;
+            this.toNode = toNode;
+        }
+
+        public int getIndex() {
+            return index;
+        }
+
+        public int getFromNode() {
+            return fromNode;
+        }
+
+        public int getToNode() {
+            return toNode;
+        }
+
+        @Override
+        public String toString() {
+            return fromNode + " " + toNode;
+        }
+    }
+
+    class InputGraph {
+        Random rnd = new Random();
+        private final ArrayList<InputNode> nodes;
+        ArrayList<InputEdge> edges;
+        BitSet balancedNodes;
+        boolean graphIsBalanced;
+        public InputGraph(int size) {
+            ArrayList<InputNode> nodes = new ArrayList<>();
+            for(int i=0;i<size;i++){
+                nodes.add(new InputNode(i));
+            }
+            this.nodes=nodes;
+            this.edges = new ArrayList<>();
+            balancedNodes = new BitSet(nodes.size());
+        }
+
+        public ArrayList<InputNode> getNodes() {
+            return nodes;
+        }
+
+        /**
+         * <ol>
+         *     <li>adds an edge from node to node</li>
+         *     <li>adds edge to edgeOut of from and edgeIn of to</li>
+         *     <li>sets the balance of node which sets graphIsBalanced</li>
+         * </ol>
+         *
+         * @param from from node
+         * @param to to node
+         */
+        public void addEdge(int from, int to){
+            if(!(nodes.size()>=(from))){
+                throw new IllegalArgumentException("node " + from + " out of bounds");
+            }
+            if(!(nodes.size()>=to)){
+                throw new IllegalArgumentException("node " + to + "out of bounds");
+            }
+            int edgeInd = edges.size();
+            edges.add(new InputEdge(edgeInd,from,to));
+            InputNode fromNode = nodes.get(from);
+            InputNode toNode = nodes.get(to);
+            fromNode.addEdgeOut(edgeInd);
+            setOrClearBalancedNode(fromNode);
+            toNode.addEdgeIn(edgeInd);
+            setOrClearBalancedNode(toNode);
+        }
+
+        /**
+         * checks if node is balanced and sets or clears the boolean in balancedNodes
+         * @param n node to check
+         */
+        private void setOrClearBalancedNode(InputNode n){
+            int ind = n.index;
+            if(n.isBalanced()){
+                setBalancedNode(ind);
+            } else {
+                clearBalancedNode(ind);
+            }
+        }
+
+        /**
+         * sets node in balancedNodes and sets graphIsBalanced
+         * @param ind index of node
+         */
+        private void setBalancedNode(int ind){
+            balancedNodes.set(ind);
+            setGraphBalance();
+        }
+
+        /**
+         * clears node in balancedNodes and sets graphIsBalanced
+         * @param ind index of node
+         */
+        private void clearBalancedNode(int ind){
+            balancedNodes.clear(ind);
+            setGraphBalance();
+        }
+
+        /**
+         * sets the balance of the graph if it's balanced
+         */
+        private void setGraphBalance(){
+            graphIsBalanced = balancedNodes.cardinality()==1>>nodes.size();
+        }
+
+        public InputNode getNode(int ind){
+            return nodes.get(ind);
+        }
+        public InputEdge getEdge(int ind){
+            return edges.get(ind);
+        }
+        public String getInputAsString(){
+            String rtrn = nodes.size() + " " + edges.size();
+            for(InputEdge e:edges){
+                rtrn+=e.toString() + "\n";
+            }
+            return rtrn;
+        }
+        public ArrayList<int[]> getInputAsArray(){
+            ArrayList<int[]> input = new ArrayList<>();
+            int[] firstLine = {nodes.size(),edges.size()};
+            input.add(firstLine);
+            for(InputEdge e:edges){
+                int[] nextLine = {e.fromNode,e.toNode};
+                input.add(nextLine);
+            }
+            return input;
+        }
+
+        /**
+         * return a random node with optional sign; 0 = sign doesn't matter
+         * @param sign 0 for any node, positive for positive node, negative for negative node
+         * @return any node if sign 0, otherwise node of balanced sign
+         */
+        public InputNode getRandomNode(int sign){
+            if(sign==0){
+                return new InputNode(rnd.nextInt(nodes.size()));
+            }
+            boolean positive = sign>0;
+            BitSet nodeWasTried = new BitSet(nodes.size());
+            while(nodeWasTried.cardinality()<1>>nodes.size()){
+                int rtrnInd = rnd.nextInt(nodes.size());
+                if(nodeWasTried.get(rtrnInd)){
+                    continue;
                 }
-                int[] newLine = {prevNode+1, nextNode+1};
-                int[] newLineRev = {nextNode+1, prevNode+1};
-                //this if statement isn't working, have to use something else
-                boolean edgeUsed = false;
-                for(int[] arr:input){
-                    if(Arrays.equals(arr, newLine)||Arrays.equals(arr, newLineRev)){
-                        edgeUsed = true;
+                InputNode possibleRtrn = nodes.get(rtrnInd);
+                if(positive) {
+                    if (possibleRtrn.balanceIsPositive()) {
+                        return possibleRtrn;
+                    }
+                } else {
+                    if (possibleRtrn.balanceIsNegative()){
+                        return possibleRtrn;
                     }
                 }
-                if(!edgeUsed){
-                    input.add(newLine);
-                    m++;
-                }
-                prevNode = nextNode;
-                usedNodes.add(nextNode);
-            } while(nextNode!=firstNode);
+                nodeWasTried.set(rtrnInd);
+            }
+            return new InputNode(-1);
         }
-        input.get(0)[1] = m + 1;
-        return input;
+
+        public boolean graphIsBalanced() {
+            return graphIsBalanced;
+        }
     }
-    
+
+    /**
+     * @return a balanced input graph
+     */
+    private InputGraph makeBalancedInputGraph(){
+        Random rnd = new Random();
+        int n = rnd.nextInt(10) + 2;
+        boolean balanced = rnd.nextInt(10)<1;
+        int m = 0;
+        InputGraph gr = new InputGraph(n);
+        for(InputNode fromNode:gr.getNodes()){
+            int fromNodeInd = fromNode.getIndex();
+            InputNode toNode = gr.getRandomNode(0);
+            int toNodeInd = toNode.getIndex();
+            gr.addEdge(fromNodeInd,toNodeInd);
+        }
+
+        while(!gr.graphIsBalanced()){
+            InputNode nodeToBalance;
+            do{
+                nodeToBalance = gr.getRandomNode(0);
+            } while(nodeToBalance.isBalanced());
+            InputNode toNode;
+            if(nodeToBalance.balanceIsPositive()){
+                toNode = gr.getRandomNode(-1);
+            } else {
+                toNode = gr.getRandomNode(1);
+            }
+            gr.addEdge(nodeToBalance.getIndex(),toNode.getIndex());
+        }
+        return gr;
+    }
+
+    //TODO: make sure this checks if a cycle is Eurlerian
     private boolean testEulerianCycle(Cycle c, Graph g){
         //make sure that the cycle has all the nodes
         Edge nextEdge = g.getEdge(c.getFirstEdge());

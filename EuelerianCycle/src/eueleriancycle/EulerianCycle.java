@@ -7,7 +7,7 @@ package eueleriancycle;
 
 
 
-import com.sun.javafx.geom.Edge;
+
 
 import java.io.IOException;
 import java.util.*;
@@ -41,7 +41,7 @@ public class EulerianCycle {
         Graph g = buildGraph(inputs);
         Cycle c;
         if(!g.isGraphEven()){
-            c = new Cycle(0)
+            c = new Cycle(0);
         } else {
             c = g.makeEulerianCycle();
         }
