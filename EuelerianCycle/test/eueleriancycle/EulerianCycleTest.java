@@ -11,6 +11,7 @@ import eueleriancycle.EulerianCycle.Graph;
 
 import java.util.*;
 
+import jdk.internal.util.xml.impl.Input;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -65,6 +66,11 @@ public class EulerianCycleTest {
 //        // TODO review the generated test code and remove the default call to fail.
 //        fail("The test case is a prototype.");
 //    }
+
+    /**
+     * does not get correct output in advance, just checks to make sure that the
+     * cycle that develops is Eulerian
+     */
     @Test
     public void testMakeEulerianCycle(){
         EulerianCycle instance = new EulerianCycle();
@@ -108,11 +114,11 @@ public class EulerianCycleTest {
         //work with this after the simple answer works
 
 
-        InputGraph input = makeBalancedInputGraph();
-        //TODO: create the cycle, then check to see if the cycle is Eulerian
-//        Graph g = instance.buildGraph(input);
-//        Cycle c = g.makeEulerianCycle();
-//        assert(testEulerianCycle(c, g));
+        InputGraph inputGraph = makeBalancedInputGraph();
+        ArrayList<int[]> input = inputGraph.getInputAsArray();
+        Graph g = instance.buildGraph(input);
+        Cycle c = g.makeEulerianCycle();
+        assert(testEulerianCycle(c, inputGraph));
     }
 
     class InputNode{
@@ -305,7 +311,9 @@ public class EulerianCycleTest {
          */
         public InputNode getRandomNode(int sign){
             if(sign==0){
-                return new InputNode(rnd.nextInt(nodes.size()));
+                int nodeNum = rnd.nextInt(nodes.size());
+                InputNode n = nodes.get(nodeNum);
+                return n;
             }
             boolean positive = sign>0;
             BitSet nodeWasTried = new BitSet(nodes.size());
@@ -366,26 +374,52 @@ public class EulerianCycleTest {
         return gr;
     }
 
-    //TODO: make sure this checks if a cycle is Eurlerian
-    private boolean testEulerianCycle(Cycle c, Graph g){
+    /**
+     * <o>Checks to make sure that the cycle meets following criteria:</p>
+     * <ol>
+     *     <li>every edge connects to the next edge</li>
+     *     <li>every edge is used</li>
+     *     <li>no edge used more than once</li>
+     *     <li>last edge connects to first edge</li>
+     * </ol>
+     * @param c the cycle returned by program
+     * @param g the original input graph
+     * @return true if cycle is Eulerian in InputGraph g
+     */
+    private boolean testEulerianCycle(Cycle c, InputGraph g){
         //make sure that the cycle has all the nodes
-        Edge nextEdge = g.getEdge(c.getFirstEdge());
-        Edge thisEdge;
-        if(c.size()<g.size())
-            return false;
+        InputEdge nextEdge = g.getEdge(c.getFirstEdge());
+        InputEdge thisEdge;
+        boolean[] edgesAreUsed = new boolean[g.edges.size()];
         //make sure each node's "to" == the next node's "from"
         for(int i=0;i<c.size()-1;i++){
             nextEdge = g.getEdge(c.getEdge(i+1));
-
-            thisEdge = g.getEdge(c.getEdge(i));
-            if(nextEdge.getFromNode()!=thisEdge.getToNode())
+            //make sure edge wasn't used twice
+            if(edgesAreUsed[nextEdge.index]){
+                System.out.println("edge " + nextEdge.index + " was used more than once");
                 return false;
+            }
+            edgesAreUsed[nextEdge.index] = true;
+            thisEdge = g.getEdge(c.getEdge(i));
+            //make sure previous ede connects to next edge
+            if(nextEdge.getFromNode()!=thisEdge.getToNode()) {
+                System.out.println("Edge " + thisEdge.index + " does not connect to " + nextEdge.index + ".");
+                return false;
+            }
         }
-        if(g.getEdge(c.getFirstEdge()).getFromNode()!= nextEdge.getToNode())
+        //make sure all edges were used
+        for(int i=0;i<edgesAreUsed.length;i++){
+            boolean edgeIsUsed = edgesAreUsed[i];
+            if(!edgeIsUsed){
+                System.out.println("Edge " + i + " was not used");
+                return false;
+            }
+        }
+        //make sure last edge connects to first edge
+        if(g.getEdge(c.getFirstEdge()).getFromNode()!= nextEdge.getToNode()) {
+            System.out.println("Final edge " + nextEdge.index + " does not meet first edge " + c.getFirstEdge());
             return false;
-        //[tk]make sure the start equals the end
-        if(c.getFirstEdge()!=c.getEdge(c.size()-1))
-            return false;
+        }
         return true;
     }
     

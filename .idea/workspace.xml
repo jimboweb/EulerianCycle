@@ -34,43 +34,41 @@
       <file leaf-file-name="EulerianCycleTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/EuelerianCycle/test/eueleriancycle/EulerianCycleTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="339" column="47" lean-forward="false" selection-start-line="339" selection-start-column="47" selection-end-line="339" selection-end-column="47" />
+            <state relative-caret-position="79">
+              <caret line="314" column="47" lean-forward="false" selection-start-line="314" selection-start-column="47" selection-end-line="314" selection-end-column="47" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="class#InputNode#0;class#EulerianCycleTest#0" expanded="false" />
                 <element signature="method#InputNode#0;class#InputNode#0;class#EulerianCycleTest#0" expanded="false" />
-                <element signature="e#4278#4279#0" expanded="true" />
-                <element signature="e#4316#4317#0" expanded="true" />
-                <element signature="e#4361#4362#0" expanded="true" />
-                <element signature="e#4401#4402#0" expanded="true" />
-                <element signature="e#4446#4447#0" expanded="true" />
-                <element signature="e#4486#4487#0" expanded="true" />
-                <element signature="e#4523#4524#0" expanded="true" />
-                <element signature="e#4564#4565#0" expanded="true" />
-                <element signature="e#4597#4598#0" expanded="true" />
-                <element signature="e#4633#4634#0" expanded="true" />
+                <element signature="e#4450#4451#0" expanded="true" />
+                <element signature="e#4488#4489#0" expanded="true" />
+                <element signature="e#4533#4534#0" expanded="true" />
+                <element signature="e#4573#4574#0" expanded="true" />
+                <element signature="e#4618#4619#0" expanded="true" />
+                <element signature="e#4658#4659#0" expanded="true" />
+                <element signature="e#4695#4696#0" expanded="true" />
+                <element signature="e#4736#4737#0" expanded="true" />
+                <element signature="e#4769#4770#0" expanded="true" />
+                <element signature="e#4805#4806#0" expanded="true" />
                 <element signature="class#InputEdge#0;class#EulerianCycleTest#0" expanded="false" />
-                <element signature="e#4976#4977#0" expanded="true" />
-                <element signature="e#5012#5013#0" expanded="true" />
-                <element signature="e#5048#5049#0" expanded="true" />
-                <element signature="e#5087#5088#0" expanded="true" />
-                <element signature="e#5121#5122#0" expanded="true" />
-                <element signature="e#5158#5159#0" expanded="true" />
-                <element signature="e#5212#5213#0" expanded="true" />
-                <element signature="e#5266#5267#0" expanded="true" />
-                <element signature="class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
-                <element signature="e#5862#5863#0" expanded="true" />
-                <element signature="e#5898#5899#0" expanded="true" />
-                <element signature="e#7940#7941#0" expanded="true" />
-                <element signature="e#8026#8027#0" expanded="true" />
-                <element signature="e#8070#8071#0" expanded="true" />
-                <element signature="e#8115#8116#0" expanded="true" />
-                <element signature="e#8158#8159#0" expanded="true" />
-                <element signature="e#8203#8204#0" expanded="true" />
-                <element signature="e#10084#10085#0" expanded="true" />
-                <element signature="e#10130#10131#0" expanded="true" />
-                <element signature="method#makeBalancedInputGraph#0;class#EulerianCycleTest#0" expanded="false" />
+                <element signature="e#5148#5149#0" expanded="true" />
+                <element signature="e#5184#5185#0" expanded="true" />
+                <element signature="e#5220#5221#0" expanded="true" />
+                <element signature="e#5259#5260#0" expanded="true" />
+                <element signature="e#5293#5294#0" expanded="true" />
+                <element signature="e#5330#5331#0" expanded="true" />
+                <element signature="e#5384#5385#0" expanded="true" />
+                <element signature="e#5438#5439#0" expanded="true" />
+                <element signature="e#6034#6035#0" expanded="true" />
+                <element signature="e#6070#6071#0" expanded="true" />
+                <element signature="method#addEdge#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
+                <element signature="method#setOrClearBalancedNode#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
+                <element signature="method#setBalancedNode#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
+                <element signature="method#clearBalancedNode#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
+                <element signature="method#getInputAsString#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
+                <element signature="method#getInputAsArray#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
+                <element signature="e#10324#10325#0" expanded="true" />
+                <element signature="e#10370#10371#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -128,6 +126,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -166,7 +165,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="AndroidView" />
     </panes>
@@ -175,7 +173,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="vcs.Perforce" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -348,22 +346,11 @@
       <workItem from="1515539918637" duration="1746000" />
       <workItem from="1515799440200" duration="3558000" />
       <workItem from="1515850250408" duration="12203000" />
+      <workItem from="1515940134077" duration="2831000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="EulerianCycleTest_testMakeEulerianCycle - 2018.01.08 at 07h 00m 46s.xml">
-      <configuration name="EulerianCycleTest.testMakeEulerianCycle" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="EulerianCycleTest_testMakeEulerianCycle - 2018.01.08 at 07h 00m 50s.xml">
-      <configuration name="EulerianCycleTest.testMakeEulerianCycle" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="EulerianCycleTest_testMakeEulerianCycle - 2018.01.08 at 07h 00m 54s.xml">
-      <configuration name="EulerianCycleTest.testMakeEulerianCycle" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="EulerianCycleTest_testMakeEulerianCycle - 2018.01.09 at 18h 22m 17s.xml">
-      <configuration name="EulerianCycleTest.testMakeEulerianCycle" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="EulerianCycleTest_testMakeEulerianCycle - 2018.01.09 at 18h 47m 37s.xml">
       <configuration name="EulerianCycleTest.testMakeEulerianCycle" configurationId="JUnit" />
     </history-entry>
@@ -382,9 +369,21 @@
     <history-entry file="EulerianCycleTest_testMakeEulerianCycle - 2018.01.13 at 11h 21m 51s.xml">
       <configuration name="EulerianCycleTest.testMakeEulerianCycle" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="EulerianCycleTest_testMakeEulerianCycle - 2018.01.14 at 10h 08m 40s.xml">
+      <configuration name="EulerianCycleTest.testMakeEulerianCycle" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="EulerianCycleTest_testMakeEulerianCycle - 2018.01.14 at 10h 12m 46s.xml">
+      <configuration name="EulerianCycleTest.testMakeEulerianCycle" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="EulerianCycleTest_testMakeEulerianCycle - 2018.01.14 at 10h 14m 48s.xml">
+      <configuration name="EulerianCycleTest.testMakeEulerianCycle" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="EulerianCycleTest_testMakeEulerianCycle - 2018.01.14 at 10h 17m 28s.xml">
+      <configuration name="EulerianCycleTest.testMakeEulerianCycle" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47698000" />
+    <option name="totallyTimeSpent" value="50529000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="55" y="43" width="1375" height="837" extended-state="0" />
@@ -392,14 +391,14 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32941177" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32941177" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32941177" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -409,8 +408,8 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -430,7 +429,7 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="182" />
+      <option name="time" value="190" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -446,8 +445,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/EuelerianCycle/src/eueleriancycle/EulerianCycle.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="75">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2157#2158#0" expanded="true" />
@@ -463,43 +462,41 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/EuelerianCycle/test/eueleriancycle/EulerianCycleTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1470">
-          <caret line="114" column="0" lean-forward="false" selection-start-line="114" selection-start-column="0" selection-end-line="114" selection-end-column="0" />
+        <state relative-caret-position="1830">
+          <caret line="339" column="47" lean-forward="false" selection-start-line="339" selection-start-column="47" selection-end-line="339" selection-end-column="47" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="class#InputNode#0;class#EulerianCycleTest#0" expanded="false" />
             <element signature="method#InputNode#0;class#InputNode#0;class#EulerianCycleTest#0" expanded="false" />
-            <element signature="e#4278#4279#0" expanded="true" />
-            <element signature="e#4316#4317#0" expanded="true" />
-            <element signature="e#4361#4362#0" expanded="true" />
-            <element signature="e#4401#4402#0" expanded="true" />
-            <element signature="e#4446#4447#0" expanded="true" />
-            <element signature="e#4486#4487#0" expanded="true" />
-            <element signature="e#4523#4524#0" expanded="true" />
-            <element signature="e#4564#4565#0" expanded="true" />
-            <element signature="e#4597#4598#0" expanded="true" />
-            <element signature="e#4633#4634#0" expanded="true" />
+            <element signature="e#4450#4451#0" expanded="true" />
+            <element signature="e#4488#4489#0" expanded="true" />
+            <element signature="e#4533#4534#0" expanded="true" />
+            <element signature="e#4573#4574#0" expanded="true" />
+            <element signature="e#4618#4619#0" expanded="true" />
+            <element signature="e#4658#4659#0" expanded="true" />
+            <element signature="e#4695#4696#0" expanded="true" />
+            <element signature="e#4736#4737#0" expanded="true" />
+            <element signature="e#4769#4770#0" expanded="true" />
+            <element signature="e#4805#4806#0" expanded="true" />
             <element signature="class#InputEdge#0;class#EulerianCycleTest#0" expanded="false" />
-            <element signature="e#4976#4977#0" expanded="true" />
-            <element signature="e#5012#5013#0" expanded="true" />
-            <element signature="e#5048#5049#0" expanded="true" />
-            <element signature="e#5087#5088#0" expanded="true" />
-            <element signature="e#5121#5122#0" expanded="true" />
-            <element signature="e#5158#5159#0" expanded="true" />
-            <element signature="e#5212#5213#0" expanded="true" />
-            <element signature="e#5266#5267#0" expanded="true" />
-            <element signature="class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
-            <element signature="e#5862#5863#0" expanded="true" />
-            <element signature="e#5898#5899#0" expanded="true" />
-            <element signature="e#7940#7941#0" expanded="true" />
-            <element signature="e#8026#8027#0" expanded="true" />
-            <element signature="e#8070#8071#0" expanded="true" />
-            <element signature="e#8115#8116#0" expanded="true" />
-            <element signature="e#8158#8159#0" expanded="true" />
-            <element signature="e#8203#8204#0" expanded="true" />
-            <element signature="e#10084#10085#0" expanded="true" />
-            <element signature="e#10130#10131#0" expanded="true" />
-            <element signature="method#makeBalancedInputGraph#0;class#EulerianCycleTest#0" expanded="false" />
+            <element signature="e#5148#5149#0" expanded="true" />
+            <element signature="e#5184#5185#0" expanded="true" />
+            <element signature="e#5220#5221#0" expanded="true" />
+            <element signature="e#5259#5260#0" expanded="true" />
+            <element signature="e#5293#5294#0" expanded="true" />
+            <element signature="e#5330#5331#0" expanded="true" />
+            <element signature="e#5384#5385#0" expanded="true" />
+            <element signature="e#5438#5439#0" expanded="true" />
+            <element signature="e#6034#6035#0" expanded="true" />
+            <element signature="e#6070#6071#0" expanded="true" />
+            <element signature="method#addEdge#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
+            <element signature="method#setOrClearBalancedNode#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
+            <element signature="method#setBalancedNode#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
+            <element signature="method#clearBalancedNode#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
+            <element signature="method#getInputAsString#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
+            <element signature="method#getInputAsArray#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
+            <element signature="e#10324#10325#0" expanded="true" />
+            <element signature="e#10370#10371#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -529,37 +526,93 @@
             <element signature="imports" expanded="true" />
             <element signature="class#InputNode#0;class#EulerianCycleTest#0" expanded="false" />
             <element signature="method#InputNode#0;class#InputNode#0;class#EulerianCycleTest#0" expanded="false" />
-            <element signature="e#4278#4279#0" expanded="true" />
-            <element signature="e#4316#4317#0" expanded="true" />
-            <element signature="e#4361#4362#0" expanded="true" />
-            <element signature="e#4401#4402#0" expanded="true" />
-            <element signature="e#4446#4447#0" expanded="true" />
-            <element signature="e#4486#4487#0" expanded="true" />
-            <element signature="e#4523#4524#0" expanded="true" />
-            <element signature="e#4564#4565#0" expanded="true" />
-            <element signature="e#4597#4598#0" expanded="true" />
-            <element signature="e#4633#4634#0" expanded="true" />
+            <element signature="e#4450#4451#0" expanded="true" />
+            <element signature="e#4488#4489#0" expanded="true" />
+            <element signature="e#4533#4534#0" expanded="true" />
+            <element signature="e#4573#4574#0" expanded="true" />
+            <element signature="e#4618#4619#0" expanded="true" />
+            <element signature="e#4658#4659#0" expanded="true" />
+            <element signature="e#4695#4696#0" expanded="true" />
+            <element signature="e#4736#4737#0" expanded="true" />
+            <element signature="e#4769#4770#0" expanded="true" />
+            <element signature="e#4805#4806#0" expanded="true" />
             <element signature="class#InputEdge#0;class#EulerianCycleTest#0" expanded="false" />
-            <element signature="e#4976#4977#0" expanded="true" />
-            <element signature="e#5012#5013#0" expanded="true" />
-            <element signature="e#5048#5049#0" expanded="true" />
-            <element signature="e#5087#5088#0" expanded="true" />
-            <element signature="e#5121#5122#0" expanded="true" />
-            <element signature="e#5158#5159#0" expanded="true" />
-            <element signature="e#5212#5213#0" expanded="true" />
-            <element signature="e#5266#5267#0" expanded="true" />
-            <element signature="class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
-            <element signature="e#5862#5863#0" expanded="true" />
-            <element signature="e#5898#5899#0" expanded="true" />
-            <element signature="e#7940#7941#0" expanded="true" />
-            <element signature="e#8026#8027#0" expanded="true" />
-            <element signature="e#8070#8071#0" expanded="true" />
-            <element signature="e#8115#8116#0" expanded="true" />
-            <element signature="e#8158#8159#0" expanded="true" />
-            <element signature="e#8203#8204#0" expanded="true" />
-            <element signature="e#10084#10085#0" expanded="true" />
-            <element signature="e#10130#10131#0" expanded="true" />
-            <element signature="method#makeBalancedInputGraph#0;class#EulerianCycleTest#0" expanded="false" />
+            <element signature="e#5148#5149#0" expanded="true" />
+            <element signature="e#5184#5185#0" expanded="true" />
+            <element signature="e#5220#5221#0" expanded="true" />
+            <element signature="e#5259#5260#0" expanded="true" />
+            <element signature="e#5293#5294#0" expanded="true" />
+            <element signature="e#5330#5331#0" expanded="true" />
+            <element signature="e#5384#5385#0" expanded="true" />
+            <element signature="e#5438#5439#0" expanded="true" />
+            <element signature="e#6034#6035#0" expanded="true" />
+            <element signature="e#6070#6071#0" expanded="true" />
+            <element signature="method#addEdge#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
+            <element signature="method#setOrClearBalancedNode#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
+            <element signature="method#setBalancedNode#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
+            <element signature="method#clearBalancedNode#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
+            <element signature="method#getInputAsString#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
+            <element signature="method#getInputAsArray#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
+            <element signature="e#10324#10325#0" expanded="true" />
+            <element signature="e#10370#10371#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EuelerianCycle/src/eueleriancycle/EulerianCycle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2157#2158#0" expanded="true" />
+            <element signature="e#2205#2206#0" expanded="true" />
+            <element signature="e#7502#7503#0" expanded="true" />
+            <element signature="e#7556#7557#0" expanded="true" />
+            <element signature="e#7828#7829#0" expanded="true" />
+            <element signature="e#7871#7872#0" expanded="true" />
+            <element signature="method#outputAsArray#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EuelerianCycle/test/eueleriancycle/EulerianCycleTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1470">
+          <caret line="114" column="0" lean-forward="false" selection-start-line="114" selection-start-column="0" selection-end-line="114" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="class#InputNode#0;class#EulerianCycleTest#0" expanded="false" />
+            <element signature="method#InputNode#0;class#InputNode#0;class#EulerianCycleTest#0" expanded="false" />
+            <element signature="e#4450#4451#0" expanded="true" />
+            <element signature="e#4488#4489#0" expanded="true" />
+            <element signature="e#4533#4534#0" expanded="true" />
+            <element signature="e#4573#4574#0" expanded="true" />
+            <element signature="e#4618#4619#0" expanded="true" />
+            <element signature="e#4658#4659#0" expanded="true" />
+            <element signature="e#4695#4696#0" expanded="true" />
+            <element signature="e#4736#4737#0" expanded="true" />
+            <element signature="e#4769#4770#0" expanded="true" />
+            <element signature="e#4805#4806#0" expanded="true" />
+            <element signature="class#InputEdge#0;class#EulerianCycleTest#0" expanded="false" />
+            <element signature="e#5148#5149#0" expanded="true" />
+            <element signature="e#5184#5185#0" expanded="true" />
+            <element signature="e#5220#5221#0" expanded="true" />
+            <element signature="e#5259#5260#0" expanded="true" />
+            <element signature="e#5293#5294#0" expanded="true" />
+            <element signature="e#5330#5331#0" expanded="true" />
+            <element signature="e#5384#5385#0" expanded="true" />
+            <element signature="e#5438#5439#0" expanded="true" />
+            <element signature="e#6034#6035#0" expanded="true" />
+            <element signature="e#6070#6071#0" expanded="true" />
+            <element signature="method#addEdge#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
+            <element signature="method#setOrClearBalancedNode#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
+            <element signature="method#setBalancedNode#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
+            <element signature="method#clearBalancedNode#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
+            <element signature="method#getInputAsString#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
+            <element signature="method#getInputAsArray#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
+            <element signature="e#10324#10325#0" expanded="true" />
+            <element signature="e#10370#10371#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -589,37 +642,35 @@
             <element signature="imports" expanded="true" />
             <element signature="class#InputNode#0;class#EulerianCycleTest#0" expanded="false" />
             <element signature="method#InputNode#0;class#InputNode#0;class#EulerianCycleTest#0" expanded="false" />
-            <element signature="e#4278#4279#0" expanded="true" />
-            <element signature="e#4316#4317#0" expanded="true" />
-            <element signature="e#4361#4362#0" expanded="true" />
-            <element signature="e#4401#4402#0" expanded="true" />
-            <element signature="e#4446#4447#0" expanded="true" />
-            <element signature="e#4486#4487#0" expanded="true" />
-            <element signature="e#4523#4524#0" expanded="true" />
-            <element signature="e#4564#4565#0" expanded="true" />
-            <element signature="e#4597#4598#0" expanded="true" />
-            <element signature="e#4633#4634#0" expanded="true" />
+            <element signature="e#4450#4451#0" expanded="true" />
+            <element signature="e#4488#4489#0" expanded="true" />
+            <element signature="e#4533#4534#0" expanded="true" />
+            <element signature="e#4573#4574#0" expanded="true" />
+            <element signature="e#4618#4619#0" expanded="true" />
+            <element signature="e#4658#4659#0" expanded="true" />
+            <element signature="e#4695#4696#0" expanded="true" />
+            <element signature="e#4736#4737#0" expanded="true" />
+            <element signature="e#4769#4770#0" expanded="true" />
+            <element signature="e#4805#4806#0" expanded="true" />
             <element signature="class#InputEdge#0;class#EulerianCycleTest#0" expanded="false" />
-            <element signature="e#4976#4977#0" expanded="true" />
-            <element signature="e#5012#5013#0" expanded="true" />
-            <element signature="e#5048#5049#0" expanded="true" />
-            <element signature="e#5087#5088#0" expanded="true" />
-            <element signature="e#5121#5122#0" expanded="true" />
-            <element signature="e#5158#5159#0" expanded="true" />
-            <element signature="e#5212#5213#0" expanded="true" />
-            <element signature="e#5266#5267#0" expanded="true" />
-            <element signature="class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
-            <element signature="e#5862#5863#0" expanded="true" />
-            <element signature="e#5898#5899#0" expanded="true" />
-            <element signature="e#7940#7941#0" expanded="true" />
-            <element signature="e#8026#8027#0" expanded="true" />
-            <element signature="e#8070#8071#0" expanded="true" />
-            <element signature="e#8115#8116#0" expanded="true" />
-            <element signature="e#8158#8159#0" expanded="true" />
-            <element signature="e#8203#8204#0" expanded="true" />
-            <element signature="e#10084#10085#0" expanded="true" />
-            <element signature="e#10130#10131#0" expanded="true" />
-            <element signature="method#makeBalancedInputGraph#0;class#EulerianCycleTest#0" expanded="false" />
+            <element signature="e#5148#5149#0" expanded="true" />
+            <element signature="e#5184#5185#0" expanded="true" />
+            <element signature="e#5220#5221#0" expanded="true" />
+            <element signature="e#5259#5260#0" expanded="true" />
+            <element signature="e#5293#5294#0" expanded="true" />
+            <element signature="e#5330#5331#0" expanded="true" />
+            <element signature="e#5384#5385#0" expanded="true" />
+            <element signature="e#5438#5439#0" expanded="true" />
+            <element signature="e#6034#6035#0" expanded="true" />
+            <element signature="e#6070#6071#0" expanded="true" />
+            <element signature="method#addEdge#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
+            <element signature="method#setOrClearBalancedNode#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
+            <element signature="method#setBalancedNode#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
+            <element signature="method#clearBalancedNode#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
+            <element signature="method#getInputAsString#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
+            <element signature="method#getInputAsArray#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
+            <element signature="e#10324#10325#0" expanded="true" />
+            <element signature="e#10370#10371#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -649,37 +700,35 @@
             <element signature="imports" expanded="true" />
             <element signature="class#InputNode#0;class#EulerianCycleTest#0" expanded="false" />
             <element signature="method#InputNode#0;class#InputNode#0;class#EulerianCycleTest#0" expanded="false" />
-            <element signature="e#4278#4279#0" expanded="true" />
-            <element signature="e#4316#4317#0" expanded="true" />
-            <element signature="e#4361#4362#0" expanded="true" />
-            <element signature="e#4401#4402#0" expanded="true" />
-            <element signature="e#4446#4447#0" expanded="true" />
-            <element signature="e#4486#4487#0" expanded="true" />
-            <element signature="e#4523#4524#0" expanded="true" />
-            <element signature="e#4564#4565#0" expanded="true" />
-            <element signature="e#4597#4598#0" expanded="true" />
-            <element signature="e#4633#4634#0" expanded="true" />
+            <element signature="e#4450#4451#0" expanded="true" />
+            <element signature="e#4488#4489#0" expanded="true" />
+            <element signature="e#4533#4534#0" expanded="true" />
+            <element signature="e#4573#4574#0" expanded="true" />
+            <element signature="e#4618#4619#0" expanded="true" />
+            <element signature="e#4658#4659#0" expanded="true" />
+            <element signature="e#4695#4696#0" expanded="true" />
+            <element signature="e#4736#4737#0" expanded="true" />
+            <element signature="e#4769#4770#0" expanded="true" />
+            <element signature="e#4805#4806#0" expanded="true" />
             <element signature="class#InputEdge#0;class#EulerianCycleTest#0" expanded="false" />
-            <element signature="e#4976#4977#0" expanded="true" />
-            <element signature="e#5012#5013#0" expanded="true" />
-            <element signature="e#5048#5049#0" expanded="true" />
-            <element signature="e#5087#5088#0" expanded="true" />
-            <element signature="e#5121#5122#0" expanded="true" />
-            <element signature="e#5158#5159#0" expanded="true" />
-            <element signature="e#5212#5213#0" expanded="true" />
-            <element signature="e#5266#5267#0" expanded="true" />
-            <element signature="class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
-            <element signature="e#5862#5863#0" expanded="true" />
-            <element signature="e#5898#5899#0" expanded="true" />
-            <element signature="e#7940#7941#0" expanded="true" />
-            <element signature="e#8026#8027#0" expanded="true" />
-            <element signature="e#8070#8071#0" expanded="true" />
-            <element signature="e#8115#8116#0" expanded="true" />
-            <element signature="e#8158#8159#0" expanded="true" />
-            <element signature="e#8203#8204#0" expanded="true" />
-            <element signature="e#10084#10085#0" expanded="true" />
-            <element signature="e#10130#10131#0" expanded="true" />
-            <element signature="method#makeBalancedInputGraph#0;class#EulerianCycleTest#0" expanded="false" />
+            <element signature="e#5148#5149#0" expanded="true" />
+            <element signature="e#5184#5185#0" expanded="true" />
+            <element signature="e#5220#5221#0" expanded="true" />
+            <element signature="e#5259#5260#0" expanded="true" />
+            <element signature="e#5293#5294#0" expanded="true" />
+            <element signature="e#5330#5331#0" expanded="true" />
+            <element signature="e#5384#5385#0" expanded="true" />
+            <element signature="e#5438#5439#0" expanded="true" />
+            <element signature="e#6034#6035#0" expanded="true" />
+            <element signature="e#6070#6071#0" expanded="true" />
+            <element signature="method#addEdge#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
+            <element signature="method#setOrClearBalancedNode#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
+            <element signature="method#setBalancedNode#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
+            <element signature="method#clearBalancedNode#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
+            <element signature="method#getInputAsString#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
+            <element signature="method#getInputAsArray#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
+            <element signature="e#10324#10325#0" expanded="true" />
+            <element signature="e#10370#10371#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -709,37 +758,35 @@
             <element signature="imports" expanded="true" />
             <element signature="class#InputNode#0;class#EulerianCycleTest#0" expanded="false" />
             <element signature="method#InputNode#0;class#InputNode#0;class#EulerianCycleTest#0" expanded="false" />
-            <element signature="e#4278#4279#0" expanded="true" />
-            <element signature="e#4316#4317#0" expanded="true" />
-            <element signature="e#4361#4362#0" expanded="true" />
-            <element signature="e#4401#4402#0" expanded="true" />
-            <element signature="e#4446#4447#0" expanded="true" />
-            <element signature="e#4486#4487#0" expanded="true" />
-            <element signature="e#4523#4524#0" expanded="true" />
-            <element signature="e#4564#4565#0" expanded="true" />
-            <element signature="e#4597#4598#0" expanded="true" />
-            <element signature="e#4633#4634#0" expanded="true" />
+            <element signature="e#4450#4451#0" expanded="true" />
+            <element signature="e#4488#4489#0" expanded="true" />
+            <element signature="e#4533#4534#0" expanded="true" />
+            <element signature="e#4573#4574#0" expanded="true" />
+            <element signature="e#4618#4619#0" expanded="true" />
+            <element signature="e#4658#4659#0" expanded="true" />
+            <element signature="e#4695#4696#0" expanded="true" />
+            <element signature="e#4736#4737#0" expanded="true" />
+            <element signature="e#4769#4770#0" expanded="true" />
+            <element signature="e#4805#4806#0" expanded="true" />
             <element signature="class#InputEdge#0;class#EulerianCycleTest#0" expanded="false" />
-            <element signature="e#4976#4977#0" expanded="true" />
-            <element signature="e#5012#5013#0" expanded="true" />
-            <element signature="e#5048#5049#0" expanded="true" />
-            <element signature="e#5087#5088#0" expanded="true" />
-            <element signature="e#5121#5122#0" expanded="true" />
-            <element signature="e#5158#5159#0" expanded="true" />
-            <element signature="e#5212#5213#0" expanded="true" />
-            <element signature="e#5266#5267#0" expanded="true" />
-            <element signature="class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
-            <element signature="e#5862#5863#0" expanded="true" />
-            <element signature="e#5898#5899#0" expanded="true" />
-            <element signature="e#7940#7941#0" expanded="true" />
-            <element signature="e#8026#8027#0" expanded="true" />
-            <element signature="e#8070#8071#0" expanded="true" />
-            <element signature="e#8115#8116#0" expanded="true" />
-            <element signature="e#8158#8159#0" expanded="true" />
-            <element signature="e#8203#8204#0" expanded="true" />
-            <element signature="e#10084#10085#0" expanded="true" />
-            <element signature="e#10130#10131#0" expanded="true" />
-            <element signature="method#makeBalancedInputGraph#0;class#EulerianCycleTest#0" expanded="false" />
+            <element signature="e#5148#5149#0" expanded="true" />
+            <element signature="e#5184#5185#0" expanded="true" />
+            <element signature="e#5220#5221#0" expanded="true" />
+            <element signature="e#5259#5260#0" expanded="true" />
+            <element signature="e#5293#5294#0" expanded="true" />
+            <element signature="e#5330#5331#0" expanded="true" />
+            <element signature="e#5384#5385#0" expanded="true" />
+            <element signature="e#5438#5439#0" expanded="true" />
+            <element signature="e#6034#6035#0" expanded="true" />
+            <element signature="e#6070#6071#0" expanded="true" />
+            <element signature="method#addEdge#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
+            <element signature="method#setOrClearBalancedNode#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
+            <element signature="method#setBalancedNode#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
+            <element signature="method#clearBalancedNode#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
+            <element signature="method#getInputAsString#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
+            <element signature="method#getInputAsArray#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
+            <element signature="e#10324#10325#0" expanded="true" />
+            <element signature="e#10370#10371#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -764,43 +811,41 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/EuelerianCycle/test/eueleriancycle/EulerianCycleTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="339" column="47" lean-forward="false" selection-start-line="339" selection-start-column="47" selection-end-line="339" selection-end-column="47" />
+        <state relative-caret-position="79">
+          <caret line="314" column="47" lean-forward="false" selection-start-line="314" selection-start-column="47" selection-end-line="314" selection-end-column="47" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="class#InputNode#0;class#EulerianCycleTest#0" expanded="false" />
             <element signature="method#InputNode#0;class#InputNode#0;class#EulerianCycleTest#0" expanded="false" />
-            <element signature="e#4278#4279#0" expanded="true" />
-            <element signature="e#4316#4317#0" expanded="true" />
-            <element signature="e#4361#4362#0" expanded="true" />
-            <element signature="e#4401#4402#0" expanded="true" />
-            <element signature="e#4446#4447#0" expanded="true" />
-            <element signature="e#4486#4487#0" expanded="true" />
-            <element signature="e#4523#4524#0" expanded="true" />
-            <element signature="e#4564#4565#0" expanded="true" />
-            <element signature="e#4597#4598#0" expanded="true" />
-            <element signature="e#4633#4634#0" expanded="true" />
+            <element signature="e#4450#4451#0" expanded="true" />
+            <element signature="e#4488#4489#0" expanded="true" />
+            <element signature="e#4533#4534#0" expanded="true" />
+            <element signature="e#4573#4574#0" expanded="true" />
+            <element signature="e#4618#4619#0" expanded="true" />
+            <element signature="e#4658#4659#0" expanded="true" />
+            <element signature="e#4695#4696#0" expanded="true" />
+            <element signature="e#4736#4737#0" expanded="true" />
+            <element signature="e#4769#4770#0" expanded="true" />
+            <element signature="e#4805#4806#0" expanded="true" />
             <element signature="class#InputEdge#0;class#EulerianCycleTest#0" expanded="false" />
-            <element signature="e#4976#4977#0" expanded="true" />
-            <element signature="e#5012#5013#0" expanded="true" />
-            <element signature="e#5048#5049#0" expanded="true" />
-            <element signature="e#5087#5088#0" expanded="true" />
-            <element signature="e#5121#5122#0" expanded="true" />
-            <element signature="e#5158#5159#0" expanded="true" />
-            <element signature="e#5212#5213#0" expanded="true" />
-            <element signature="e#5266#5267#0" expanded="true" />
-            <element signature="class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
-            <element signature="e#5862#5863#0" expanded="true" />
-            <element signature="e#5898#5899#0" expanded="true" />
-            <element signature="e#7940#7941#0" expanded="true" />
-            <element signature="e#8026#8027#0" expanded="true" />
-            <element signature="e#8070#8071#0" expanded="true" />
-            <element signature="e#8115#8116#0" expanded="true" />
-            <element signature="e#8158#8159#0" expanded="true" />
-            <element signature="e#8203#8204#0" expanded="true" />
-            <element signature="e#10084#10085#0" expanded="true" />
-            <element signature="e#10130#10131#0" expanded="true" />
-            <element signature="method#makeBalancedInputGraph#0;class#EulerianCycleTest#0" expanded="false" />
+            <element signature="e#5148#5149#0" expanded="true" />
+            <element signature="e#5184#5185#0" expanded="true" />
+            <element signature="e#5220#5221#0" expanded="true" />
+            <element signature="e#5259#5260#0" expanded="true" />
+            <element signature="e#5293#5294#0" expanded="true" />
+            <element signature="e#5330#5331#0" expanded="true" />
+            <element signature="e#5384#5385#0" expanded="true" />
+            <element signature="e#5438#5439#0" expanded="true" />
+            <element signature="e#6034#6035#0" expanded="true" />
+            <element signature="e#6070#6071#0" expanded="true" />
+            <element signature="method#addEdge#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
+            <element signature="method#setOrClearBalancedNode#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
+            <element signature="method#setBalancedNode#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
+            <element signature="method#clearBalancedNode#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
+            <element signature="method#getInputAsString#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
+            <element signature="method#getInputAsArray#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
+            <element signature="e#10324#10325#0" expanded="true" />
+            <element signature="e#10370#10371#0" expanded="true" />
           </folding>
         </state>
       </provider>
