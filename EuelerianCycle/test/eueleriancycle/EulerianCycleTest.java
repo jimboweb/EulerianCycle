@@ -317,6 +317,7 @@ public class EulerianCycleTest {
             }
             boolean positive = sign>0;
             BitSet nodeWasTried = new BitSet(nodes.size());
+            // TODO: 1/14/18 failing to get positive or negative node and returning new node with index -1 
             while(nodeWasTried.cardinality()<1>>nodes.size()){
                 int rtrnInd = rnd.nextInt(nodes.size());
                 if(nodeWasTried.get(rtrnInd)){

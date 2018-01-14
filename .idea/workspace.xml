@@ -34,8 +34,8 @@
       <file leaf-file-name="EulerianCycleTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/EuelerianCycle/test/eueleriancycle/EulerianCycleTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="79">
-              <caret line="314" column="47" lean-forward="false" selection-start-line="314" selection-start-column="47" selection-end-line="314" selection-end-column="47" />
+            <state relative-caret-position="1346">
+              <caret line="319" column="106" lean-forward="false" selection-start-line="319" selection-start-column="106" selection-end-line="319" selection-end-column="106" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="class#InputNode#0;class#EulerianCycleTest#0" expanded="false" />
@@ -61,14 +61,13 @@
                 <element signature="e#5438#5439#0" expanded="true" />
                 <element signature="e#6034#6035#0" expanded="true" />
                 <element signature="e#6070#6071#0" expanded="true" />
-                <element signature="method#addEdge#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
                 <element signature="method#setOrClearBalancedNode#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
                 <element signature="method#setBalancedNode#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
                 <element signature="method#clearBalancedNode#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
                 <element signature="method#getInputAsString#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
                 <element signature="method#getInputAsArray#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
-                <element signature="e#10324#10325#0" expanded="true" />
-                <element signature="e#10370#10371#0" expanded="true" />
+                <element signature="e#10432#10433#0" expanded="true" />
+                <element signature="e#10478#10479#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -346,17 +345,11 @@
       <workItem from="1515539918637" duration="1746000" />
       <workItem from="1515799440200" duration="3558000" />
       <workItem from="1515850250408" duration="12203000" />
-      <workItem from="1515940134077" duration="2831000" />
+      <workItem from="1515940134077" duration="3892000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="EulerianCycleTest_testMakeEulerianCycle - 2018.01.09 at 18h 47m 37s.xml">
-      <configuration name="EulerianCycleTest.testMakeEulerianCycle" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="EulerianCycleTest_testMakeEulerianCycle - 2018.01.13 at 10h 41m 18s.xml">
-      <configuration name="EulerianCycleTest.testMakeEulerianCycle" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="EulerianCycleTest_testMakeEulerianCycle - 2018.01.13 at 10h 41m 31s.xml">
       <configuration name="EulerianCycleTest.testMakeEulerianCycle" configurationId="JUnit" />
     </history-entry>
@@ -381,9 +374,15 @@
     <history-entry file="EulerianCycleTest_testMakeEulerianCycle - 2018.01.14 at 10h 17m 28s.xml">
       <configuration name="EulerianCycleTest.testMakeEulerianCycle" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="EulerianCycleTest_testMakeEulerianCycle - 2018.01.14 at 10h 20m 27s.xml">
+      <configuration name="EulerianCycleTest.testMakeEulerianCycle" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="EulerianCycleTest_testMakeEulerianCycle - 2018.01.14 at 10h 25m 34s.xml">
+      <configuration name="EulerianCycleTest.testMakeEulerianCycle" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50529000" />
+    <option name="totallyTimeSpent" value="51590000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="55" y="43" width="1375" height="837" extended-state="0" />
@@ -426,10 +425,18 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/EuelerianCycle/test/eueleriancycle/EulerianCycleTest.java</url>
+          <line>321</line>
+          <properties />
+          <option name="timeStamp" value="191" />
+        </line-breakpoint>
+      </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="190" />
+      <option name="time" value="192" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -489,14 +496,13 @@
             <element signature="e#5438#5439#0" expanded="true" />
             <element signature="e#6034#6035#0" expanded="true" />
             <element signature="e#6070#6071#0" expanded="true" />
-            <element signature="method#addEdge#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
             <element signature="method#setOrClearBalancedNode#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
             <element signature="method#setBalancedNode#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
             <element signature="method#clearBalancedNode#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
             <element signature="method#getInputAsString#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
             <element signature="method#getInputAsArray#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
-            <element signature="e#10324#10325#0" expanded="true" />
-            <element signature="e#10370#10371#0" expanded="true" />
+            <element signature="e#10432#10433#0" expanded="true" />
+            <element signature="e#10478#10479#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -547,14 +553,13 @@
             <element signature="e#5438#5439#0" expanded="true" />
             <element signature="e#6034#6035#0" expanded="true" />
             <element signature="e#6070#6071#0" expanded="true" />
-            <element signature="method#addEdge#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
             <element signature="method#setOrClearBalancedNode#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
             <element signature="method#setBalancedNode#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
             <element signature="method#clearBalancedNode#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
             <element signature="method#getInputAsString#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
             <element signature="method#getInputAsArray#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
-            <element signature="e#10324#10325#0" expanded="true" />
-            <element signature="e#10370#10371#0" expanded="true" />
+            <element signature="e#10432#10433#0" expanded="true" />
+            <element signature="e#10478#10479#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -605,14 +610,13 @@
             <element signature="e#5438#5439#0" expanded="true" />
             <element signature="e#6034#6035#0" expanded="true" />
             <element signature="e#6070#6071#0" expanded="true" />
-            <element signature="method#addEdge#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
             <element signature="method#setOrClearBalancedNode#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
             <element signature="method#setBalancedNode#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
             <element signature="method#clearBalancedNode#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
             <element signature="method#getInputAsString#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
             <element signature="method#getInputAsArray#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
-            <element signature="e#10324#10325#0" expanded="true" />
-            <element signature="e#10370#10371#0" expanded="true" />
+            <element signature="e#10432#10433#0" expanded="true" />
+            <element signature="e#10478#10479#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -663,14 +667,13 @@
             <element signature="e#5438#5439#0" expanded="true" />
             <element signature="e#6034#6035#0" expanded="true" />
             <element signature="e#6070#6071#0" expanded="true" />
-            <element signature="method#addEdge#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
             <element signature="method#setOrClearBalancedNode#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
             <element signature="method#setBalancedNode#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
             <element signature="method#clearBalancedNode#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
             <element signature="method#getInputAsString#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
             <element signature="method#getInputAsArray#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
-            <element signature="e#10324#10325#0" expanded="true" />
-            <element signature="e#10370#10371#0" expanded="true" />
+            <element signature="e#10432#10433#0" expanded="true" />
+            <element signature="e#10478#10479#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -721,14 +724,13 @@
             <element signature="e#5438#5439#0" expanded="true" />
             <element signature="e#6034#6035#0" expanded="true" />
             <element signature="e#6070#6071#0" expanded="true" />
-            <element signature="method#addEdge#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
             <element signature="method#setOrClearBalancedNode#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
             <element signature="method#setBalancedNode#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
             <element signature="method#clearBalancedNode#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
             <element signature="method#getInputAsString#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
             <element signature="method#getInputAsArray#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
-            <element signature="e#10324#10325#0" expanded="true" />
-            <element signature="e#10370#10371#0" expanded="true" />
+            <element signature="e#10432#10433#0" expanded="true" />
+            <element signature="e#10478#10479#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -779,14 +781,13 @@
             <element signature="e#5438#5439#0" expanded="true" />
             <element signature="e#6034#6035#0" expanded="true" />
             <element signature="e#6070#6071#0" expanded="true" />
-            <element signature="method#addEdge#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
             <element signature="method#setOrClearBalancedNode#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
             <element signature="method#setBalancedNode#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
             <element signature="method#clearBalancedNode#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
             <element signature="method#getInputAsString#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
             <element signature="method#getInputAsArray#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
-            <element signature="e#10324#10325#0" expanded="true" />
-            <element signature="e#10370#10371#0" expanded="true" />
+            <element signature="e#10432#10433#0" expanded="true" />
+            <element signature="e#10478#10479#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -811,8 +812,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/EuelerianCycle/test/eueleriancycle/EulerianCycleTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="79">
-          <caret line="314" column="47" lean-forward="false" selection-start-line="314" selection-start-column="47" selection-end-line="314" selection-end-column="47" />
+        <state relative-caret-position="1346">
+          <caret line="319" column="106" lean-forward="false" selection-start-line="319" selection-start-column="106" selection-end-line="319" selection-end-column="106" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="class#InputNode#0;class#EulerianCycleTest#0" expanded="false" />
@@ -838,14 +839,13 @@
             <element signature="e#5438#5439#0" expanded="true" />
             <element signature="e#6034#6035#0" expanded="true" />
             <element signature="e#6070#6071#0" expanded="true" />
-            <element signature="method#addEdge#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
             <element signature="method#setOrClearBalancedNode#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
             <element signature="method#setBalancedNode#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
             <element signature="method#clearBalancedNode#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
             <element signature="method#getInputAsString#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
             <element signature="method#getInputAsArray#0;class#InputGraph#0;class#EulerianCycleTest#0" expanded="false" />
-            <element signature="e#10324#10325#0" expanded="true" />
-            <element signature="e#10370#10371#0" expanded="true" />
+            <element signature="e#10432#10433#0" expanded="true" />
+            <element signature="e#10478#10479#0" expanded="true" />
           </folding>
         </state>
       </provider>
