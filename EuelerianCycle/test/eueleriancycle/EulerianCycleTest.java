@@ -191,7 +191,9 @@ public class EulerianCycleTest {
 
         @Override
         public String toString() {
-            return fromNode + " " + toNode;
+            int f = fromNode+1;
+            int t = toNode +1;
+            return f + " " + t;
         }
     }
 
@@ -277,7 +279,7 @@ public class EulerianCycleTest {
          * sets the balance of the graph if it's balanced
          */
         private void setGraphBalance(){
-            graphIsBalanced = balancedNodes.cardinality()==1>>nodes.size();
+            graphIsBalanced = balancedNodes.cardinality()==nodes.size();
         }
 
         public InputNode getNode(int ind){
@@ -298,7 +300,7 @@ public class EulerianCycleTest {
             int[] firstLine = {nodes.size(),edges.size()};
             input.add(firstLine);
             for(InputEdge e:edges){
-                int[] nextLine = {e.fromNode,e.toNode};
+                int[] nextLine = {e.fromNode+1,e.toNode+1};
                 input.add(nextLine);
             }
             return input;
@@ -317,8 +319,8 @@ public class EulerianCycleTest {
             }
             boolean positive = sign>0;
             BitSet nodeWasTried = new BitSet(nodes.size());
-            // TODO: 1/14/18 failing to get positive or negative node and returning new node with index -1 
-            while(nodeWasTried.cardinality()<1>>nodes.size()){
+            // TODO: 1/14/18 failing to get positive or negative node and returning new node with index -1
+            while(nodeWasTried.cardinality()<nodes.size()){
                 int rtrnInd = rnd.nextInt(nodes.size());
                 if(nodeWasTried.get(rtrnInd)){
                     continue;

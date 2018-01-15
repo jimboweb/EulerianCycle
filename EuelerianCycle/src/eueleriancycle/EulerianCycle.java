@@ -244,7 +244,6 @@ public class EulerianCycle {
             int edge;
             int firstEdge = -1;
             while(firstEdge==-1 && edgeNumber>0){
-                //TODO: duh ok I am only looking at the edges coming from the last edge I drew
                 //I think I need to go around and look at each edge in the cycle
                 for(int e:edges[edgeNumber].getEdgesOut()){
                     if(!visited[e]){
@@ -327,7 +326,11 @@ public class EulerianCycle {
             int to = y-1;
             int edgeInd = i-1;
             Edge e = g.addEdge(edgeInd, from, to);
-            edgesFromNode.get(from).add(edgeInd);
+            try {//debug try
+                edgesFromNode.get(from).add(edgeInd);
+            }catch(ArrayIndexOutOfBoundsException ex){
+                System.out.println(ex);
+            }
             edgesToNode.get(to).add(edgeInd);
             addEdgeOps++; //debug
             g.nodes = addOrModifyNodes(g.nodes,edgeInd,from,to);
