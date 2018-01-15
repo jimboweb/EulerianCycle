@@ -17,6 +17,7 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.junit.Assert;
 
 /**
  *
@@ -118,7 +119,14 @@ public class EulerianCycleTest {
         ArrayList<int[]> input = inputGraph.getInputAsArray();
         Graph g = instance.buildGraph(input);
         Cycle c = g.makeEulerianCycle();
-        assert(testEulerianCycle(c, inputGraph));
+        Assert.assertTrue(getFailOutput(c,inputGraph),testEulerianCycle(c, inputGraph));
+    }
+
+    private String getFailOutput(Cycle c, InputGraph g){
+        String s = "Input graph was " + g.getInputAsString();
+        s+="\n";
+        s+=c.toString() + "\n";
+        return s;
     }
 
     class InputNode{
@@ -289,7 +297,7 @@ public class EulerianCycleTest {
             return edges.get(ind);
         }
         public String getInputAsString(){
-            String rtrn = nodes.size() + " " + edges.size();
+            String rtrn = nodes.size() + " " + edges.size()+"\n";
             for(InputEdge e:edges){
                 rtrn+=e.toString() + "\n";
             }
@@ -356,7 +364,10 @@ public class EulerianCycleTest {
         InputGraph gr = new InputGraph(n);
         for(InputNode fromNode:gr.getNodes()){
             int fromNodeInd = fromNode.getIndex();
-            InputNode toNode = gr.getRandomNode(0);
+            InputNode toNode;
+            do{
+                toNode = gr.getRandomNode(0);
+            } while(toNode.index==fromNode.index);
             int toNodeInd = toNode.getIndex();
             gr.addEdge(fromNodeInd,toNodeInd);
         }
@@ -373,6 +384,12 @@ public class EulerianCycleTest {
                 toNode = gr.getRandomNode(1);
             }
             gr.addEdge(nodeToBalance.getIndex(),toNode.getIndex());
+        }
+        boolean areNodesPointingToSelf = rnd.nextBoolean();
+        int nodesPointingToSelf = areNodesPointingToSelf? rnd.nextInt(n):0;
+        for(int i=0;i<nodesPointingToSelf;i++){
+            int nodePointingToSelf = rnd.nextInt(n);
+            gr.addEdge(nodePointingToSelf,nodePointingToSelf);
         }
         return gr;
     }

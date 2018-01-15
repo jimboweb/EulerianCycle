@@ -116,6 +116,7 @@ public class EulerianCycle {
                     return new Cycle(0);
                 }
                 newCycle.addEdge(newCycle.firstEdge);
+                newCycle.setPrevIsVisited(oldCycle);
                 //do old cycle
                 newCycle = growCycle(newCycle);
                 newCycle.appendCycle(oldCycle);
@@ -125,7 +126,13 @@ public class EulerianCycle {
            return newCycle;
         }
 
-
+// TODO: BUG: 1/15/18 new cycle is going over old cycle because the boolean visited is not marked from previous cycle.
+// so would it work to copy the old cycle's visited boolean?
+        /**
+         * add new edges to the cycle from before
+         * @param newCycle
+         * @return
+         */
         Cycle growCycle(Cycle newCycle){
             int nextEdge = newCycle.firstEdge;
             while (edges[nextEdge].to!=edges[newCycle.firstEdge].from){
@@ -293,6 +300,30 @@ public class EulerianCycle {
             return rtrn;
         }
 
+        /**
+         * sets all the true visited in the old cycle to true in the new cycle
+         * so growCycle won't go over them
+         * @param oldCycle
+         */
+        private void setPrevIsVisited(Cycle oldCycle){
+            if(this.visited.length!=oldCycle.visited.length){
+                throw new IllegalArgumentException("new cycle's visited not the same length as old cycle visited");
+            }
+            for(int i=0;i<visited.length;i++){
+                if(!visited[i] && oldCycle.visited[i]){
+                    visited[i] = true;
+                }
+            }
+        }
+
+        @Override
+        public String toString() {
+            String rtrnString = "Cycle: ";
+            for(Integer e:edges){
+                rtrnString += e + " ";
+            }
+            return rtrnString;
+        }
     }
     public static void main(String[] args) {
       new Thread(null, new Runnable() {
@@ -326,11 +357,7 @@ public class EulerianCycle {
             int to = y-1;
             int edgeInd = i-1;
             Edge e = g.addEdge(edgeInd, from, to);
-            try {//debug try
-                edgesFromNode.get(from).add(edgeInd);
-            }catch(ArrayIndexOutOfBoundsException ex){
-                System.out.println(ex);
-            }
+            edgesFromNode.get(from).add(edgeInd);
             edgesToNode.get(to).add(edgeInd);
             addEdgeOps++; //debug
             g.nodes = addOrModifyNodes(g.nodes,edgeInd,from,to);
