@@ -24,6 +24,20 @@ public class EulerianCycle {
     private int addNodeOps;
     private int buildCycleOps;
 
+
+    public static void main(String[] args) {
+        new Thread(null, new Runnable() {
+            public void run() {
+                try {
+                    new EulerianCycle().run();
+                } catch (IOException ex) {
+                    Logger.getLogger(EulerianCycle.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }, "1", 1 << 26).start();
+    }
+
+
     // TODO: 1/15/18 Bug: on sample input 3 uses edge 3 twice
     // correct output nodes: 4 3 2 4 1 2 1 edges: 5 6 4 3 0 1
     // my output nodes: 3 2 4 1 4 1 2  edges: 6 4 3 2 3 4
@@ -117,7 +131,7 @@ public class EulerianCycle {
                 //find new node to start from
             do{    
                 newCycle= new Cycle(edges.length);
-                newCycle.firstEdge = oldCycle.lastAvailableEdge(edges);
+                newCycle.firstEdge = oldCycle.mostRecentAvailableEdge(edges);
                 if(newCycle.firstEdge==-1){
                     //return empty cycle because couldn't find available edge
                     return new Cycle(0);
@@ -251,15 +265,15 @@ public class EulerianCycle {
          * from previous cycle
          * @return the edge number of the new first edge
          */
-        private int lastAvailableEdge(Edge[] edges){
+        private int mostRecentAvailableEdge(Edge[] graphEdges){
             if(size()==0)
                 return 0;
-            int edgeNumber = edges.length-1;
+            int edgeNumber = edges.size()-1;
             int edge;
             int firstEdge = -1;
             while(firstEdge==-1 && edgeNumber>0){
                 //I think I need to go around and look at each edge in the cycle
-                for(int e:edges[edgeNumber].getEdgesOut()){
+                for(int e:graphEdges[edgeNumber].getEdgesOut()){
                     if(!visited[e]){
                         firstEdge = e;
                         break;
@@ -332,17 +346,6 @@ public class EulerianCycle {
             return rtrnString;
         }
     }
-    public static void main(String[] args) {
-      new Thread(null, new Runnable() {
-                    public void run() {
-                        try {
-                            new EulerianCycle().run();
-                        } catch (IOException ex) {
-                            Logger.getLogger(EulerianCycle.class.getName()).log(Level.SEVERE, null, ex);
-                        }
-                    }
-                }, "1", 1 << 26).start();
-     }
 
 
     public Graph buildGraph(ArrayList<int[]> inputs){
