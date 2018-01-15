@@ -24,6 +24,9 @@ public class EulerianCycle {
     private int addNodeOps;
     private int buildCycleOps;
 
+    // TODO: 1/15/18 Bug: on sample input 3 uses edge 3 twice
+    // correct output nodes: 4 3 2 4 1 2 1 edges: 5 6 4 3 0 1
+    // my output nodes: 3 2 4 1 4 1 2  edges: 6 4 3 2 3 4
     public void run() throws IOException {
         Scanner scanner = new Scanner(System.in);
         ArrayList<int[]> inputs = new ArrayList<>();
