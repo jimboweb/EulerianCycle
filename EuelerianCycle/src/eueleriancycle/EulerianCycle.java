@@ -30,6 +30,10 @@ public class EulerianCycle {
         int[] in = new int[2];
         in[0] = scanner.nextInt();
         in[1] = scanner.nextInt();
+        if(in[0]==0||in[1]==0){
+            System.out.println("0");
+            System.exit(0);
+        }
         inputs.add(in);
         int n = inputs.get(0)[1];
         for (int i = 0; i < n; i++) {
