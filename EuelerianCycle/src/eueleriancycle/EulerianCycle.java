@@ -38,9 +38,6 @@ public class EulerianCycle {
     }
 
 
-    // TODO: 1/15/18 Bug: on sample input 3 uses edge 3 twice
-    // correct output nodes: 4 3 2 4 1 2 1 edges: 5 6 4 3 0 1
-    // my output nodes: 3 2 4 1 4 1 2  edges: 6 4 3 2 3 4
     public void run() throws IOException {
         Scanner scanner = new Scanner(System.in);
         ArrayList<int[]> inputs = new ArrayList<>();
@@ -127,17 +124,16 @@ public class EulerianCycle {
         public Cycle makeEulerianCycle(){
             Cycle newCycle;
             Cycle oldCycle = new Cycle(edges.length);
-            oldCycle.firstEdge = 0;
                 //find new node to start from
             do{    
                 newCycle= new Cycle(edges.length);
-                newCycle.firstEdge = oldCycle.mostRecentAvailableEdge(edges);
-                if(newCycle.firstEdge==-1){
+
+                //mostRecentOpenEdgeIndex will be changed but not returned
+                newCycle = oldCycle.startNewCycle(newCycle,this);
+                if(newCycle.edges.size()==0){
                     //return empty cycle because couldn't find available edge
                     return new Cycle(0);
                 }
-                newCycle.addEdge(newCycle.firstEdge);
-                newCycle.setPrevIsVisited(oldCycle);
                 //do old cycle
                 newCycle = growCycle(newCycle);
                 newCycle.appendCycle(oldCycle);
@@ -155,8 +151,8 @@ public class EulerianCycle {
          * @return
          */
         Cycle growCycle(Cycle newCycle){
-            int nextEdge = newCycle.firstEdge;
-            while (edges[nextEdge].to!=edges[newCycle.firstEdge].from){
+            int nextEdge = newCycle.getFirstEdge();
+            while (edges[nextEdge].to!=edges[newCycle.getFirstEdge()].from){
                 for(Integer e:edgesFromEdge(nextEdge)){
                     if(!newCycle.visited[e]){
                         nextEdge = e;
@@ -250,30 +246,34 @@ public class EulerianCycle {
     
     class Cycle{
         private ArrayList<Integer> edges;
-        private int firstEdge;
         private boolean[] visited;
         private int graphSize;
         public Cycle(int graphSize){
             edges = new ArrayList<>();
             visited = new boolean[graphSize];
             this.graphSize=graphSize;
-            firstEdge = -1;
         }
+        public Integer newCyclePreviousEdge; //this will be the edge before the new cycle starts
+
 
         /**
-         * Finds a new first edge with unvisited edges out
-         * from previous cycle
-         * @return the edge number of the new first edge
+         * this starts a new cycle, setting its firstEdge and newCyclePreviousEdge
+         * @param newCycle the new cycle, should be empty
+         * @param gr the graph
+         * @return a new cycle with correct firstEdge and newCyclePreviousEdge
          */
-        private int mostRecentAvailableEdge(Edge[] graphEdges){
-            if(size()==0)
-                return 0;
+        private Cycle startNewCycle(Cycle newCycle, Graph gr){
+            if(size()==0){
+                newCycle.addEdge(0);
+                newCycle.setNewCyclePreviousEdge(-1);
+                return newCycle;
+            }
             int edgeNumber = edges.size()-1;
-            int edge;
             int firstEdge = -1;
-            while(firstEdge==-1 && edgeNumber>0){
+            while(firstEdge==-1){
                 //I think I need to go around and look at each edge in the cycle
-                for(int e:graphEdges[edgeNumber].getEdgesOut()){
+                // TODO: 1/16/18 keep getting index out of bounds error here. problem with old cycle visited being full.
+                for(int e:gr.edges[edges.get(edgeNumber)].getEdgesOut()){
                     if(!visited[e]){
                         firstEdge = e;
                         break;
@@ -282,18 +282,36 @@ public class EulerianCycle {
                 }
                 edgeNumber--;
             }
-            return firstEdge;
+            newCycle.addEdge(firstEdge);
+            newCycle.setNewCyclePreviousEdge(edgeNumber);
+            newCycle.setPrevIsVisited(this);
+            return newCycle;
         }
 
 
+        /**
+         * this appends the other cycle starting from newCyclePreviousEdge and then wrapping around
+         * @param otherCycle
+         */
         public void appendCycle(Cycle otherCycle){
-            edges.addAll(otherCycle.edges);
+            int prevEdge = getNewCyclePreviousEdge();
+            if (prevEdge > 0 && otherCycle.size()>prevEdge) {
+                List<Integer> appendCycle = otherCycle.edges.subList(prevEdge,otherCycle.edges.size()-1);
+                appendCycle.addAll(otherCycle.edges.subList(0,prevEdge));
+                edges.addAll(appendCycle);
+            }
+        }
+
+        public Integer getNewCyclePreviousEdge() {
+            return newCyclePreviousEdge;
+        }
+
+        public void setNewCyclePreviousEdge(Integer newCyclePreviousEdge) {
+            this.newCyclePreviousEdge = newCyclePreviousEdge;
         }
 
         public void addEdge(int e){
             edges.add(e);
-            if(firstEdge == -1)
-                firstEdge = e;
             visited[e] = true;
         }
         public int size(){
@@ -303,13 +321,15 @@ public class EulerianCycle {
             return edges.get(n);
         }
         public int getFirstEdge(){
-            return firstEdge;
+            if (edges.size()>0) {
+                return edges.get(0);
+            }
+            return -1;
         }
         public int getLastEdge(){return edges.get(edges.size()-1);}
         public Cycle copy(){
             Cycle c = new Cycle(graphSize);
             c.edges = new ArrayList<>(edges);
-            c.firstEdge = this.firstEdge;
             c.visited = Arrays.copyOf(visited, visited.length);
             return c;
         }
