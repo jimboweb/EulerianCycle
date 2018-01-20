@@ -98,11 +98,11 @@ public class EulerianCycle {
             return e;
         }
         public ArrayList<Integer> edgesFromEdge(int e){
-            return edges[e].edgesOut;
+            return nodes[edges[e].to].edgesOut;
         }
         public ArrayList<Integer> edgesToEdge(int e){
-            return edges[e].edgesIn;
-            
+            return nodes[edges[e].from].edgesIn;
+
         }
         public int size(){
             return edges.length;
@@ -171,13 +171,9 @@ public class EulerianCycle {
         private int from;
         private int to;
         private int nodeNum;
-        private ArrayList<Integer> edgesIn;
-        private ArrayList<Integer> edgesOut;
         public Edge(int from, int to){
             this.from = from;
             this.to = to;
-            this.edgesOut = new ArrayList<>();
-            this.edgesIn = new ArrayList<>();
         }
         private int from(){
             return from;
@@ -185,21 +181,7 @@ public class EulerianCycle {
         private int to(){
             return to;
         }
-//        For when I try to get rid of the nodes
-        public void addEdgeIn(int n){
-            edgesIn.add(n);
-        }
-        //[tk] move this to the edge instead
-        public ArrayList<Integer> getEdgesIn(){
-            return edgesIn;
-        }
-        public void addEdgeOut(int n){
-            edgesOut.add(n);
-        }
-        public ArrayList<Integer> getEdgesOut(){
-            return edgesOut;
-        }
-        public int getFromNode(){
+       public int getFromNode(){
             return from;
         }
         public int getToNode(){
@@ -271,7 +253,7 @@ public class EulerianCycle {
             int nextEdgeLocalIndex = edges.size()-1;
             int firstEdge = -1;
             while(firstEdge==-1){
-                for(int e:gr.edges[edges.get(nextEdgeLocalIndex)].getEdgesOut()){
+                for(int e:gr.edgesFromEdge(edges.get(nextEdgeLocalIndex))){
                     if(!visited[e]){
                         firstEdge = e;
                         newCycle.setNewCyclePreviousEdge(nextEdgeLocalIndex);
@@ -390,19 +372,7 @@ public class EulerianCycle {
             addEdgeOps++; //debug
             g.nodes = addOrModifyNodes(g.nodes,edgeInd,from,to);
         }
-        // TODO: 1/20/18 right now it's working but too slow. this is the part that increases fastest, at O(n^2).
-        // I don't actually need this. I can get the edges out by looking at the nodes and their edges out
-        for(Edge e:g.edges){
-            for(Integer edgeOut:edgesFromNode.get(e.to)){
-                e.edgesOut.add(edgeOut);
-                addEdgeOps++;//debug
-            }
-            for(Integer edgeIn:edgesToNode.get(e.from)){
-                e.edgesIn.add((edgeIn));
-                addEdgeOps++;//debug
-            }
-        }
-        return g;
+       return g;
     }
 
     private Node[] addOrModifyNodes(Node[] nodes, int edgeNum, int from, int to){
