@@ -22,7 +22,7 @@ public class EulerianCycle {
 
     private int addEdgeOps;
     private int addNodeOps;
-    private int buildCycleOps;
+    public int buildCycleOps;
 
 
     public static void main(String[] args) {

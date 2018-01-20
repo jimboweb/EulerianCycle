@@ -114,18 +114,21 @@ public class EulerianCycleTest {
 
         //work with this after the simple answer works
 
-
-        InputGraph inputGraph = makeBalancedInputGraph(30);
-        ArrayList<int[]> input = inputGraph.getInputAsArray();
-        Graph g = instance.buildGraph(input);
-        Cycle c = g.makeEulerianCycle();
-        Assert.assertTrue(getFailOutput(c,inputGraph),testEulerianCycle(c, inputGraph));
+        for(int i=0;i<1000;i++) {
+            InputGraph inputGraph = makeBalancedInputGraph(10);
+            ArrayList<int[]> input = inputGraph.getInputAsArray();
+            Graph g = instance.buildGraph(input);
+            Cycle c = g.makeEulerianCycle();
+            //Assert.assertTrue(getFailOutput(c,inputGraph),testEulerianCycle(c, inputGraph));
+            Assert.assertTrue(getFailOutput(c,inputGraph, instance), instance.buildCycleOps < input.size() * 10);
+        }
     }
 
-    private String getFailOutput(Cycle c, InputGraph g){
+    private String getFailOutput(Cycle c, InputGraph g, EulerianCycle instance){
         String s = "Input graph was " + g.getInputAsString();
         s+="\n";
         s+=c.toString() + "\n";
+        s+="buildCycleOps: " + instance.buildCycleOps;
         return s;
     }
 
@@ -377,13 +380,14 @@ public class EulerianCycleTest {
             do{
                 nodeToBalance = gr.getRandomNode(0);
             } while(nodeToBalance.isBalanced());
-            InputNode toNode;
+            InputNode otherNode;
             if(nodeToBalance.balanceIsPositive()){
-                toNode = gr.getRandomNode(-1);
+                otherNode = gr.getRandomNode(-1);
+                gr.addEdge(nodeToBalance.getIndex(),otherNode.getIndex());
             } else {
-                toNode = gr.getRandomNode(1);
+                otherNode = gr.getRandomNode(1);
+                gr.addEdge(otherNode.getIndex(),nodeToBalance.getIndex());
             }
-            gr.addEdge(nodeToBalance.getIndex(),toNode.getIndex());
         }
         boolean areNodesPointingToSelf = rnd.nextBoolean();
         int nodesPointingToSelf = areNodesPointingToSelf? rnd.nextInt(n):0;
