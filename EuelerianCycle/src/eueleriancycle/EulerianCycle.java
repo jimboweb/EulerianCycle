@@ -143,8 +143,6 @@ public class EulerianCycle {
            return newCycle;
         }
 
-// TODO: BUG: 1/15/18 new cycle is going over old cycle because the boolean visited is not marked from previous cycle.
-// so would it work to copy the old cycle's visited boolean?
         /**
          * add new edges to the cycle from before
          * @param newCycle
@@ -253,7 +251,8 @@ public class EulerianCycle {
             visited = new boolean[graphSize];
             this.graphSize=graphSize;
         }
-        public Integer newCyclePreviousEdge; //this will be the edge before the new cycle starts
+        //newCyclePreviousEdge is the LOCAL INDEX IN THIS CYCLE of the edge the next cycle starts from
+        public Integer newCyclePreviousEdge;
 
 
         /**
@@ -268,22 +267,21 @@ public class EulerianCycle {
                 newCycle.setNewCyclePreviousEdge(-1);
                 return newCycle;
             }
-            int edgeNumber = edges.size()-1;
+            //nextEdgeLocalIndex is the index in this cycle of the edge we're looking at
+            int nextEdgeLocalIndex = edges.size()-1;
             int firstEdge = -1;
             while(firstEdge==-1){
-                //I think I need to go around and look at each edge in the cycle
-                // TODO: 1/16/18 keep getting index out of bounds error here. problem with old cycle visited being full.
-                for(int e:gr.edges[edges.get(edgeNumber)].getEdgesOut()){
+                for(int e:gr.edges[edges.get(nextEdgeLocalIndex)].getEdgesOut()){
                     if(!visited[e]){
                         firstEdge = e;
+                        newCycle.setNewCyclePreviousEdge(nextEdgeLocalIndex);
                         break;
                     }
                     buildCycleOps++;//debug
                 }
-                edgeNumber--;
+                nextEdgeLocalIndex--;
             }
             newCycle.addEdge(firstEdge);
-            newCycle.setNewCyclePreviousEdge(edgeNumber);
             newCycle.setPrevIsVisited(this);
             return newCycle;
         }
@@ -295,9 +293,9 @@ public class EulerianCycle {
          */
         public void appendCycle(Cycle otherCycle){
             int prevEdge = getNewCyclePreviousEdge();
-            if (prevEdge > 0 && otherCycle.size()>prevEdge) {
-                List<Integer> appendCycle = otherCycle.edges.subList(prevEdge,otherCycle.edges.size()-1);
-                appendCycle.addAll(otherCycle.edges.subList(0,prevEdge));
+            if (prevEdge >= 0 && otherCycle.size()>prevEdge) {
+                List<Integer> appendCycle = otherCycle.edges.subList(prevEdge+1,otherCycle.edges.size());
+                appendCycle.addAll(otherCycle.edges.subList(0,prevEdge+1));
                 edges.addAll(appendCycle);
             }
         }
@@ -392,6 +390,8 @@ public class EulerianCycle {
             addEdgeOps++; //debug
             g.nodes = addOrModifyNodes(g.nodes,edgeInd,from,to);
         }
+        // TODO: 1/20/18 right now it's working but too slow. this is the part that increases fastest, at O(n^2).
+        // I don't actually need this. I can get the edges out by looking at the nodes and their 
         for(Edge e:g.edges){
             for(Integer edgeOut:edgesFromNode.get(e.to)){
                 e.edgesOut.add(edgeOut);

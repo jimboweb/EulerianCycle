@@ -115,7 +115,7 @@ public class EulerianCycleTest {
         //work with this after the simple answer works
 
 
-        InputGraph inputGraph = makeBalancedInputGraph();
+        InputGraph inputGraph = makeBalancedInputGraph(30);
         ArrayList<int[]> input = inputGraph.getInputAsArray();
         Graph g = instance.buildGraph(input);
         Cycle c = g.makeEulerianCycle();
@@ -356,9 +356,9 @@ public class EulerianCycleTest {
     /**
      * @return a balanced input graph
      */
-    private InputGraph makeBalancedInputGraph(){
+    private InputGraph makeBalancedInputGraph(int graphSize){
         Random rnd = new Random();
-        int n = rnd.nextInt(10) + 2;
+        int n = rnd.nextInt(graphSize) + 2;
         boolean balanced = rnd.nextInt(10)<1;
         int m = 0;
         InputGraph gr = new InputGraph(n);
