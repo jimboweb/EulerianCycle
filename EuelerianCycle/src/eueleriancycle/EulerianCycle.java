@@ -391,7 +391,7 @@ public class EulerianCycle {
             g.nodes = addOrModifyNodes(g.nodes,edgeInd,from,to);
         }
         // TODO: 1/20/18 right now it's working but too slow. this is the part that increases fastest, at O(n^2).
-        // I don't actually need this. I can get the edges out by looking at the nodes and their 
+        // I don't actually need this. I can get the edges out by looking at the nodes and their edges out
         for(Edge e:g.edges){
             for(Integer edgeOut:edgesFromNode.get(e.to)){
                 e.edgesOut.add(edgeOut);
