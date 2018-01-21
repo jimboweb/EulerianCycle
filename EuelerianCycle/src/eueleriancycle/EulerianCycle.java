@@ -36,7 +36,7 @@ public class EulerianCycle {
         }, "1", 1 << 26).start();
     }
 
-// TODO: 1/21/18 AHAH! It is the single-node edges (2 2) that make it slow. It increases polynomially with single-node edges.
+    // TODO: 1/21/18 make a single node edge object in node. add single node edges to that and not main nodes. add each sne to cycle without looping through them
     public void run() throws IOException {
         Scanner scanner = new Scanner(System.in);
         ArrayList<int[]> inputs = new ArrayList<>();
@@ -86,14 +86,12 @@ public class EulerianCycle {
             this.nodeNum = n;
             this.edgeNum = m;
         }
+
+
         public Edge addEdge(int ind, int from, int to){
             Edge e = new Edge(from, to);
             e.nodeNum = ind;
-            try{
             edges[ind] = e;
-            }catch(ArrayIndexOutOfBoundsException err){
-                System.out.println();
-            }
             return e;
         }
         public ArrayList<Integer> edgesFromEdge(int e){
@@ -103,6 +101,11 @@ public class EulerianCycle {
             return nodes[edges[e].from].edgesIn;
 
         }
+
+        public ArrayList<Integer> singleNodeEdgesFromEdge(int e){
+            return nodes[edges[e].to].singleNodeEdges;
+        }
+
         public int size(){
             return edges.length;
         }
@@ -150,6 +153,12 @@ public class EulerianCycle {
         Cycle growCycle(Cycle newCycle){
             int nextEdge = newCycle.getFirstEdge();
             while (edges[nextEdge].to!=edges[newCycle.getFirstEdge()].from){
+                for(Integer e:singleNodeEdgesFromEdge(nextEdge)){
+                    if(!newCycle.visited[e]) {
+                        newCycle.addEdge(e);
+                    }
+                    buildCycleOps++;//debug
+                }
                 for(Integer e:edgesFromEdge(nextEdge)){
                     if(!newCycle.visited[e]){
                         nextEdge = e;
@@ -174,35 +183,40 @@ public class EulerianCycle {
             this.from = from;
             this.to = to;
         }
-        private int from(){
+
+        public int getFrom() {
             return from;
         }
-        private int to(){
+
+        public int getTo() {
             return to;
         }
-       public int getFromNode(){
-            return from;
-        }
-        public int getToNode(){
-            return to;
+
+        public int getNodeNum() {
+            return nodeNum;
         }
     }
     
     class Node{
         private ArrayList<Integer> edgesIn;
         private ArrayList<Integer> edgesOut;
-        private int nodeNum = -1;
+        private ArrayList<Integer> singleNodeEdges;
+        private final int nodeNum;
         public Node(int nodeNum){
             edgesIn = new ArrayList<>();
             edgesOut = new ArrayList<>();
+            singleNodeEdges = new ArrayList<>();
             this.nodeNum = nodeNum;
         }
-        public void setNodeNum(int n){
-            nodeNum = n;
+
+        public void addSingleNodeEdge(int n){
+            singleNodeEdges.add(n);
         }
-        public int getNodeNum(){
-            return nodeNum;
+
+        public ArrayList<Integer> getSingleNodeEdges() {
+            return singleNodeEdges;
         }
+
         public void addEdgeIn(int n){
             edgesIn.add(n);
         }
@@ -252,6 +266,7 @@ public class EulerianCycle {
             int nextEdgeLocalIndex = edges.size()-1;
             int firstEdge = -1;
             while(firstEdge==-1){
+//                if(edges.get(nextEdgeLocalIndex))
                 for(int e:gr.edgesFromEdge(edges.get(nextEdgeLocalIndex))){
                     if(!visited[e]){
                         firstEdge = e;
@@ -351,14 +366,6 @@ public class EulerianCycle {
     public Graph buildGraph(ArrayList<int[]> inputs){
         int n = inputs.get(0)[0];
         int m = inputs.get(0)[1];
-        ArrayList<ArrayList<Integer>> edgesFromNode = new ArrayList<>();
-        for(int i=0;i<n;i++){
-            edgesFromNode.add(new ArrayList<>());
-        }
-        ArrayList<ArrayList<Integer>> edgesToNode = new ArrayList<>();
-        for(int i=0;i<n;i++){
-            edgesToNode.add(new ArrayList<>());
-        }        
         Graph g = new Graph(n,m);
         for(int i=1;i<inputs.size();i++){
             int x=inputs.get(i)[0];
@@ -367,8 +374,6 @@ public class EulerianCycle {
             int to = y-1;
             int edgeInd = i-1;
             Edge e = g.addEdge(edgeInd, from, to);
-            edgesFromNode.get(from).add(edgeInd);
-            edgesToNode.get(to).add(edgeInd);
             addEdgeOps++; //debug
             g.nodes = addOrModifyNodes(g.nodes,edgeInd,from,to);
         }
@@ -384,6 +389,15 @@ public class EulerianCycle {
             nextNode = new Node(from);
             nodes[from] = nextNode;
         }
+
+        //this is for single node edges so they won't clutter the to and from edges
+        if(from == to){
+            if(!nextNode.singleNodeEdges.contains((edgeNum))){
+                nextNode.singleNodeEdges.add(edgeNum);
+            }
+            return nodes;
+        }
+
         if(!nextNode.edgesOut.contains(edgeNum)){
             nextNode.edgesOut.add(edgeNum);
         }
