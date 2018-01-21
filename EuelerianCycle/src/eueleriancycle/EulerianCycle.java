@@ -24,7 +24,6 @@ public class EulerianCycle {
     private int addNodeOps;
     public int buildCycleOps;
 
-
     public static void main(String[] args) {
         new Thread(null, new Runnable() {
             public void run() {
@@ -37,7 +36,7 @@ public class EulerianCycle {
         }, "1", 1 << 26).start();
     }
 
-
+// TODO: 1/21/18 AHAH! It is the single-node edges (2 2) that make it slow. It increases polynomially with single-node edges.
     public void run() throws IOException {
         Scanner scanner = new Scanner(System.in);
         ArrayList<int[]> inputs = new ArrayList<>();
@@ -334,6 +333,7 @@ public class EulerianCycle {
                 if(!visited[i] && oldCycle.visited[i]){
                     visited[i] = true;
                 }
+                buildCycleOps++;
             }
         }
 

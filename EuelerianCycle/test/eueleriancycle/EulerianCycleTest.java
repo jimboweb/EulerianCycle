@@ -75,47 +75,9 @@ public class EulerianCycleTest {
      */
     @Test
     public void testMakeEulerianCycle(){
-        EulerianCycle instance = new EulerianCycle();
-//        List<int[]> konigsburg = new ArrayList<>();
-//        String kString =
-//                "4 7" +
-//                        "1 2" +
-//                        "1 3" +
-//                        "2 1" +
-//                        "3 1" +
-//                        "2 4" +
-//                        "3 4" +
-//                        "4 1";
-//        List<int[]> simpleInput = new ArrayList<>();
-//        String simpleInputs =
-//                            "8 9\n" +
-//                            "1 2\n" +
-//                            "2 3\n" +
-//                            "3 1\n" +
-//                            "1 4\n" +
-//                            "4 5\n" +
-//                            "5 6\n" +
-//                            "6 7\n" +
-//                            "7 8\n" +
-//                            "8 1";
-//        String[] simpleInputLines = simpleInputs.split("\n");
-//
-//        int[] simpleOutputAnswer = {1,2,3,1,4,5,6,7,8};
-//        for(String si:simpleInputLines){
-//            String[] inputString = si.split(" ");
-//            int[] inputNums = new int[2];
-//            inputNums[0] = Integer.parseInt(inputString[0]);
-//            inputNums[1] = Integer.parseInt(inputString[1]);
-//            simpleInput.add(inputNums);
-//        }
-//        Graph simpleG = instance.buildGraph((ArrayList<int[]>)simpleInput);
-//        Cycle simpleC = simpleG.makeEulerianCycle();
-//        int[] correctAnswer = simpleC.outputAsArray(simpleG);
-//        assertArrayEquals(simpleOutputAnswer, correctAnswer);
 
-        //work with this after the simple answer works
-
-        for(int i=0;i<1000;i++) {
+        for(int i=0;i<10000;i++) {
+            EulerianCycle instance = new EulerianCycle();
             InputGraph inputGraph = makeBalancedInputGraph(10);
             ArrayList<int[]> input = inputGraph.getInputAsArray();
             Graph g = instance.buildGraph(input);
@@ -123,12 +85,11 @@ public class EulerianCycleTest {
             try {
                 c = g.makeEulerianCycle();
             } catch (ArrayIndexOutOfBoundsException err) {
-                System.out.println("ArrayIndexOutOfBoundsException on input:");
-                System.out.println(getFailOutput(c,inputGraph, instance));
+                System.out.println("Unconnected cycle");
                 continue;
             }
             //Assert.assertTrue(getFailOutput(c,inputGraph),testEulerianCycle(c, inputGraph));
-            Assert.assertTrue(getFailOutput(c,inputGraph, instance), instance.buildCycleOps < input.size() * 100);
+            Assert.assertTrue(getFailOutput(c,inputGraph, instance), instance.buildCycleOps < inputGraph.edges.size() * 15);
         }
     }
 
