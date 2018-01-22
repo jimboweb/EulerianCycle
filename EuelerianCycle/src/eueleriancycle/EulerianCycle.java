@@ -36,7 +36,6 @@ public class EulerianCycle {
         }, "1", 1 << 26).start();
     }
 
-// TODO: 1/21/18 AHAH! It is the single-node edges (2 2) that make it slow. It increases polynomially with single-node edges.
     public void run() throws IOException {
         Scanner scanner = new Scanner(System.in);
         ArrayList<int[]> inputs = new ArrayList<>();
@@ -191,6 +190,7 @@ public class EulerianCycle {
     class Node{
         private ArrayList<Integer> edgesIn;
         private ArrayList<Integer> edgesOut;
+        // TODO: 1: 1/21/18  Add unusedEdgesOut array
         private int nodeNum = -1;
         public Node(int nodeNum){
             edgesIn = new ArrayList<>();
@@ -213,6 +213,7 @@ public class EulerianCycle {
             return edgesIn;
         }
         public void addEdgeOut(int n){
+            //TODO: 2: add to unusedEdgesOut
             edgesOut.add(n);
         }
         public int getEdgeOut(int n){
@@ -221,6 +222,7 @@ public class EulerianCycle {
         public ArrayList<Integer> getEdgesOut(){
             return edgesOut;
         }
+        //TODO: 3: add setEdgeUsed method to remove from unusedEdgesOut
     }
     
     class Cycle{
@@ -251,7 +253,9 @@ public class EulerianCycle {
             //nextEdgeLocalIndex is the index in this cycle of the edge we're looking at
             int nextEdgeLocalIndex = edges.size()-1;
             int firstEdge = -1;
-            while(firstEdge==-1){
+            //solution: make a unusedEdges section in Node. Cycle through this and when you add an edge remove it from that node
+            while(firstEdge == -1){
+                //TODO: 4: make this cycle with an iterator so I can know what index it is to remove it
                 for(int e:gr.edgesFromEdge(edges.get(nextEdgeLocalIndex))){
                     if(!visited[e]){
                         firstEdge = e;
@@ -263,6 +267,7 @@ public class EulerianCycle {
                 nextEdgeLocalIndex--;
             }
             newCycle.addEdge(firstEdge);
+            //TODO: 5: call setEdgeUsed method in node
             newCycle.setPrevIsVisited(this);
             return newCycle;
         }
@@ -385,7 +390,9 @@ public class EulerianCycle {
             nodes[from] = nextNode;
         }
         if(!nextNode.edgesOut.contains(edgeNum)){
+            //TODO: 0: change this and next method to Node.addEdgesOut method
             nextNode.edgesOut.add(edgeNum);
+
         }
 
         if(nodes[to]!=null){
@@ -395,6 +402,7 @@ public class EulerianCycle {
             nodes[to]=nextNode;
         }
         if(!nextNode.edgesIn.contains(edgeNum)){
+            //TODO: 0: change to Node.addEdgeIn
             nextNode.edgesIn.add(edgeNum);
         }
         return nodes;
