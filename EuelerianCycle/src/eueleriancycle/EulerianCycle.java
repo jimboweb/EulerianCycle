@@ -267,17 +267,17 @@ public class EulerianCycle {
 
         private int getFirstEdgeOfNextCycle(Cycle newCycle, Graph gr){
             int nextEdgeLocalIndex = edges.size()-1;
-            int firstEdge = -1;
-            while(firstEdge == -1){
-                List<Integer> unusedEdges = gr.unusedEdgesFromEdge(edges.get(nextEdgeLocalIndex));
-                if(unusedEdges.size()==0){
-                    continue;
-                }
-                firstEdge = edges.get(0);
-                newCycle.setNewCyclePreviousEdge(nextEdgeLocalIndex);
+            List<Integer> unusedEdges = new ArrayList<>();
+            while(unusedEdges.size()==0){
+                unusedEdges = gr.unusedEdgesFromEdge(edges.get(nextEdgeLocalIndex));
                 buildCycleOps++;//debug
                 nextEdgeLocalIndex--;
+                if(nextEdgeLocalIndex<0){
+                    throw new IndexOutOfBoundsException("getFirstEdgeOfNextCycle ran out of edges");
+                }
             }
+            int firstEdge = unusedEdges.get(0);
+            newCycle.setNewCyclePreviousEdge(nextEdgeLocalIndex);
 
             return firstEdge;
         }
