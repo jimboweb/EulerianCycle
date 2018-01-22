@@ -95,11 +95,20 @@ public class EulerianCycle {
             }
             return e;
         }
+
+        public void addEdgeToCycle(int edgeGraphIndex, int edgeNodeIndex, Cycle c){
+            c.addEdge(edgeGraphIndex);
+            nodes[edges[edgeGraphIndex].from()].setEdgeUsed(edgeNodeIndex);
+        }
+
+        public ArrayList<Integer> unusedEdgesFromEdge(int e){
+            return nodes[edges[e].to()].unusedEdgesOut;
+        }
         public ArrayList<Integer> edgesFromEdge(int e){
-            return nodes[edges[e].to].edgesOut;
+            return nodes[edges[e].to()].edgesOut;
         }
         public ArrayList<Integer> edgesToEdge(int e){
-            return nodes[edges[e].from].edgesIn;
+            return nodes[edges[e].from()].edgesIn;
 
         }
         public int size(){
@@ -147,16 +156,13 @@ public class EulerianCycle {
          * @return
          */
         Cycle growCycle(Cycle newCycle){
-            int nextEdge = newCycle.getFirstEdge();
-            while (edges[nextEdge].to!=edges[newCycle.getFirstEdge()].from){
-                for(Integer e:edgesFromEdge(nextEdge)){
-                    if(!newCycle.visited[e]){
-                        nextEdge = e;
-                        newCycle.addEdge(nextEdge);
-                        break;
-                    }
-                    buildCycleOps++;//debug
-                }
+            int nextEdge = newCycle.getFirstEdgeOfNextCycle();
+            while (edges[nextEdge].to!=edges[newCycle.getFirstEdgeOfNextCycle()].from){
+                ArrayList<Integer> unusedEdges = unusedEdgesFromEdge(nextEdge);
+                int e=unusedEdges.get(0);
+                nextEdge = e;
+                addEdgeToCycle(e,0,newCycle);
+                buildCycleOps++;//debug
             }
              
             return newCycle;
@@ -190,11 +196,12 @@ public class EulerianCycle {
     class Node{
         private ArrayList<Integer> edgesIn;
         private ArrayList<Integer> edgesOut;
-        // TODO: 1: 1/21/18  Add unusedEdgesOut array
+        private ArrayList<Integer> unusedEdgesOut;
         private int nodeNum = -1;
         public Node(int nodeNum){
             edgesIn = new ArrayList<>();
             edgesOut = new ArrayList<>();
+            unusedEdgesOut = new ArrayList<>();
             this.nodeNum = nodeNum;
         }
         public void setNodeNum(int n){
@@ -213,7 +220,7 @@ public class EulerianCycle {
             return edgesIn;
         }
         public void addEdgeOut(int n){
-            //TODO: 2: add to unusedEdgesOut
+            unusedEdgesOut.add(n);
             edgesOut.add(n);
         }
         public int getEdgeOut(int n){
@@ -222,7 +229,9 @@ public class EulerianCycle {
         public ArrayList<Integer> getEdgesOut(){
             return edgesOut;
         }
-        //TODO: 3: add setEdgeUsed method to remove from unusedEdgesOut
+        public void setEdgeUsed(int i){
+            unusedEdgesOut.remove(i);
+        }
     }
     
     class Cycle{
@@ -246,30 +255,31 @@ public class EulerianCycle {
          */
         private Cycle startNewCycle(Cycle newCycle, Graph gr){
             if(size()==0){
-                newCycle.addEdge(0);
+                gr.addEdgeToCycle(0,0,newCycle);
                 newCycle.setNewCyclePreviousEdge(-1);
                 return newCycle;
             }
-            //nextEdgeLocalIndex is the index in this cycle of the edge we're looking at
-            int nextEdgeLocalIndex = edges.size()-1;
-            int firstEdge = -1;
-            //solution: make a unusedEdges section in Node. Cycle through this and when you add an edge remove it from that node
-            while(firstEdge == -1){
-                //TODO: 4: make this cycle with an iterator so I can know what index it is to remove it
-                for(int e:gr.edgesFromEdge(edges.get(nextEdgeLocalIndex))){
-                    if(!visited[e]){
-                        firstEdge = e;
-                        newCycle.setNewCyclePreviousEdge(nextEdgeLocalIndex);
-                        break;
-                    }
-                    buildCycleOps++;//debug
-                }
-                nextEdgeLocalIndex--;
-            }
-            newCycle.addEdge(firstEdge);
-            //TODO: 5: call setEdgeUsed method in node
+            int firstEdge = getFirstEdgeOfNextCycle(newCycle,gr);
+            gr.addEdgeToCycle(firstEdge,0,newCycle);
             newCycle.setPrevIsVisited(this);
             return newCycle;
+        }
+
+        private int getFirstEdgeOfNextCycle(Cycle newCycle, Graph gr){
+            int nextEdgeLocalIndex = edges.size()-1;
+            int firstEdge = -1;
+            while(firstEdge == -1){
+                List<Integer> unusedEdges = gr.unusedEdgesFromEdge(edges.get(nextEdgeLocalIndex));
+                if(unusedEdges.size()==0){
+                    continue;
+                }
+                firstEdge = edges.get(0);
+                newCycle.setNewCyclePreviousEdge(nextEdgeLocalIndex);
+                buildCycleOps++;//debug
+                nextEdgeLocalIndex--;
+            }
+
+            return firstEdge;
         }
 
 
@@ -304,7 +314,7 @@ public class EulerianCycle {
         public int getEdge(int n){
             return edges.get(n);
         }
-        public int getFirstEdge(){
+        public int getFirstEdgeOfNextCycle(){
             if (edges.size()>0) {
                 return edges.get(0);
             }
@@ -390,9 +400,7 @@ public class EulerianCycle {
             nodes[from] = nextNode;
         }
         if(!nextNode.edgesOut.contains(edgeNum)){
-            //TODO: 0: change this and next method to Node.addEdgesOut method
-            nextNode.edgesOut.add(edgeNum);
-
+            nextNode.addEdgeOut(edgeNum);
         }
 
         if(nodes[to]!=null){
@@ -402,8 +410,7 @@ public class EulerianCycle {
             nodes[to]=nextNode;
         }
         if(!nextNode.edgesIn.contains(edgeNum)){
-            //TODO: 0: change to Node.addEdgeIn
-            nextNode.edgesIn.add(edgeNum);
+            nextNode.addEdgeIn(edgeNum);
         }
         return nodes;
     }
