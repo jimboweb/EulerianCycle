@@ -5,6 +5,7 @@
  */
 package eueleriancycle;
 
+import eueleriancycle.EulerianCycle;
 import eueleriancycle.EulerianCycle.Cycle;
 import eueleriancycle.EulerianCycle.Graph;
 
@@ -73,9 +74,9 @@ public class EulerianCycleTest {
     @Test
     public void testMakeEulerianCycle(){
 
-        for(int i=0;i<10000;i++) {
+        for(int i=0;i<100000;i++) {
             EulerianCycle instance = new EulerianCycle();
-            InputGraph inputGraph = makeBalancedInputGraph(10);
+            InputGraph inputGraph = makeBalancedInputGraph(5);
             ArrayList<int[]> input = inputGraph.getInputAsArray();
             Graph g = instance.buildGraph(input);
             Cycle c = instance.new Cycle(0);
@@ -86,7 +87,7 @@ public class EulerianCycleTest {
                 continue;
             }
             //Assert.assertTrue(getFailOutput(c,inputGraph),testEulerianCycle(c, inputGraph));
-            Assert.assertTrue(getFailOutput(c,inputGraph, instance), instance.buildCycleOps < inputGraph.edges.size() * 15);
+            Assert.assertTrue(getFailOutput(c,inputGraph, instance), instance.buildCycleOps < inputGraph.edges.size() * 2);
         }
     }
 

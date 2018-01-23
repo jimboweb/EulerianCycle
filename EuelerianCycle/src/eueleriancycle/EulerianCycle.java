@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package eueleriancycle;
+//package eueleriancycle;
 
 
 
@@ -261,23 +261,24 @@ public class EulerianCycle {
             }
             int firstEdge = getFirstEdgeOfNextCycle(newCycle,gr);
             gr.addEdgeToCycle(firstEdge,0,newCycle);
-            newCycle.setPrevIsVisited(this);
             return newCycle;
         }
 
         private int getFirstEdgeOfNextCycle(Cycle newCycle, Graph gr){
             int nextEdgeLocalIndex = edges.size()-1;
             List<Integer> unusedEdges = new ArrayList<>();
+            int prevEdge = -1;
             while(unusedEdges.size()==0){
                 unusedEdges = gr.unusedEdgesFromEdge(edges.get(nextEdgeLocalIndex));
                 buildCycleOps++;//debug
-                nextEdgeLocalIndex--;
+                prevEdge = nextEdgeLocalIndex;
                 if(nextEdgeLocalIndex<0){
                     throw new IndexOutOfBoundsException("getFirstEdgeOfNextCycle ran out of edges");
                 }
+                nextEdgeLocalIndex--;
             }
             int firstEdge = unusedEdges.get(0);
-            newCycle.setNewCyclePreviousEdge(nextEdgeLocalIndex);
+            newCycle.setNewCyclePreviousEdge(prevEdge);
 
             return firstEdge;
         }
@@ -335,22 +336,6 @@ public class EulerianCycle {
             return rtrn;
         }
 
-        /**
-         * sets all the true visited in the old cycle to true in the new cycle
-         * so growCycle won't go over them
-         * @param oldCycle
-         */
-        private void setPrevIsVisited(Cycle oldCycle){
-            if(this.visited.length!=oldCycle.visited.length){
-                throw new IllegalArgumentException("new cycle's visited not the same length as old cycle visited");
-            }
-            for(int i=0;i<visited.length;i++){
-                if(!visited[i] && oldCycle.visited[i]){
-                    visited[i] = true;
-                }
-                buildCycleOps++;
-            }
-        }
 
         @Override
         public String toString() {
