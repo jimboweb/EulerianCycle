@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-//package eueleriancycle;
+package eueleriancycle;
 
 
 
@@ -23,6 +23,7 @@ public class EulerianCycle {
     private int addEdgeOps;
     private int addNodeOps;
     public int buildCycleOps;
+    // TODO: 1/22/18 0: make lastOpenNode variable (index in cycle edges) 
 
     public static void main(String[] args) {
         new Thread(null, new Runnable() {
@@ -141,10 +142,8 @@ public class EulerianCycle {
                     //return empty cycle because couldn't find available edge
                     return new Cycle(0);
                 }
-                //do old cycle
                 newCycle = growCycle(newCycle);
                 newCycle.appendCycle(oldCycle);
-                 //make new cycle
                 oldCycle = newCycle.copy();
             } while (newCycle.edges.size() < edges.length);
            return newCycle;
@@ -156,6 +155,7 @@ public class EulerianCycle {
          * @return
          */
         Cycle growCycle(Cycle newCycle){
+            // TODO: 1/22/18 1: each node check if it's got other nodes. if so, replace lastOpenNode 
             int nextEdge = newCycle.getFirstEdgeOfNextCycle();
             while (edges[nextEdge].to!=edges[newCycle.getFirstEdgeOfNextCycle()].from){
                 ArrayList<Integer> unusedEdges = unusedEdgesFromEdge(nextEdge);
@@ -254,6 +254,7 @@ public class EulerianCycle {
          * @return a new cycle with correct firstEdge and newCyclePreviousEdge
          */
         private Cycle startNewCycle(Cycle newCycle, Graph gr){
+            // TODO: 1/22/18 2: replace all this with lastOpenNode variable 
             if(size()==0){
                 gr.addEdgeToCycle(0,0,newCycle);
                 newCycle.setNewCyclePreviousEdge(-1);
@@ -264,6 +265,8 @@ public class EulerianCycle {
             return newCycle;
         }
 
+        // TODO: 1/22/18 new hypothesis: this is what's slowing me down. Say I have to step back 500 edges? Might be really slow.
+        // I can make this faster. Save the open node when I first make the cycle. 
         private int getFirstEdgeOfNextCycle(Cycle newCycle, Graph gr){
             int nextEdgeLocalIndex = edges.size()-1;
             List<Integer> unusedEdges = new ArrayList<>();
