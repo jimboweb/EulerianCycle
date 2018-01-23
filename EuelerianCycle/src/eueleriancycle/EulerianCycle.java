@@ -6,8 +6,7 @@
 package eueleriancycle;
 
 
-
-
+// TODO: 1/23/18 not getting the correct last edge 
 
 import java.io.IOException;
 import java.util.*;
@@ -23,7 +22,7 @@ public class EulerianCycle {
     private int addEdgeOps;
     private int addNodeOps;
     public int buildCycleOps;
-    // TODO: 1/22/18 0: make lastOpenNode variable (index in cycle edges) 
+
 
     public static void main(String[] args) {
         new Thread(null, new Runnable() {
@@ -155,14 +154,20 @@ public class EulerianCycle {
          * @return
          */
         Cycle growCycle(Cycle newCycle){
-            // TODO: 1/22/18 1: each node check if it's got other nodes. if so, replace lastOpenNode 
             int nextEdge = newCycle.getFirstEdgeOfNextCycle();
             while (edges[nextEdge].to!=edges[newCycle.getFirstEdgeOfNextCycle()].from){
                 ArrayList<Integer> unusedEdges = unusedEdgesFromEdge(nextEdge);
+                if(unusedEdges.size()>1){
+                    newCycle.setLastOpenEdge(nextEdge);
+                }
                 int e=unusedEdges.get(0);
                 nextEdge = e;
                 addEdgeToCycle(e,0,newCycle);
                 buildCycleOps++;//debug
+            }
+
+            if(unusedEdgesFromEdge(nextEdge).size()>0){
+                newCycle.setLastOpenEdge(nextEdge);
             }
              
             return newCycle;
@@ -238,6 +243,7 @@ public class EulerianCycle {
         private ArrayList<Integer> edges;
         private boolean[] visited;
         private int graphSize;
+        private int lastOpenEdge;
         public Cycle(int graphSize){
             edges = new ArrayList<>();
             visited = new boolean[graphSize];
@@ -254,37 +260,17 @@ public class EulerianCycle {
          * @return a new cycle with correct firstEdge and newCyclePreviousEdge
          */
         private Cycle startNewCycle(Cycle newCycle, Graph gr){
-            // TODO: 1/22/18 2: replace all this with lastOpenNode variable 
             if(size()==0){
                 gr.addEdgeToCycle(0,0,newCycle);
                 newCycle.setNewCyclePreviousEdge(-1);
                 return newCycle;
             }
-            int firstEdge = getFirstEdgeOfNextCycle(newCycle,gr);
+            int firstEdge = gr.unusedEdgesFromEdge(getLastOpenEdge()).get(0);
+            newCycle.setNewCyclePreviousEdge(getLastOpenEdge());
             gr.addEdgeToCycle(firstEdge,0,newCycle);
             return newCycle;
         }
 
-        // TODO: 1/22/18 new hypothesis: this is what's slowing me down. Say I have to step back 5000 edges? Might be really slow.
-        // I can make this faster. Save the open node when I first make the cycle. 
-        private int getFirstEdgeOfNextCycle(Cycle newCycle, Graph gr){
-            int nextEdgeLocalIndex = edges.size()-1;
-            List<Integer> unusedEdges = new ArrayList<>();
-            int prevEdge = -1;
-            while(unusedEdges.size()==0){
-                unusedEdges = gr.unusedEdgesFromEdge(edges.get(nextEdgeLocalIndex));
-                buildCycleOps++;//debug
-                prevEdge = nextEdgeLocalIndex;
-                if(nextEdgeLocalIndex<0){
-                    throw new IndexOutOfBoundsException("getFirstEdgeOfNextCycle ran out of edges");
-                }
-                nextEdgeLocalIndex--;
-            }
-            int firstEdge = unusedEdges.get(0);
-            newCycle.setNewCyclePreviousEdge(prevEdge);
-
-            return firstEdge;
-        }
 
 
         /**
@@ -308,6 +294,14 @@ public class EulerianCycle {
             this.newCyclePreviousEdge = newCyclePreviousEdge;
         }
 
+        public int getLastOpenEdge() {
+            return lastOpenEdge;
+        }
+
+        public void setLastOpenEdge(int lastOpenEdge) {
+            this.lastOpenEdge = lastOpenEdge;
+        }
+
         public void addEdge(int e){
             edges.add(e);
             visited[e] = true;
@@ -328,7 +322,7 @@ public class EulerianCycle {
         public Cycle copy(){
             Cycle c = new Cycle(graphSize);
             c.edges = new ArrayList<>(edges);
-            c.visited = Arrays.copyOf(visited, visited.length);
+            c.setLastOpenEdge(getLastOpenEdge());
             return c;
         }
         public int[] outputAsArray(Graph graph){
