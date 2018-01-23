@@ -250,7 +250,18 @@ public class EulerianCycle {
                 newCycle.setNewCyclePreviousEdge(-1);
                 return newCycle;
             }
+<<<<<<< HEAD
             //nextEdgeLocalIndex is the index in this cycle of the edge we're looking at
+=======
+            int firstEdge = getFirstEdgeOfNextCycle(newCycle,gr);
+            gr.addEdgeToCycle(firstEdge,0,newCycle);
+            return newCycle;
+        }
+
+        // TODO: 1/22/18 new hypothesis: this is what's slowing me down. Say I have to step back 5000 edges? Might be really slow.
+        // I can make this faster. Save the open node when I first make the cycle. 
+        private int getFirstEdgeOfNextCycle(Cycle newCycle, Graph gr){
+>>>>>>> unusedEdgesArray
             int nextEdgeLocalIndex = edges.size()-1;
             int firstEdge = -1;
             //solution: make a unusedEdges section in Node. Cycle through this and when you add an edge remove it from that node
