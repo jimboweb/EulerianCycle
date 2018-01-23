@@ -5,9 +5,7 @@
     <bookmark url="file://$PROJECT_DIR$/EuelerianCycle/test/eueleriancycle/EulerianCycleTest.java" line="350" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="049fa48a-42b0-486f-bc83-3cbe43ea694a" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/EuelerianCycle/src/eueleriancycle/EulerianCycle.java" afterPath="$PROJECT_DIR$/EuelerianCycle/src/eueleriancycle/EulerianCycle.java" />
-    </list>
+    <list default="true" id="049fa48a-42b0-486f-bc83-3cbe43ea694a" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -405,7 +403,7 @@
       <workItem from="1516458404342" duration="13659000" />
       <workItem from="1516538805782" duration="5520000" />
       <workItem from="1516622304786" duration="2852000" />
-      <workItem from="1516680234588" duration="122000" />
+      <workItem from="1516680234588" duration="136000" />
     </task>
     <servers />
   </component>
@@ -442,7 +440,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="110705000" />
+    <option name="totallyTimeSpent" value="110719000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="55" y="43" width="1375" height="837" extended-state="0" />
