@@ -7,12 +7,10 @@ package eueleriancycle;
 
 import eueleriancycle.EulerianCycle;
 import eueleriancycle.EulerianCycle.Cycle;
-import eueleriancycle.EulerianCycle.Edge;
 import eueleriancycle.EulerianCycle.Graph;
 
 import java.util.*;
 
-import jdk.internal.util.xml.impl.Input;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -76,9 +74,9 @@ public class EulerianCycleTest {
     @Test
     public void testMakeEulerianCycle(){
 
-        for(int i=0;i<10000;i++) {
+        for(int i=0;i<100000;i++) {
             EulerianCycle instance = new EulerianCycle();
-            InputGraph inputGraph = makeBalancedInputGraph(10);
+            InputGraph inputGraph = makeBalancedInputGraph(5);
             ArrayList<int[]> input = inputGraph.getInputAsArray();
             Graph g = instance.buildGraph(input);
             Cycle c = instance.new Cycle(0);
@@ -89,7 +87,7 @@ public class EulerianCycleTest {
                 continue;
             }
             //Assert.assertTrue(getFailOutput(c,inputGraph),testEulerianCycle(c, inputGraph));
-            Assert.assertTrue(getFailOutput(c,inputGraph, instance), instance.buildCycleOps < inputGraph.edges.size() * 15);
+            Assert.assertTrue(getFailOutput(c,inputGraph, instance), instance.buildCycleOps < inputGraph.edges.size() * 2);
         }
     }
 
@@ -381,7 +379,7 @@ public class EulerianCycleTest {
      */
     private boolean testEulerianCycle(Cycle c, InputGraph g){
         //make sure that the cycle has all the nodes
-        InputEdge nextEdge = g.getEdge(c.getFirstEdge());
+        InputEdge nextEdge = g.getEdge(c.getFirstEdgeOfNextCycle());
         InputEdge thisEdge;
         boolean[] edgesAreUsed = new boolean[g.edges.size()];
         //make sure each node's "to" == the next node's "from"
@@ -409,8 +407,8 @@ public class EulerianCycleTest {
             }
         }
         //make sure last edge connects to first edge
-        if(g.getEdge(c.getFirstEdge()).getFromNode()!= nextEdge.getToNode()) {
-            System.out.println("Final edge " + nextEdge.index + " does not meet first edge " + c.getFirstEdge());
+        if(g.getEdge(c.getFirstEdgeOfNextCycle()).getFromNode()!= nextEdge.getToNode()) {
+            System.out.println("Final edge " + nextEdge.index + " does not meet first edge " + c.getFirstEdgeOfNextCycle());
             return false;
         }
         return true;

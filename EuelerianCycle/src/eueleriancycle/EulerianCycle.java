@@ -23,6 +23,7 @@ public class EulerianCycle {
     private int addEdgeOps;
     private int addNodeOps;
     public int buildCycleOps;
+    // TODO: 1/22/18 0: make lastOpenNode variable (index in cycle edges) 
 
     public static void main(String[] args) {
         new Thread(null, new Runnable() {
@@ -95,11 +96,20 @@ public class EulerianCycle {
             }
             return e;
         }
+
+        public void addEdgeToCycle(int edgeGraphIndex, int edgeNodeIndex, Cycle c){
+            c.addEdge(edgeGraphIndex);
+            nodes[edges[edgeGraphIndex].from()].setEdgeUsed(edgeNodeIndex);
+        }
+
+        public ArrayList<Integer> unusedEdgesFromEdge(int e){
+            return nodes[edges[e].to()].unusedEdgesOut;
+        }
         public ArrayList<Integer> edgesFromEdge(int e){
-            return nodes[edges[e].to].edgesOut;
+            return nodes[edges[e].to()].edgesOut;
         }
         public ArrayList<Integer> edgesToEdge(int e){
-            return nodes[edges[e].from].edgesIn;
+            return nodes[edges[e].from()].edgesIn;
 
         }
         public int size(){
@@ -132,10 +142,8 @@ public class EulerianCycle {
                     //return empty cycle because couldn't find available edge
                     return new Cycle(0);
                 }
-                //do old cycle
                 newCycle = growCycle(newCycle);
                 newCycle.appendCycle(oldCycle);
-                 //make new cycle
                 oldCycle = newCycle.copy();
             } while (newCycle.edges.size() < edges.length);
            return newCycle;
@@ -147,16 +155,14 @@ public class EulerianCycle {
          * @return
          */
         Cycle growCycle(Cycle newCycle){
-            int nextEdge = newCycle.getFirstEdge();
-            while (edges[nextEdge].to!=edges[newCycle.getFirstEdge()].from){
-                for(Integer e:edgesFromEdge(nextEdge)){
-                    if(!newCycle.visited[e]){
-                        nextEdge = e;
-                        newCycle.addEdge(nextEdge);
-                        break;
-                    }
-                    buildCycleOps++;//debug
-                }
+            // TODO: 1/22/18 1: each node check if it's got other nodes. if so, replace lastOpenNode 
+            int nextEdge = newCycle.getFirstEdgeOfNextCycle();
+            while (edges[nextEdge].to!=edges[newCycle.getFirstEdgeOfNextCycle()].from){
+                ArrayList<Integer> unusedEdges = unusedEdgesFromEdge(nextEdge);
+                int e=unusedEdges.get(0);
+                nextEdge = e;
+                addEdgeToCycle(e,0,newCycle);
+                buildCycleOps++;//debug
             }
              
             return newCycle;
@@ -190,11 +196,12 @@ public class EulerianCycle {
     class Node{
         private ArrayList<Integer> edgesIn;
         private ArrayList<Integer> edgesOut;
-        // TODO: 1: 1/21/18  Add unusedEdgesOut array
+        private ArrayList<Integer> unusedEdgesOut;
         private int nodeNum = -1;
         public Node(int nodeNum){
             edgesIn = new ArrayList<>();
             edgesOut = new ArrayList<>();
+            unusedEdgesOut = new ArrayList<>();
             this.nodeNum = nodeNum;
         }
         public void setNodeNum(int n){
@@ -213,7 +220,7 @@ public class EulerianCycle {
             return edgesIn;
         }
         public void addEdgeOut(int n){
-            //TODO: 2: add to unusedEdgesOut
+            unusedEdgesOut.add(n);
             edgesOut.add(n);
         }
         public int getEdgeOut(int n){
@@ -222,7 +229,9 @@ public class EulerianCycle {
         public ArrayList<Integer> getEdgesOut(){
             return edgesOut;
         }
-        //TODO: 3: add setEdgeUsed method to remove from unusedEdgesOut
+        public void setEdgeUsed(int i){
+            unusedEdgesOut.remove(i);
+        }
     }
     
     class Cycle{
@@ -245,31 +254,36 @@ public class EulerianCycle {
          * @return a new cycle with correct firstEdge and newCyclePreviousEdge
          */
         private Cycle startNewCycle(Cycle newCycle, Graph gr){
+            // TODO: 1/22/18 2: replace all this with lastOpenNode variable 
             if(size()==0){
-                newCycle.addEdge(0);
+                gr.addEdgeToCycle(0,0,newCycle);
                 newCycle.setNewCyclePreviousEdge(-1);
                 return newCycle;
             }
-            //nextEdgeLocalIndex is the index in this cycle of the edge we're looking at
+            int firstEdge = getFirstEdgeOfNextCycle(newCycle,gr);
+            gr.addEdgeToCycle(firstEdge,0,newCycle);
+            return newCycle;
+        }
+
+        // TODO: 1/22/18 new hypothesis: this is what's slowing me down. Say I have to step back 500 edges? Might be really slow.
+        // I can make this faster. Save the open node when I first make the cycle. 
+        private int getFirstEdgeOfNextCycle(Cycle newCycle, Graph gr){
             int nextEdgeLocalIndex = edges.size()-1;
-            int firstEdge = -1;
-            //solution: make a unusedEdges section in Node. Cycle through this and when you add an edge remove it from that node
-            while(firstEdge == -1){
-                //TODO: 4: make this cycle with an iterator so I can know what index it is to remove it
-                for(int e:gr.edgesFromEdge(edges.get(nextEdgeLocalIndex))){
-                    if(!visited[e]){
-                        firstEdge = e;
-                        newCycle.setNewCyclePreviousEdge(nextEdgeLocalIndex);
-                        break;
-                    }
-                    buildCycleOps++;//debug
+            List<Integer> unusedEdges = new ArrayList<>();
+            int prevEdge = -1;
+            while(unusedEdges.size()==0){
+                unusedEdges = gr.unusedEdgesFromEdge(edges.get(nextEdgeLocalIndex));
+                buildCycleOps++;//debug
+                prevEdge = nextEdgeLocalIndex;
+                if(nextEdgeLocalIndex<0){
+                    throw new IndexOutOfBoundsException("getFirstEdgeOfNextCycle ran out of edges");
                 }
                 nextEdgeLocalIndex--;
             }
-            newCycle.addEdge(firstEdge);
-            //TODO: 5: call setEdgeUsed method in node
-            newCycle.setPrevIsVisited(this);
-            return newCycle;
+            int firstEdge = unusedEdges.get(0);
+            newCycle.setNewCyclePreviousEdge(prevEdge);
+
+            return firstEdge;
         }
 
 
@@ -304,7 +318,7 @@ public class EulerianCycle {
         public int getEdge(int n){
             return edges.get(n);
         }
-        public int getFirstEdge(){
+        public int getFirstEdgeOfNextCycle(){
             if (edges.size()>0) {
                 return edges.get(0);
             }
@@ -325,22 +339,6 @@ public class EulerianCycle {
             return rtrn;
         }
 
-        /**
-         * sets all the true visited in the old cycle to true in the new cycle
-         * so growCycle won't go over them
-         * @param oldCycle
-         */
-        private void setPrevIsVisited(Cycle oldCycle){
-            if(this.visited.length!=oldCycle.visited.length){
-                throw new IllegalArgumentException("new cycle's visited not the same length as old cycle visited");
-            }
-            for(int i=0;i<visited.length;i++){
-                if(!visited[i] && oldCycle.visited[i]){
-                    visited[i] = true;
-                }
-                buildCycleOps++;
-            }
-        }
 
         @Override
         public String toString() {
@@ -390,9 +388,7 @@ public class EulerianCycle {
             nodes[from] = nextNode;
         }
         if(!nextNode.edgesOut.contains(edgeNum)){
-            //TODO: 0: change this and next method to Node.addEdgesOut method
-            nextNode.edgesOut.add(edgeNum);
-
+            nextNode.addEdgeOut(edgeNum);
         }
 
         if(nodes[to]!=null){
@@ -402,8 +398,7 @@ public class EulerianCycle {
             nodes[to]=nextNode;
         }
         if(!nextNode.edgesIn.contains(edgeNum)){
-            //TODO: 0: change to Node.addEdgeIn
-            nextNode.edgesIn.add(edgeNum);
+            nextNode.addEdgeIn(edgeNum);
         }
         return nodes;
     }
