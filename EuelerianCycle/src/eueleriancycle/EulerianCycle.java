@@ -265,7 +265,7 @@ public class EulerianCycle {
             return newCycle;
         }
 
-        // TODO: 1/22/18 new hypothesis: this is what's slowing me down. Say I have to step back 500 edges? Might be really slow.
+        // TODO: 1/22/18 new hypothesis: this is what's slowing me down. Say I have to step back 5000 edges? Might be really slow.
         // I can make this faster. Save the open node when I first make the cycle. 
         private int getFirstEdgeOfNextCycle(Cycle newCycle, Graph gr){
             int nextEdgeLocalIndex = edges.size()-1;
