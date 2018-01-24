@@ -3,10 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package eueleriancycle;
+//package eueleriancycle;
 
 
-// TODO: 1/23/18 not getting the correct last edge 
 
 import java.io.IOException;
 import java.util.*;
@@ -155,6 +154,7 @@ public class EulerianCycle {
          */
         Cycle growCycle(Cycle newCycle){
             int nextEdge = newCycle.getFirstEdgeOfNextCycle();
+            Node startNode = nodes[edges[nextEdge].from];
             while (edges[nextEdge].to!=edges[newCycle.getFirstEdgeOfNextCycle()].from){
                 ArrayList<Integer> unusedEdges = unusedEdgesFromEdge(nextEdge);
                 if(unusedEdges.size()>1){
@@ -166,7 +166,7 @@ public class EulerianCycle {
                 buildCycleOps++;//debug
             }
 
-            if(unusedEdgesFromEdge(nextEdge).size()>0){
+            if(newCycle.getLastOpenEdge()==-1 && unusedEdgesFromEdge(nextEdge).size()>0){
                 newCycle.setLastOpenEdge(nextEdge);
             }
              
@@ -243,7 +243,7 @@ public class EulerianCycle {
         private ArrayList<Integer> edges;
         private boolean[] visited;
         private int graphSize;
-        private int lastOpenEdge;
+        private int lastOpenEdge = -1;
         public Cycle(int graphSize){
             edges = new ArrayList<>();
             visited = new boolean[graphSize];
