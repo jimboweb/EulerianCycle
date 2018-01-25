@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-//package eueleriancycle;
+package eueleriancycle;
 
 
 
@@ -22,6 +22,14 @@ public class EulerianCycle {
     private int addNodeOps;
     public int buildCycleOps;
 
+    // TODO: 1/25/18 incorrect return on following case:
+    //4 6
+    //1 2
+    //2 4
+    //3 2
+    //4 2
+    //2 1
+    //2 3
 
     public static void main(String[] args) {
         new Thread(null, new Runnable() {
@@ -265,8 +273,19 @@ public class EulerianCycle {
                 newCycle.setNewCyclePreviousEdge(-1);
                 return newCycle;
             }
-            int firstEdge = gr.unusedEdgesFromEdge(getLastOpenEdge()).get(0);
-            newCycle.setNewCyclePreviousEdge(getLastOpenEdge());
+            int firstEdge = 0; //debug
+            try{
+            firstEdge = gr.unusedEdgesFromEdge(getLastOpenEdge()).get(0);
+            } catch (IndexOutOfBoundsException e){
+                System.out.println(e);
+            }
+
+            //TODO: wait a minute am I setting the edge from the index in the graph?
+            try {
+                newCycle.setNewCyclePreviousEdge(edges.indexOf(getLastOpenEdge()));
+            } catch (IndexOutOfBoundsException e){
+                System.out.println(e);
+            }
             gr.addEdgeToCycle(firstEdge,0,newCycle);
             return newCycle;
         }

@@ -2,17 +2,13 @@
 <project version="4">
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$/EuelerianCycle/test/eueleriancycle/EulerianCycleTest.java" line="74" />
-    <bookmark url="file://$PROJECT_DIR$/EuelerianCycle/test/eueleriancycle/EulerianCycleTest.java" line="350" />
+    <bookmark url="file://$PROJECT_DIR$/EuelerianCycle/test/eueleriancycle/EulerianCycleTest.java" line="354" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="049fa48a-42b0-486f-bc83-3cbe43ea694a" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/EuelerianCycle/src/eueleriancycle/EulerianCycle.java" afterPath="$PROJECT_DIR$/EuelerianCycle/src/eueleriancycle/EulerianCycle.java" />
-      <change beforePath="$PROJECT_DIR$/out/production/EuelerianCycle/eueleriancycle/EulerianCycle$1.class" afterPath="$PROJECT_DIR$/out/production/EuelerianCycle/eueleriancycle/EulerianCycle$1.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/EuelerianCycle/eueleriancycle/EulerianCycle$Cycle.class" afterPath="$PROJECT_DIR$/out/production/EuelerianCycle/eueleriancycle/EulerianCycle$Cycle.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/EuelerianCycle/eueleriancycle/EulerianCycle$Edge.class" afterPath="$PROJECT_DIR$/out/production/EuelerianCycle/eueleriancycle/EulerianCycle$Edge.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/EuelerianCycle/eueleriancycle/EulerianCycle$Graph.class" afterPath="$PROJECT_DIR$/out/production/EuelerianCycle/eueleriancycle/EulerianCycle$Graph.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/EuelerianCycle/eueleriancycle/EulerianCycle.class" afterPath="$PROJECT_DIR$/out/production/EuelerianCycle/eueleriancycle/EulerianCycle.class" />
+      <change beforePath="$PROJECT_DIR$/EuelerianCycle/test/eueleriancycle/EulerianCycleTest.java" afterPath="$PROJECT_DIR$/EuelerianCycle/test/eueleriancycle/EulerianCycleTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -32,18 +28,26 @@
       <file leaf-file-name="EulerianCycle.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/EuelerianCycle/src/eueleriancycle/EulerianCycle.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="5" column="2" lean-forward="false" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
+            <state relative-caret-position="152">
+              <caret line="277" column="42" lean-forward="true" selection-start-line="277" selection-start-column="42" selection-end-line="277" selection-end-column="42" />
               <folding>
+                <element signature="e#0#12563#0" expanded="true" />
                 <element signature="imports" expanded="true" />
                 <element signature="class#Edge#0;class#EulerianCycle#0" expanded="false" />
                 <element signature="class#Node#0;class#EulerianCycle#0" expanded="false" />
                 <element signature="method#Cycle#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
                 <element signature="docComment;method#startNewCycle#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
+                <element signature="e#9333#9334#0" expanded="true" />
+                <element signature="e#9384#9385#0" expanded="true" />
                 <element signature="method#setNewCyclePreviousEdge#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
-                <element signature="e#9165#9166#0" expanded="true" />
-                <element signature="e#9221#9222#0" expanded="true" />
-                <element signature="method#addEdge#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
+                <element signature="e#9573#9574#0" expanded="true" />
+                <element signature="e#9616#9617#0" expanded="true" />
+                <element signature="e#9673#9674#0" expanded="true" />
+                <element signature="e#9729#9730#0" expanded="true" />
+                <element signature="e#9860#9861#0" expanded="true" />
+                <element signature="e#9903#9904#0" expanded="true" />
+                <element signature="e#9938#9939#0" expanded="true" />
+                <element signature="e#9981#9982#0" expanded="true" />
                 <element signature="method#outputAsArray#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
                 <element signature="method#toString#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
                 <element signature="method#buildGraph#0;class#EulerianCycle#0" expanded="false" />
@@ -56,8 +60,8 @@
       <file leaf-file-name="EulerianCycleTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/EuelerianCycle/test/eueleriancycle/EulerianCycleTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+            <state relative-caret-position="147">
+              <caret line="89" column="54" lean-forward="true" selection-start-line="89" selection-start-column="54" selection-end-line="89" selection-end-column="54" />
               <folding />
             </state>
           </provider>
@@ -89,6 +93,9 @@
       <find>unuse</find>
       <find>buildCy</find>
       <find>growC</find>
+      <find>edgesAre</find>
+      <find>indexOf</find>
+      <find>index</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -388,44 +395,46 @@
       <workItem from="1516622304786" duration="2852000" />
       <workItem from="1516680234588" duration="136000" />
       <workItem from="1516680599950" duration="4000" />
-      <workItem from="1516742015496" duration="7978000" />
+      <workItem from="1516742015496" duration="8180000" />
+      <workItem from="1516800532355" duration="99000" />
+      <workItem from="1516914490046" duration="3642000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="EulerianCycleTest_testMakeEulerianCycle - 2018.01.21 at 08h 28m 21s.xml">
+    <history-entry file="EulerianCycleTest - 2018.01.25 at 16h 11m 40s.xml">
+      <configuration name="EulerianCycleTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="EulerianCycleTest_testMakeEulerianCycle - 2018.01.25 at 16h 10m 43s.xml">
       <configuration name="EulerianCycleTest.testMakeEulerianCycle" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="EulerianCycleTest_testMakeEulerianCycle - 2018.01.21 at 08h 40m 15s.xml">
+    <history-entry file="EulerianCycleTest_testMakeEulerianCycle - 2018.01.25 at 16h 13m 45s.xml">
       <configuration name="EulerianCycleTest.testMakeEulerianCycle" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="EulerianCycleTest_testMakeEulerianCycle - 2018.01.22 at 22h 09m 38s.xml">
+    <history-entry file="EulerianCycleTest_testMakeEulerianCycle - 2018.01.25 at 16h 18m 08s.xml">
       <configuration name="EulerianCycleTest.testMakeEulerianCycle" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="EulerianCycleTest_testMakeEulerianCycle - 2018.01.22 at 22h 09m 49s.xml">
+    <history-entry file="EulerianCycleTest_testMakeEulerianCycle - 2018.01.25 at 16h 51m 34s.xml">
       <configuration name="EulerianCycleTest.testMakeEulerianCycle" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="EulerianCycleTest_testMakeEulerianCycle - 2018.01.22 at 22h 10m 07s.xml">
+    <history-entry file="EulerianCycleTest_testMakeEulerianCycle - 2018.01.25 at 16h 51m 44s.xml">
       <configuration name="EulerianCycleTest.testMakeEulerianCycle" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="EulerianCycleTest_testMakeEulerianCycle - 2018.01.22 at 22h 13m 02s.xml">
+    <history-entry file="EulerianCycleTest_testMakeEulerianCycle - 2018.01.25 at 16h 53m 38s.xml">
       <configuration name="EulerianCycleTest.testMakeEulerianCycle" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="EulerianCycleTest_testMakeEulerianCycle - 2018.01.22 at 22h 13m 11s.xml">
+    <history-entry file="EulerianCycleTest_testMakeEulerianCycle - 2018.01.25 at 16h 59m 12s.xml">
       <configuration name="EulerianCycleTest.testMakeEulerianCycle" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="EulerianCycleTest_testMakeEulerianCycle - 2018.01.22 at 22h 13m 30s.xml">
+    <history-entry file="EulerianCycleTest_testMakeEulerianCycle - 2018.01.25 at 16h 59m 35s.xml">
       <configuration name="EulerianCycleTest.testMakeEulerianCycle" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="EulerianCycleTest_testMakeEulerianCycle - 2018.01.22 at 22h 13m 54s.xml">
-      <configuration name="EulerianCycleTest.testMakeEulerianCycle" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="EulerianCycleTest_testMakeEulerianCycle - 2018.01.22 at 22h 14m 15s.xml">
+    <history-entry file="EulerianCycleTest_testMakeEulerianCycle - 2018.01.25 at 17h 01m 14s.xml">
       <configuration name="EulerianCycleTest.testMakeEulerianCycle" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="118701000" />
+    <option name="totallyTimeSpent" value="122644000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -448,19 +457,19 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32941177" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32884097" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884097" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21305326" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21905476" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884097" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39892185" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39892185" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -478,10 +487,30 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/EuelerianCycle/src/eueleriancycle/EulerianCycle.java</url>
+          <line>100</line>
+          <properties />
+          <option name="timeStamp" value="678" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/EuelerianCycle/src/eueleriancycle/EulerianCycle.java</url>
+          <line>286</line>
+          <properties />
+          <option name="timeStamp" value="679" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/EuelerianCycle/src/eueleriancycle/EulerianCycle.java</url>
+          <line>279</line>
+          <properties />
+          <option name="timeStamp" value="680" />
+        </line-breakpoint>
+      </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="658" />
+      <option name="time" value="681" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -520,15 +549,23 @@
         <state relative-caret-position="3465">
           <caret line="231" column="51" lean-forward="false" selection-start-line="231" selection-start-column="51" selection-end-line="231" selection-end-column="51" />
           <folding>
+            <element signature="e#0#12563#0" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="class#Edge#0;class#EulerianCycle#0" expanded="false" />
             <element signature="class#Node#0;class#EulerianCycle#0" expanded="false" />
             <element signature="method#Cycle#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
             <element signature="docComment;method#startNewCycle#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
+            <element signature="e#9333#9334#0" expanded="true" />
+            <element signature="e#9384#9385#0" expanded="true" />
             <element signature="method#setNewCyclePreviousEdge#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
-            <element signature="e#9165#9166#0" expanded="true" />
-            <element signature="e#9221#9222#0" expanded="true" />
-            <element signature="method#addEdge#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
+            <element signature="e#9573#9574#0" expanded="true" />
+            <element signature="e#9616#9617#0" expanded="true" />
+            <element signature="e#9673#9674#0" expanded="true" />
+            <element signature="e#9729#9730#0" expanded="true" />
+            <element signature="e#9860#9861#0" expanded="true" />
+            <element signature="e#9903#9904#0" expanded="true" />
+            <element signature="e#9938#9939#0" expanded="true" />
+            <element signature="e#9981#9982#0" expanded="true" />
             <element signature="method#outputAsArray#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
             <element signature="method#toString#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
             <element signature="method#buildGraph#0;class#EulerianCycle#0" expanded="false" />
@@ -559,15 +596,23 @@
         <state relative-caret-position="126">
           <caret line="71" column="0" lean-forward="false" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
           <folding>
+            <element signature="e#0#12563#0" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="class#Edge#0;class#EulerianCycle#0" expanded="false" />
             <element signature="class#Node#0;class#EulerianCycle#0" expanded="false" />
             <element signature="method#Cycle#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
             <element signature="docComment;method#startNewCycle#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
+            <element signature="e#9333#9334#0" expanded="true" />
+            <element signature="e#9384#9385#0" expanded="true" />
             <element signature="method#setNewCyclePreviousEdge#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
-            <element signature="e#9165#9166#0" expanded="true" />
-            <element signature="e#9221#9222#0" expanded="true" />
-            <element signature="method#addEdge#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
+            <element signature="e#9573#9574#0" expanded="true" />
+            <element signature="e#9616#9617#0" expanded="true" />
+            <element signature="e#9673#9674#0" expanded="true" />
+            <element signature="e#9729#9730#0" expanded="true" />
+            <element signature="e#9860#9861#0" expanded="true" />
+            <element signature="e#9903#9904#0" expanded="true" />
+            <element signature="e#9938#9939#0" expanded="true" />
+            <element signature="e#9981#9982#0" expanded="true" />
             <element signature="method#outputAsArray#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
             <element signature="method#toString#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
             <element signature="method#buildGraph#0;class#EulerianCycle#0" expanded="false" />
@@ -581,15 +626,23 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="e#0#12563#0" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="class#Edge#0;class#EulerianCycle#0" expanded="false" />
             <element signature="class#Node#0;class#EulerianCycle#0" expanded="false" />
             <element signature="method#Cycle#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
             <element signature="docComment;method#startNewCycle#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
+            <element signature="e#9333#9334#0" expanded="true" />
+            <element signature="e#9384#9385#0" expanded="true" />
             <element signature="method#setNewCyclePreviousEdge#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
-            <element signature="e#9165#9166#0" expanded="true" />
-            <element signature="e#9221#9222#0" expanded="true" />
-            <element signature="method#addEdge#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
+            <element signature="e#9573#9574#0" expanded="true" />
+            <element signature="e#9616#9617#0" expanded="true" />
+            <element signature="e#9673#9674#0" expanded="true" />
+            <element signature="e#9729#9730#0" expanded="true" />
+            <element signature="e#9860#9861#0" expanded="true" />
+            <element signature="e#9903#9904#0" expanded="true" />
+            <element signature="e#9938#9939#0" expanded="true" />
+            <element signature="e#9981#9982#0" expanded="true" />
             <element signature="method#outputAsArray#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
             <element signature="method#toString#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
             <element signature="method#buildGraph#0;class#EulerianCycle#0" expanded="false" />
@@ -611,15 +664,23 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="e#0#12563#0" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="class#Edge#0;class#EulerianCycle#0" expanded="false" />
             <element signature="class#Node#0;class#EulerianCycle#0" expanded="false" />
             <element signature="method#Cycle#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
             <element signature="docComment;method#startNewCycle#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
+            <element signature="e#9333#9334#0" expanded="true" />
+            <element signature="e#9384#9385#0" expanded="true" />
             <element signature="method#setNewCyclePreviousEdge#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
-            <element signature="e#9165#9166#0" expanded="true" />
-            <element signature="e#9221#9222#0" expanded="true" />
-            <element signature="method#addEdge#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
+            <element signature="e#9573#9574#0" expanded="true" />
+            <element signature="e#9616#9617#0" expanded="true" />
+            <element signature="e#9673#9674#0" expanded="true" />
+            <element signature="e#9729#9730#0" expanded="true" />
+            <element signature="e#9860#9861#0" expanded="true" />
+            <element signature="e#9903#9904#0" expanded="true" />
+            <element signature="e#9938#9939#0" expanded="true" />
+            <element signature="e#9981#9982#0" expanded="true" />
             <element signature="method#outputAsArray#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
             <element signature="method#toString#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
             <element signature="method#buildGraph#0;class#EulerianCycle#0" expanded="false" />
@@ -641,15 +702,23 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="e#0#12563#0" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="class#Edge#0;class#EulerianCycle#0" expanded="false" />
             <element signature="class#Node#0;class#EulerianCycle#0" expanded="false" />
             <element signature="method#Cycle#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
             <element signature="docComment;method#startNewCycle#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
+            <element signature="e#9333#9334#0" expanded="true" />
+            <element signature="e#9384#9385#0" expanded="true" />
             <element signature="method#setNewCyclePreviousEdge#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
-            <element signature="e#9165#9166#0" expanded="true" />
-            <element signature="e#9221#9222#0" expanded="true" />
-            <element signature="method#addEdge#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
+            <element signature="e#9573#9574#0" expanded="true" />
+            <element signature="e#9616#9617#0" expanded="true" />
+            <element signature="e#9673#9674#0" expanded="true" />
+            <element signature="e#9729#9730#0" expanded="true" />
+            <element signature="e#9860#9861#0" expanded="true" />
+            <element signature="e#9903#9904#0" expanded="true" />
+            <element signature="e#9938#9939#0" expanded="true" />
+            <element signature="e#9981#9982#0" expanded="true" />
             <element signature="method#outputAsArray#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
             <element signature="method#toString#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
             <element signature="method#buildGraph#0;class#EulerianCycle#0" expanded="false" />
@@ -671,15 +740,23 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="e#0#12563#0" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="class#Edge#0;class#EulerianCycle#0" expanded="false" />
             <element signature="class#Node#0;class#EulerianCycle#0" expanded="false" />
             <element signature="method#Cycle#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
             <element signature="docComment;method#startNewCycle#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
+            <element signature="e#9333#9334#0" expanded="true" />
+            <element signature="e#9384#9385#0" expanded="true" />
             <element signature="method#setNewCyclePreviousEdge#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
-            <element signature="e#9165#9166#0" expanded="true" />
-            <element signature="e#9221#9222#0" expanded="true" />
-            <element signature="method#addEdge#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
+            <element signature="e#9573#9574#0" expanded="true" />
+            <element signature="e#9616#9617#0" expanded="true" />
+            <element signature="e#9673#9674#0" expanded="true" />
+            <element signature="e#9729#9730#0" expanded="true" />
+            <element signature="e#9860#9861#0" expanded="true" />
+            <element signature="e#9903#9904#0" expanded="true" />
+            <element signature="e#9938#9939#0" expanded="true" />
+            <element signature="e#9981#9982#0" expanded="true" />
             <element signature="method#outputAsArray#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
             <element signature="method#toString#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
             <element signature="method#buildGraph#0;class#EulerianCycle#0" expanded="false" />
@@ -701,15 +778,23 @@
         <state relative-caret-position="75">
           <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="23" />
           <folding>
+            <element signature="e#0#12563#0" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="class#Edge#0;class#EulerianCycle#0" expanded="false" />
             <element signature="class#Node#0;class#EulerianCycle#0" expanded="false" />
             <element signature="method#Cycle#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
             <element signature="docComment;method#startNewCycle#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
+            <element signature="e#9333#9334#0" expanded="true" />
+            <element signature="e#9384#9385#0" expanded="true" />
             <element signature="method#setNewCyclePreviousEdge#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
-            <element signature="e#9165#9166#0" expanded="true" />
-            <element signature="e#9221#9222#0" expanded="true" />
-            <element signature="method#addEdge#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
+            <element signature="e#9573#9574#0" expanded="true" />
+            <element signature="e#9616#9617#0" expanded="true" />
+            <element signature="e#9673#9674#0" expanded="true" />
+            <element signature="e#9729#9730#0" expanded="true" />
+            <element signature="e#9860#9861#0" expanded="true" />
+            <element signature="e#9903#9904#0" expanded="true" />
+            <element signature="e#9938#9939#0" expanded="true" />
+            <element signature="e#9981#9982#0" expanded="true" />
             <element signature="method#outputAsArray#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
             <element signature="method#toString#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
             <element signature="method#buildGraph#0;class#EulerianCycle#0" expanded="false" />
@@ -731,15 +816,23 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="e#0#12563#0" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="class#Edge#0;class#EulerianCycle#0" expanded="false" />
             <element signature="class#Node#0;class#EulerianCycle#0" expanded="false" />
             <element signature="method#Cycle#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
             <element signature="docComment;method#startNewCycle#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
+            <element signature="e#9333#9334#0" expanded="true" />
+            <element signature="e#9384#9385#0" expanded="true" />
             <element signature="method#setNewCyclePreviousEdge#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
-            <element signature="e#9165#9166#0" expanded="true" />
-            <element signature="e#9221#9222#0" expanded="true" />
-            <element signature="method#addEdge#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
+            <element signature="e#9573#9574#0" expanded="true" />
+            <element signature="e#9616#9617#0" expanded="true" />
+            <element signature="e#9673#9674#0" expanded="true" />
+            <element signature="e#9729#9730#0" expanded="true" />
+            <element signature="e#9860#9861#0" expanded="true" />
+            <element signature="e#9903#9904#0" expanded="true" />
+            <element signature="e#9938#9939#0" expanded="true" />
+            <element signature="e#9981#9982#0" expanded="true" />
             <element signature="method#outputAsArray#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
             <element signature="method#toString#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
             <element signature="method#buildGraph#0;class#EulerianCycle#0" expanded="false" />
@@ -761,15 +854,23 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="e#0#12563#0" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="class#Edge#0;class#EulerianCycle#0" expanded="false" />
             <element signature="class#Node#0;class#EulerianCycle#0" expanded="false" />
             <element signature="method#Cycle#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
             <element signature="docComment;method#startNewCycle#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
+            <element signature="e#9333#9334#0" expanded="true" />
+            <element signature="e#9384#9385#0" expanded="true" />
             <element signature="method#setNewCyclePreviousEdge#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
-            <element signature="e#9165#9166#0" expanded="true" />
-            <element signature="e#9221#9222#0" expanded="true" />
-            <element signature="method#addEdge#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
+            <element signature="e#9573#9574#0" expanded="true" />
+            <element signature="e#9616#9617#0" expanded="true" />
+            <element signature="e#9673#9674#0" expanded="true" />
+            <element signature="e#9729#9730#0" expanded="true" />
+            <element signature="e#9860#9861#0" expanded="true" />
+            <element signature="e#9903#9904#0" expanded="true" />
+            <element signature="e#9938#9939#0" expanded="true" />
+            <element signature="e#9981#9982#0" expanded="true" />
             <element signature="method#outputAsArray#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
             <element signature="method#toString#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
             <element signature="method#buildGraph#0;class#EulerianCycle#0" expanded="false" />
@@ -791,15 +892,23 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="e#0#12563#0" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="class#Edge#0;class#EulerianCycle#0" expanded="false" />
             <element signature="class#Node#0;class#EulerianCycle#0" expanded="false" />
             <element signature="method#Cycle#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
             <element signature="docComment;method#startNewCycle#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
+            <element signature="e#9333#9334#0" expanded="true" />
+            <element signature="e#9384#9385#0" expanded="true" />
             <element signature="method#setNewCyclePreviousEdge#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
-            <element signature="e#9165#9166#0" expanded="true" />
-            <element signature="e#9221#9222#0" expanded="true" />
-            <element signature="method#addEdge#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
+            <element signature="e#9573#9574#0" expanded="true" />
+            <element signature="e#9616#9617#0" expanded="true" />
+            <element signature="e#9673#9674#0" expanded="true" />
+            <element signature="e#9729#9730#0" expanded="true" />
+            <element signature="e#9860#9861#0" expanded="true" />
+            <element signature="e#9903#9904#0" expanded="true" />
+            <element signature="e#9938#9939#0" expanded="true" />
+            <element signature="e#9981#9982#0" expanded="true" />
             <element signature="method#outputAsArray#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
             <element signature="method#toString#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
             <element signature="method#buildGraph#0;class#EulerianCycle#0" expanded="false" />
@@ -821,15 +930,23 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="e#0#12563#0" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="class#Edge#0;class#EulerianCycle#0" expanded="false" />
             <element signature="class#Node#0;class#EulerianCycle#0" expanded="false" />
             <element signature="method#Cycle#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
             <element signature="docComment;method#startNewCycle#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
+            <element signature="e#9333#9334#0" expanded="true" />
+            <element signature="e#9384#9385#0" expanded="true" />
             <element signature="method#setNewCyclePreviousEdge#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
-            <element signature="e#9165#9166#0" expanded="true" />
-            <element signature="e#9221#9222#0" expanded="true" />
-            <element signature="method#addEdge#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
+            <element signature="e#9573#9574#0" expanded="true" />
+            <element signature="e#9616#9617#0" expanded="true" />
+            <element signature="e#9673#9674#0" expanded="true" />
+            <element signature="e#9729#9730#0" expanded="true" />
+            <element signature="e#9860#9861#0" expanded="true" />
+            <element signature="e#9903#9904#0" expanded="true" />
+            <element signature="e#9938#9939#0" expanded="true" />
+            <element signature="e#9981#9982#0" expanded="true" />
             <element signature="method#outputAsArray#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
             <element signature="method#toString#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
             <element signature="method#buildGraph#0;class#EulerianCycle#0" expanded="false" />
@@ -851,15 +968,23 @@
         <state relative-caret-position="3465">
           <caret line="231" column="51" lean-forward="false" selection-start-line="231" selection-start-column="51" selection-end-line="231" selection-end-column="51" />
           <folding>
+            <element signature="e#0#12563#0" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="class#Edge#0;class#EulerianCycle#0" expanded="false" />
             <element signature="class#Node#0;class#EulerianCycle#0" expanded="false" />
             <element signature="method#Cycle#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
             <element signature="docComment;method#startNewCycle#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
+            <element signature="e#9333#9334#0" expanded="true" />
+            <element signature="e#9384#9385#0" expanded="true" />
             <element signature="method#setNewCyclePreviousEdge#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
-            <element signature="e#9165#9166#0" expanded="true" />
-            <element signature="e#9221#9222#0" expanded="true" />
-            <element signature="method#addEdge#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
+            <element signature="e#9573#9574#0" expanded="true" />
+            <element signature="e#9616#9617#0" expanded="true" />
+            <element signature="e#9673#9674#0" expanded="true" />
+            <element signature="e#9729#9730#0" expanded="true" />
+            <element signature="e#9860#9861#0" expanded="true" />
+            <element signature="e#9903#9904#0" expanded="true" />
+            <element signature="e#9938#9939#0" expanded="true" />
+            <element signature="e#9981#9982#0" expanded="true" />
             <element signature="method#outputAsArray#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
             <element signature="method#toString#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
             <element signature="method#buildGraph#0;class#EulerianCycle#0" expanded="false" />
@@ -890,15 +1015,23 @@
         <state relative-caret-position="190">
           <caret line="267" column="33" lean-forward="true" selection-start-line="267" selection-start-column="33" selection-end-line="267" selection-end-column="33" />
           <folding>
+            <element signature="e#0#12563#0" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="class#Edge#0;class#EulerianCycle#0" expanded="false" />
             <element signature="class#Node#0;class#EulerianCycle#0" expanded="false" />
             <element signature="method#Cycle#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
             <element signature="docComment;method#startNewCycle#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
+            <element signature="e#9333#9334#0" expanded="true" />
+            <element signature="e#9384#9385#0" expanded="true" />
             <element signature="method#setNewCyclePreviousEdge#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
-            <element signature="e#9165#9166#0" expanded="true" />
-            <element signature="e#9221#9222#0" expanded="true" />
-            <element signature="method#addEdge#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
+            <element signature="e#9573#9574#0" expanded="true" />
+            <element signature="e#9616#9617#0" expanded="true" />
+            <element signature="e#9673#9674#0" expanded="true" />
+            <element signature="e#9729#9730#0" expanded="true" />
+            <element signature="e#9860#9861#0" expanded="true" />
+            <element signature="e#9903#9904#0" expanded="true" />
+            <element signature="e#9938#9939#0" expanded="true" />
+            <element signature="e#9981#9982#0" expanded="true" />
             <element signature="method#outputAsArray#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
             <element signature="method#toString#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
             <element signature="method#buildGraph#0;class#EulerianCycle#0" expanded="false" />
@@ -912,15 +1045,23 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="e#0#12563#0" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="class#Edge#0;class#EulerianCycle#0" expanded="false" />
             <element signature="class#Node#0;class#EulerianCycle#0" expanded="false" />
             <element signature="method#Cycle#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
             <element signature="docComment;method#startNewCycle#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
+            <element signature="e#9333#9334#0" expanded="true" />
+            <element signature="e#9384#9385#0" expanded="true" />
             <element signature="method#setNewCyclePreviousEdge#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
-            <element signature="e#9165#9166#0" expanded="true" />
-            <element signature="e#9221#9222#0" expanded="true" />
-            <element signature="method#addEdge#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
+            <element signature="e#9573#9574#0" expanded="true" />
+            <element signature="e#9616#9617#0" expanded="true" />
+            <element signature="e#9673#9674#0" expanded="true" />
+            <element signature="e#9729#9730#0" expanded="true" />
+            <element signature="e#9860#9861#0" expanded="true" />
+            <element signature="e#9903#9904#0" expanded="true" />
+            <element signature="e#9938#9939#0" expanded="true" />
+            <element signature="e#9981#9982#0" expanded="true" />
             <element signature="method#outputAsArray#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
             <element signature="method#toString#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
             <element signature="method#buildGraph#0;class#EulerianCycle#0" expanded="false" />
@@ -942,15 +1083,23 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="e#0#12563#0" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="class#Edge#0;class#EulerianCycle#0" expanded="false" />
             <element signature="class#Node#0;class#EulerianCycle#0" expanded="false" />
             <element signature="method#Cycle#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
             <element signature="docComment;method#startNewCycle#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
+            <element signature="e#9333#9334#0" expanded="true" />
+            <element signature="e#9384#9385#0" expanded="true" />
             <element signature="method#setNewCyclePreviousEdge#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
-            <element signature="e#9165#9166#0" expanded="true" />
-            <element signature="e#9221#9222#0" expanded="true" />
-            <element signature="method#addEdge#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
+            <element signature="e#9573#9574#0" expanded="true" />
+            <element signature="e#9616#9617#0" expanded="true" />
+            <element signature="e#9673#9674#0" expanded="true" />
+            <element signature="e#9729#9730#0" expanded="true" />
+            <element signature="e#9860#9861#0" expanded="true" />
+            <element signature="e#9903#9904#0" expanded="true" />
+            <element signature="e#9938#9939#0" expanded="true" />
+            <element signature="e#9981#9982#0" expanded="true" />
             <element signature="method#outputAsArray#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
             <element signature="method#toString#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
             <element signature="method#buildGraph#0;class#EulerianCycle#0" expanded="false" />
@@ -972,15 +1121,23 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="e#0#12563#0" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="class#Edge#0;class#EulerianCycle#0" expanded="false" />
             <element signature="class#Node#0;class#EulerianCycle#0" expanded="false" />
             <element signature="method#Cycle#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
             <element signature="docComment;method#startNewCycle#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
+            <element signature="e#9333#9334#0" expanded="true" />
+            <element signature="e#9384#9385#0" expanded="true" />
             <element signature="method#setNewCyclePreviousEdge#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
-            <element signature="e#9165#9166#0" expanded="true" />
-            <element signature="e#9221#9222#0" expanded="true" />
-            <element signature="method#addEdge#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
+            <element signature="e#9573#9574#0" expanded="true" />
+            <element signature="e#9616#9617#0" expanded="true" />
+            <element signature="e#9673#9674#0" expanded="true" />
+            <element signature="e#9729#9730#0" expanded="true" />
+            <element signature="e#9860#9861#0" expanded="true" />
+            <element signature="e#9903#9904#0" expanded="true" />
+            <element signature="e#9938#9939#0" expanded="true" />
+            <element signature="e#9981#9982#0" expanded="true" />
             <element signature="method#outputAsArray#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
             <element signature="method#toString#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
             <element signature="method#buildGraph#0;class#EulerianCycle#0" expanded="false" />
@@ -1002,15 +1159,23 @@
         <state relative-caret-position="75">
           <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="23" />
           <folding>
+            <element signature="e#0#12563#0" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="class#Edge#0;class#EulerianCycle#0" expanded="false" />
             <element signature="class#Node#0;class#EulerianCycle#0" expanded="false" />
             <element signature="method#Cycle#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
             <element signature="docComment;method#startNewCycle#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
+            <element signature="e#9333#9334#0" expanded="true" />
+            <element signature="e#9384#9385#0" expanded="true" />
             <element signature="method#setNewCyclePreviousEdge#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
-            <element signature="e#9165#9166#0" expanded="true" />
-            <element signature="e#9221#9222#0" expanded="true" />
-            <element signature="method#addEdge#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
+            <element signature="e#9573#9574#0" expanded="true" />
+            <element signature="e#9616#9617#0" expanded="true" />
+            <element signature="e#9673#9674#0" expanded="true" />
+            <element signature="e#9729#9730#0" expanded="true" />
+            <element signature="e#9860#9861#0" expanded="true" />
+            <element signature="e#9903#9904#0" expanded="true" />
+            <element signature="e#9938#9939#0" expanded="true" />
+            <element signature="e#9981#9982#0" expanded="true" />
             <element signature="method#outputAsArray#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
             <element signature="method#toString#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
             <element signature="method#buildGraph#0;class#EulerianCycle#0" expanded="false" />
@@ -1032,15 +1197,23 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="e#0#12563#0" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="class#Edge#0;class#EulerianCycle#0" expanded="false" />
             <element signature="class#Node#0;class#EulerianCycle#0" expanded="false" />
             <element signature="method#Cycle#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
             <element signature="docComment;method#startNewCycle#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
+            <element signature="e#9333#9334#0" expanded="true" />
+            <element signature="e#9384#9385#0" expanded="true" />
             <element signature="method#setNewCyclePreviousEdge#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
-            <element signature="e#9165#9166#0" expanded="true" />
-            <element signature="e#9221#9222#0" expanded="true" />
-            <element signature="method#addEdge#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
+            <element signature="e#9573#9574#0" expanded="true" />
+            <element signature="e#9616#9617#0" expanded="true" />
+            <element signature="e#9673#9674#0" expanded="true" />
+            <element signature="e#9729#9730#0" expanded="true" />
+            <element signature="e#9860#9861#0" expanded="true" />
+            <element signature="e#9903#9904#0" expanded="true" />
+            <element signature="e#9938#9939#0" expanded="true" />
+            <element signature="e#9981#9982#0" expanded="true" />
             <element signature="method#outputAsArray#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
             <element signature="method#toString#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
             <element signature="method#buildGraph#0;class#EulerianCycle#0" expanded="false" />
@@ -1062,15 +1235,23 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="e#0#12563#0" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="class#Edge#0;class#EulerianCycle#0" expanded="false" />
             <element signature="class#Node#0;class#EulerianCycle#0" expanded="false" />
             <element signature="method#Cycle#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
             <element signature="docComment;method#startNewCycle#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
+            <element signature="e#9333#9334#0" expanded="true" />
+            <element signature="e#9384#9385#0" expanded="true" />
             <element signature="method#setNewCyclePreviousEdge#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
-            <element signature="e#9165#9166#0" expanded="true" />
-            <element signature="e#9221#9222#0" expanded="true" />
-            <element signature="method#addEdge#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
+            <element signature="e#9573#9574#0" expanded="true" />
+            <element signature="e#9616#9617#0" expanded="true" />
+            <element signature="e#9673#9674#0" expanded="true" />
+            <element signature="e#9729#9730#0" expanded="true" />
+            <element signature="e#9860#9861#0" expanded="true" />
+            <element signature="e#9903#9904#0" expanded="true" />
+            <element signature="e#9938#9939#0" expanded="true" />
+            <element signature="e#9981#9982#0" expanded="true" />
             <element signature="method#outputAsArray#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
             <element signature="method#toString#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
             <element signature="method#buildGraph#0;class#EulerianCycle#0" expanded="false" />
@@ -1092,15 +1273,23 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="e#0#12563#0" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="class#Edge#0;class#EulerianCycle#0" expanded="false" />
             <element signature="class#Node#0;class#EulerianCycle#0" expanded="false" />
             <element signature="method#Cycle#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
             <element signature="docComment;method#startNewCycle#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
+            <element signature="e#9333#9334#0" expanded="true" />
+            <element signature="e#9384#9385#0" expanded="true" />
             <element signature="method#setNewCyclePreviousEdge#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
-            <element signature="e#9165#9166#0" expanded="true" />
-            <element signature="e#9221#9222#0" expanded="true" />
-            <element signature="method#addEdge#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
+            <element signature="e#9573#9574#0" expanded="true" />
+            <element signature="e#9616#9617#0" expanded="true" />
+            <element signature="e#9673#9674#0" expanded="true" />
+            <element signature="e#9729#9730#0" expanded="true" />
+            <element signature="e#9860#9861#0" expanded="true" />
+            <element signature="e#9903#9904#0" expanded="true" />
+            <element signature="e#9938#9939#0" expanded="true" />
+            <element signature="e#9981#9982#0" expanded="true" />
             <element signature="method#outputAsArray#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
             <element signature="method#toString#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
             <element signature="method#buildGraph#0;class#EulerianCycle#0" expanded="false" />
@@ -1122,15 +1311,23 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="e#0#12563#0" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="class#Edge#0;class#EulerianCycle#0" expanded="false" />
             <element signature="class#Node#0;class#EulerianCycle#0" expanded="false" />
             <element signature="method#Cycle#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
             <element signature="docComment;method#startNewCycle#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
+            <element signature="e#9333#9334#0" expanded="true" />
+            <element signature="e#9384#9385#0" expanded="true" />
             <element signature="method#setNewCyclePreviousEdge#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
-            <element signature="e#9165#9166#0" expanded="true" />
-            <element signature="e#9221#9222#0" expanded="true" />
-            <element signature="method#addEdge#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
+            <element signature="e#9573#9574#0" expanded="true" />
+            <element signature="e#9616#9617#0" expanded="true" />
+            <element signature="e#9673#9674#0" expanded="true" />
+            <element signature="e#9729#9730#0" expanded="true" />
+            <element signature="e#9860#9861#0" expanded="true" />
+            <element signature="e#9903#9904#0" expanded="true" />
+            <element signature="e#9938#9939#0" expanded="true" />
+            <element signature="e#9981#9982#0" expanded="true" />
             <element signature="method#outputAsArray#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
             <element signature="method#toString#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
             <element signature="method#buildGraph#0;class#EulerianCycle#0" expanded="false" />
@@ -1152,15 +1349,23 @@
         <state relative-caret-position="3465">
           <caret line="231" column="51" lean-forward="false" selection-start-line="231" selection-start-column="51" selection-end-line="231" selection-end-column="51" />
           <folding>
+            <element signature="e#0#12563#0" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="class#Edge#0;class#EulerianCycle#0" expanded="false" />
             <element signature="class#Node#0;class#EulerianCycle#0" expanded="false" />
             <element signature="method#Cycle#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
             <element signature="docComment;method#startNewCycle#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
+            <element signature="e#9333#9334#0" expanded="true" />
+            <element signature="e#9384#9385#0" expanded="true" />
             <element signature="method#setNewCyclePreviousEdge#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
-            <element signature="e#9165#9166#0" expanded="true" />
-            <element signature="e#9221#9222#0" expanded="true" />
-            <element signature="method#addEdge#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
+            <element signature="e#9573#9574#0" expanded="true" />
+            <element signature="e#9616#9617#0" expanded="true" />
+            <element signature="e#9673#9674#0" expanded="true" />
+            <element signature="e#9729#9730#0" expanded="true" />
+            <element signature="e#9860#9861#0" expanded="true" />
+            <element signature="e#9903#9904#0" expanded="true" />
+            <element signature="e#9938#9939#0" expanded="true" />
+            <element signature="e#9981#9982#0" expanded="true" />
             <element signature="method#outputAsArray#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
             <element signature="method#toString#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
             <element signature="method#buildGraph#0;class#EulerianCycle#0" expanded="false" />
@@ -1185,33 +1390,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/EuelerianCycle/test/eueleriancycle/EulerianCycleTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="89" column="54" lean-forward="true" selection-start-line="89" selection-start-column="54" selection-end-line="89" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/EuelerianCycle/src/eueleriancycle/EulerianCycle.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="5" column="2" lean-forward="false" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
+        <state relative-caret-position="152">
+          <caret line="277" column="42" lean-forward="true" selection-start-line="277" selection-start-column="42" selection-end-line="277" selection-end-column="42" />
           <folding>
+            <element signature="e#0#12563#0" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="class#Edge#0;class#EulerianCycle#0" expanded="false" />
             <element signature="class#Node#0;class#EulerianCycle#0" expanded="false" />
             <element signature="method#Cycle#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
             <element signature="docComment;method#startNewCycle#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
+            <element signature="e#9333#9334#0" expanded="true" />
+            <element signature="e#9384#9385#0" expanded="true" />
             <element signature="method#setNewCyclePreviousEdge#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
-            <element signature="e#9165#9166#0" expanded="true" />
-            <element signature="e#9221#9222#0" expanded="true" />
-            <element signature="method#addEdge#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
+            <element signature="e#9573#9574#0" expanded="true" />
+            <element signature="e#9616#9617#0" expanded="true" />
+            <element signature="e#9673#9674#0" expanded="true" />
+            <element signature="e#9729#9730#0" expanded="true" />
+            <element signature="e#9860#9861#0" expanded="true" />
+            <element signature="e#9903#9904#0" expanded="true" />
+            <element signature="e#9938#9939#0" expanded="true" />
+            <element signature="e#9981#9982#0" expanded="true" />
             <element signature="method#outputAsArray#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
             <element signature="method#toString#0;class#Cycle#0;class#EulerianCycle#0" expanded="false" />
             <element signature="method#buildGraph#0;class#EulerianCycle#0" expanded="false" />
             <element signature="method#addOrModifyNodes#0;class#EulerianCycle#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EuelerianCycle/test/eueleriancycle/EulerianCycleTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
