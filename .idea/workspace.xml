@@ -5,15 +5,7 @@
     <bookmark url="file://$PROJECT_DIR$/EuelerianCycle/test/eueleriancycle/EulerianCycleTest.java" line="354" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="049fa48a-42b0-486f-bc83-3cbe43ea694a" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/EuelerianCycle/src/eueleriancycle/EulerianCycle.java" afterPath="$PROJECT_DIR$/EuelerianCycle/src/eueleriancycle/EulerianCycle.java" />
-      <change beforePath="$PROJECT_DIR$/out/production/EuelerianCycle/eueleriancycle/EulerianCycle$Cycle.class" afterPath="$PROJECT_DIR$/out/production/EuelerianCycle/eueleriancycle/EulerianCycle$Cycle.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/EuelerianCycle/eueleriancycle/EulerianCycle$Edge.class" afterPath="$PROJECT_DIR$/out/production/EuelerianCycle/eueleriancycle/EulerianCycle$Edge.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/EuelerianCycle/eueleriancycle/EulerianCycle$Graph.class" afterPath="$PROJECT_DIR$/out/production/EuelerianCycle/eueleriancycle/EulerianCycle$Graph.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/EuelerianCycle/eueleriancycle/EulerianCycle$Node.class" afterPath="$PROJECT_DIR$/out/production/EuelerianCycle/eueleriancycle/EulerianCycle$Node.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/EuelerianCycle/eueleriancycle/EulerianCycle.class" afterPath="$PROJECT_DIR$/out/production/EuelerianCycle/eueleriancycle/EulerianCycle.class" />
-    </list>
+    <list default="true" id="049fa48a-42b0-486f-bc83-3cbe43ea694a" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -408,7 +400,7 @@
       <workItem from="1516974982428" duration="1550000" />
       <workItem from="1516989422622" duration="635000" />
       <workItem from="1516990433572" duration="2328000" />
-      <workItem from="1517064481906" duration="44000" />
+      <workItem from="1517064481906" duration="82000" />
     </task>
     <servers />
   </component>
@@ -445,7 +437,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="128206000" />
+    <option name="totallyTimeSpent" value="128244000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
