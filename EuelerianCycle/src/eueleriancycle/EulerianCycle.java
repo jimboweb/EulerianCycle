@@ -7,8 +7,6 @@ package eueleriancycle;
 
 
 
-
-
 import java.io.IOException;
 import java.util.*;
 import java.util.logging.Level;
@@ -24,6 +22,9 @@ public class EulerianCycle {
     private int addNodeOps;
     public int buildCycleOps;
 
+    // TODO: 1/26/18 have to make a stack of open edges. when one gets used up get the one before it. 
+    // TODO: 1/26/18 also maybe if there is an open edge at end of cycle start the next cycle from there 
+    
     public static void main(String[] args) {
         new Thread(null, new Runnable() {
             public void run() {
@@ -88,11 +89,7 @@ public class EulerianCycle {
         public Edge addEdge(int ind, int from, int to){
             Edge e = new Edge(from, to);
             e.nodeNum = ind;
-            try{
             edges[ind] = e;
-            }catch(ArrayIndexOutOfBoundsException err){
-                System.out.println();
-            }
             return e;
         }
         public ArrayList<Integer> edgesFromEdge(int e){
@@ -147,6 +144,7 @@ public class EulerianCycle {
          * @return
          */
         Cycle growCycle(Cycle newCycle){
+<<<<<<< HEAD
             int nextEdge = newCycle.getFirstEdge();
             while (edges[nextEdge].to!=edges[newCycle.getFirstEdge()].from){
                 for(Integer e:edgesFromEdge(nextEdge)){
@@ -157,6 +155,23 @@ public class EulerianCycle {
                     }
                     buildCycleOps++;//debug
                 }
+=======
+            int nextEdge = newCycle.getFirstEdgeOfNextCycle();
+            Node startNode = nodes[edges[nextEdge].from];
+            while (edges[nextEdge].to!=edges[newCycle.getFirstEdgeOfNextCycle()].from){
+                ArrayList<Integer> unusedEdges = unusedEdgesFromEdge(nextEdge);
+                if(unusedEdges.size()>1){
+                    newCycle.setLastOpenEdge(nextEdge);
+                }
+                int e=unusedEdges.get(0);
+                nextEdge = e;
+                addEdgeToCycle(e,0,newCycle);
+                buildCycleOps++;//debug
+>>>>>>> unusedEdgesArray
+            }
+            // FIXME: 1/26/18 this won't be called if there was a last unused edge but its edges got used up 
+            if(newCycle.getLastOpenEdge()==-1 && unusedEdgesFromEdge(nextEdge).size()>0){
+                newCycle.setLastOpenEdge(nextEdge);
             }
              
             return newCycle;
@@ -229,6 +244,7 @@ public class EulerianCycle {
         private ArrayList<Integer> edges;
         private boolean[] visited;
         private int graphSize;
+        private int lastOpenEdge = -1;
         public Cycle(int graphSize){
             edges = new ArrayList<>();
             visited = new boolean[graphSize];
@@ -251,13 +267,24 @@ public class EulerianCycle {
                 return newCycle;
             }
 <<<<<<< HEAD
+<<<<<<< HEAD
             //nextEdgeLocalIndex is the index in this cycle of the edge we're looking at
 =======
             int firstEdge = getFirstEdgeOfNextCycle(newCycle,gr);
+=======
+            int firstEdge = 0;
+            try {//debug
+                firstEdge = gr.unusedEdgesFromEdge(getLastOpenEdge()).get(0);
+            } catch (IndexOutOfBoundsException e){
+                System.out.println(e);
+            }
+            newCycle.setNewCyclePreviousEdge(edges.indexOf(getLastOpenEdge()));
+>>>>>>> unusedEdgesArray
             gr.addEdgeToCycle(firstEdge,0,newCycle);
             return newCycle;
         }
 
+<<<<<<< HEAD
         // TODO: 1/22/18 new hypothesis: this is what's slowing me down. Say I have to step back 5000 edges? Might be really slow.
         // I can make this faster. Save the open node when I first make the cycle. 
         private int getFirstEdgeOfNextCycle(Cycle newCycle, Graph gr){
@@ -282,6 +309,8 @@ public class EulerianCycle {
             newCycle.setPrevIsVisited(this);
             return newCycle;
         }
+=======
+>>>>>>> unusedEdgesArray
 
 
         /**
@@ -305,6 +334,14 @@ public class EulerianCycle {
             this.newCyclePreviousEdge = newCyclePreviousEdge;
         }
 
+        public int getLastOpenEdge() {
+            return lastOpenEdge;
+        }
+
+        public void setLastOpenEdge(int lastOpenEdge) {
+            this.lastOpenEdge = lastOpenEdge;
+        }
+
         public void addEdge(int e){
             edges.add(e);
             visited[e] = true;
@@ -325,7 +362,7 @@ public class EulerianCycle {
         public Cycle copy(){
             Cycle c = new Cycle(graphSize);
             c.edges = new ArrayList<>(edges);
-            c.visited = Arrays.copyOf(visited, visited.length);
+            c.setLastOpenEdge(getLastOpenEdge());
             return c;
         }
         public int[] outputAsArray(Graph graph){
@@ -361,6 +398,7 @@ public class EulerianCycle {
             }
             return rtrnString;
         }
+
     }
 
 

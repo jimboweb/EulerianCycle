@@ -76,7 +76,11 @@ public class EulerianCycleTest {
     @Test
     public void testMakeEulerianCycle(){
 
+<<<<<<< HEAD
         for(int i=0;i<10000;i++) {
+=======
+        for(int i=0;i<1000;i++) {
+>>>>>>> unusedEdgesArray
             EulerianCycle instance = new EulerianCycle();
             InputGraph inputGraph = makeBalancedInputGraph(10);
             ArrayList<int[]> input = inputGraph.getInputAsArray();
@@ -87,9 +91,18 @@ public class EulerianCycleTest {
             } catch (ArrayIndexOutOfBoundsException err) {
                 System.out.println("Unconnected cycle");
                 continue;
+            } catch (IndexOutOfBoundsException e){
+                System.out.println(e);
+                System.out.println(e.getStackTrace());
+                Assert.fail(getFailOutput(c,inputGraph,instance));
             }
+<<<<<<< HEAD
             //Assert.assertTrue(getFailOutput(c,inputGraph),testEulerianCycle(c, inputGraph));
             Assert.assertTrue(getFailOutput(c,inputGraph, instance), instance.buildCycleOps < inputGraph.edges.size() * 15);
+=======
+            Assert.assertTrue(getFailOutput(c,inputGraph,instance),testEulerianCycle(c, inputGraph));
+            //Assert.assertTrue(getFailOutput(c,inputGraph, instance), instance.buildCycleOps < inputGraph.edges.size() * 2);
+>>>>>>> unusedEdgesArray
         }
     }
 
@@ -385,6 +398,7 @@ public class EulerianCycleTest {
         InputEdge thisEdge;
         boolean[] edgesAreUsed = new boolean[g.edges.size()];
         //make sure each node's "to" == the next node's "from"
+        edgesAreUsed[c.getEdge(0)]= true;
         for(int i=0;i<c.size()-1;i++){
             nextEdge = g.getEdge(c.getEdge(i+1));
             //make sure edge wasn't used twice
