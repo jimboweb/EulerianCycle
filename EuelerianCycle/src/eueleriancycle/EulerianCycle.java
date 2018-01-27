@@ -22,15 +22,9 @@ public class EulerianCycle {
     private int addNodeOps;
     public int buildCycleOps;
 
-    // TODO: 1/25/18 incorrect return on following case:
-    //4 6
-    //1 2
-    //2 4
-    //3 2
-    //4 2
-    //2 1
-    //2 3
-
+    // TODO: 1/26/18 have to make a stack of open edges. when one gets used up get the one before it. 
+    // TODO: 1/26/18 also maybe if there is an open edge at end of cycle start the next cycle from there 
+    
     public static void main(String[] args) {
         new Thread(null, new Runnable() {
             public void run() {
@@ -95,11 +89,7 @@ public class EulerianCycle {
         public Edge addEdge(int ind, int from, int to){
             Edge e = new Edge(from, to);
             e.nodeNum = ind;
-            try{
             edges[ind] = e;
-            }catch(ArrayIndexOutOfBoundsException err){
-                System.out.println();
-            }
             return e;
         }
 
@@ -173,7 +163,7 @@ public class EulerianCycle {
                 addEdgeToCycle(e,0,newCycle);
                 buildCycleOps++;//debug
             }
-
+            // FIXME: 1/26/18 this won't be called if there was a last unused edge but its edges got used up 
             if(newCycle.getLastOpenEdge()==-1 && unusedEdgesFromEdge(nextEdge).size()>0){
                 newCycle.setLastOpenEdge(nextEdge);
             }
@@ -273,19 +263,13 @@ public class EulerianCycle {
                 newCycle.setNewCyclePreviousEdge(-1);
                 return newCycle;
             }
-            int firstEdge = 0; //debug
-            try{
-            firstEdge = gr.unusedEdgesFromEdge(getLastOpenEdge()).get(0);
+            int firstEdge = 0;
+            try {//debug
+                firstEdge = gr.unusedEdgesFromEdge(getLastOpenEdge()).get(0);
             } catch (IndexOutOfBoundsException e){
                 System.out.println(e);
             }
-
-            //TODO: wait a minute am I setting the edge from the index in the graph?
-            try {
-                newCycle.setNewCyclePreviousEdge(edges.indexOf(getLastOpenEdge()));
-            } catch (IndexOutOfBoundsException e){
-                System.out.println(e);
-            }
+            newCycle.setNewCyclePreviousEdge(edges.indexOf(getLastOpenEdge()));
             gr.addEdgeToCycle(firstEdge,0,newCycle);
             return newCycle;
         }
@@ -361,6 +345,7 @@ public class EulerianCycle {
             }
             return rtrnString;
         }
+
     }
 
 
